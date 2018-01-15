@@ -14,20 +14,33 @@
       scroll-behavior: smooth;
     }
         body {
-            padding-top: 50px;
-            background-color:gray;
+          patdding:50px 50px;
+
+            animation: colorchange 20s infinite
         }
+        @keyframes colorchange {
+            0%{background-color: red}
+            10%{background-color: blue}
+            20%{background-color:green }
+            30%{background-color: rgb(154, 8, 63) }
+            40%{background-color: :rgb(137, 245, 0)}
+            50%{background-color: rgb(12, 0, 108) }
+            60%{background-color:rgb(102, 32, 32)}
+            70%{background-color: rgb(97, 245, 245)}
+            80%{background-color: rgb(163, 34, 158)}
+            90%{background-color: rgb(219, 255, 0)}
+            100%{background-color: rgb(41, 4, 241)}
+        }
+
         .reraytive
         {
           position:relative;
           width: 500px;
           height:500px;
-
         }
 
         .GoHOme
         {
-
           position:fixed;
           bottom: 120px;
           right:0px;
@@ -36,8 +49,6 @@
           background: steelblue;
           z-index: 10;
           padding-top: 10;
-
-
         }
         .GoHome:hover{
           bottom:123;
@@ -57,18 +68,10 @@
           z-index: 10;
         }
         .starter-template {
-            padding: 20px 40px;
-            background-color: white;
+        padding: 50px 50px;
+            background-color: rgb(184, 191, 204);
         }
-        .box{
 
-          background-color: red;
-           transition: all 200ms 0s ease;
-         }
-         .box:hover
-         {
-           background-color: blue;
-         }
 
 
         #slider-size
@@ -102,9 +105,82 @@
       .slider-Wall:hover
         {
 
-            animation:  slider_left 6s infinite;
+            animation:  slider_left  6s infinite;
 
         }
+        #silder-wall button
+        {
+         position: reraytive;
+           animation:  slider_left 6s infinite;
+
+        }
+        .box{
+          display:block;
+          display: output;
+    width: 50px;
+    height: 50px;
+
+          background-color: steelblue;
+
+           transition: all 800ms 0s ease;
+
+         }
+         .box:hover
+         {
+
+
+           transform: scale(3);
+           background-color: blue;
+         }
+
+         #menu{
+       z-index:1;
+        position: fixed;
+        padding:0;
+        margin:0;
+
+
+
+        width: 100%;
+        list-style-type: none;
+
+
+         }
+      #menu li
+        {
+         width: 25%;
+         float: left;
+        padding: 0 ;
+        margin: 0;
+         text-align: center;
+      }
+
+      #menu li a {
+
+    width:auto;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:800;
+ border: solid 2px #000;
+    padding:15px 0;
+
+    text-decoration:none;
+
+    display:block;
+
+    background:#666;
+
+  }
+
+  #menu li a:hover {
+  color:#000;
+    background:#555;
+
+  }
+
 
 
 
@@ -123,7 +199,27 @@
       100% { transform: translateX(0); }
     }
 　
+    #second
+    {
+      position: relative;
+      width:400px;
+      height:400px;
+    padding: 0;
+    margin: 0;
+    }
+    #second div{
 
+      left: 0;
+      will-change: auto;
+
+    }
+    #second div a{
+      position: relative;
+      padding: 50 50;
+      width: 400px;
+      height: 400px;
+      float: left;
+    }
 
         .icon-size {
             font-size: 200%;
@@ -139,11 +235,36 @@
 
     color: white;
         }
+        .aaa{
+          z-index:20;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+
+      <ul id="menu">
+
+
+
+    <li><a href="#">TOP</a></li>
+
+    <li><a href="https://twitter.com/fusatoshi3104">TWITTER</a></li>
+
+    <li><a href="https://github.com/satoshigp">GitHub</a></li>
+
+    <li><a href="#prof">PROF</a></li>
+
+
+
+
+
+
+
+      </ul>
+
+  </div>
+  <!--  <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -166,16 +287,19 @@
                     <li><a href="#dream">将来</a></li>
                 </ul>
             </div>
-            <!--/.nav-collapse -->
+            /.nav-collapse -->
         </div>
     </nav>
     <button type="button" name="HOME"><div class="GoHOme"><a href="#"><font style="font-size:38px;color:white;" ><u>TOP</u></font></a></button>
     <div class="jumpotoron">
         <div class"container">
           <div class="row text-center">
-                <div style="padding-top:125">
-                    <font color="blue" size="6"><strong>智士の歩～とフォリオ作成日記</strong></font>
-                  <p>ここから始まる物語 </p>
+                <div style="padding-top:200">
+                    <font color="blue" size="7"><strong>智士の歩～とフォリオ作成日記</strong></font>
+                  <font size="6" color=rgb(170, 6, 16)>
+                    <br>
+                    ～ここから始まる物語～
+                  </font>
                 </div>
 
           </div>
@@ -224,8 +348,15 @@
 
 
       <center>
+        <table>
+            <tr>
 
+              <td>
+                <button type="button" name="button"style="width:50;height:50px"class="ccc"></button>
 
+              </td>
+
+              <td>
 
 
 
@@ -235,17 +366,16 @@
 
 
 
-
                           <div class="slider-item "><a href="https://unityroom.com/games/run-space"><img src="aseet\aaaaaassdasfs.jpg"><div class="relative"><div class="absoryute"style="font-size:20px;padding-top:20px; color:red;"><center>Unityroomで<br>公開したゲームです。</center></a></div></div> </a></div>
                           <div class="slider-item ">  <a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/"><img src="aseet\bbb.jpg" width=500px height=500px><div class="relative absoryute" style="font-size:20px; padding-top:20" ><center>スクリーンショットに<br>投稿した作品です。</center></div></a></div>
                           <div class="slider-item ">  <a href="https://satoshigp.github.io/satoshigp.github.io/aseet/web/"><img src="aseet\キャプチャ.jpg"><div class="relative absoryute" style="font-size:20px; padding-top:10" ><center>冬休みに<br>制作した<br>ゲームです。</center></div></a></div>
 
+              </td>
+          </div>
 
-                  </div>
-
-                </div>
-
-
+         </div>
+       </tr>
+        </table>
 
 
         </center>
@@ -389,6 +519,7 @@
             <a id="dream"></a>
               <div class="row starter-template">
               <font style="font-size:30;color:steelblue">将来の目標</font>
+              <br>
                 <font style="font-size:20px">
                     最終目標は株式会社Alimに就職！
                     <br>まずはホワイト企業ゲーム会社に就職！
@@ -397,10 +528,29 @@
                   </font>
               </div>
         <hr>
-          <div class="row　starter-template">
+          <div class="row starter-template">
 
-          </div>
+          <table id="second">
+            <tr>
+              <td>
+                <button type="button" name="button"></button>
+              </td>
+              <td>
+                <div >
+                  <a href="https://satoshigp.github.io/satoshigp.github.io/aseet/web/"><img src="aseet\キャプチャ.jpg"></a>
+                </div>
+              </td>
+
+              <td>
+                <button type="button" name="button"></button>
+              </td>
+
+            </tr>
+
+          </table>
+
         </div>
+        <hr>
 
   </div>
     <!-- /.container -->
