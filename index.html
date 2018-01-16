@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>フカシュールブログ</title>
+    <title>深田智士(フカシュールブログ)</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
     <style>
@@ -108,12 +108,7 @@
             animation:  slider_left  6s infinite;
 
         }
-        #silder-wall button
-        {
-         position: reraytive;
-           animation:  slider_left 6s infinite;
 
-        }
         .box{
           display:block;
           display: output;
@@ -184,43 +179,64 @@
 
 
 
-      @keyframes slider_left
-     {
 
-       0% { transform: translateX(0); }
-       33% { transform: translateX(-500px); }
-       66% { transform: translateX(-1000px); }
-      100% { transform: translateX(0); }
-    }
-    @keyframes slider_right {
-      0% { transform: translateX(0); }
-      33% { transform: translateX(500px); }
-      66% { transform: translateX(1000px); }
-      100% { transform: translateX(0); }
-    }
 　
     #second
     {
-      position: relative;
-      width:400px;
-      height:400px;
-    padding: 0;
-    margin: 0;
-    }
-    #second div{
 
+      width:500px;
+      height:500px;
+
+
+      overflow:hidden;
+    }
+    #second ul{
+    position: relative;
       left: 0;
-      will-change: auto;
-
+      width:300%;
+        animation: slider_left 6s infinite;
     }
-    #second div a{
+    .item{
       position: relative;
-      padding: 50 50;
-      width: 400px;
-      height: 400px;
+      width: 500px;
+      height: 500px;
+      left: 0;
       float: left;
+      will-change: transform;
+      overflow: hidden;
+
+      animation: slider_right  infinite;
+
     }
 
+    #Clicker
+    {
+      position: relative;
+      display: inline-block;
+     padding: 50px ;
+      font-size: 40px;
+      color: rgb(231, 96, 161);
+
+      background-color: rgba(13, 37, 200, 0.36);
+      border-bottom: solid 3px rgba(0, 0, 0, 0.37);
+
+
+
+    }
+
+    #clicker a:hover
+    {
+
+
+
+    }
+
+    #clicker:active
+    {
+      transform: translateY(-3px);
+      border-bottom: solid 0;
+
+    }
         .icon-size {
             font-size: 200%;
         }
@@ -235,9 +251,26 @@
 
     color: white;
         }
-        .aaa{
-          z-index:20;
+        .center{
+          text-align: center;
+          colorrgb(169, 0, 172);
         }
+
+        @keyframes slider_left
+       {
+
+         0% { transform: translateX(0); }
+         33% { transform: translateX(-500px); }
+         66% { transform: translateX(-1000px); }
+        100% { transform: translateX(0); }
+      }
+      @keyframes slider_right {
+        0% { transform: translateX(0); }
+        33% { transform: translateX(500px); }
+        66% { transform: translateX(1000px); }
+        100% { transform: translateX(0); }
+      }
+
     </style>
 </head>
 
@@ -296,7 +329,7 @@
           <div class="row text-center">
                 <div style="padding-top:200">
                     <font color="blue" size="7"><strong>智士の歩～とフォリオ作成日記</strong></font>
-                  <font size="6" color=rgb(170, 6, 16)>
+                  <font size="6" color="rgb(170, 6, 16)">
                     <br>
                     ～ここから始まる物語～
                   </font>
@@ -321,12 +354,14 @@
                 <h2><font style="color:green; background-color:red;">－目次－</font></h2>
 
 
-                <li><a href="#Charange">在学中の成果</a></li>
-                <li><a href="#Skill">スキル</a></li>
-                <li><a href="#Other"> その他</a></li>
-                <li><a href="#cards">取得資格</a></li>
-                  <li><a href="#prof">深田とは？</a></li>
-                  <li><a href="#dream">将来</a></li>
+
+  <li><a href="#Charange">在学中の成果</a></li>
+  <li><a href="#Skill">スキル</a></li>
+  <li><a href="#Other"> その他</a></li>
+  <li><a href="#cards">取得資格</a></li>
+    <li><a href="#prof">深田とは？</a></li>
+    <li><a href="#dream">将来</a></li>
+
 
                     <p>一年生の間にいくつかの作品を作成しました</p>
 
@@ -366,7 +401,7 @@
 
 
 
-                          <div class="slider-item "><a href="https://unityroom.com/games/run-space"><img src="aseet\aaaaaassdasfs.jpg"><div class="relative"><div class="absoryute"style="font-size:20px;padding-top:20px; color:red;"><center>Unityroomで<br>公開したゲームです。</center></a></div></div> </a></div>
+                          <div class="slider-item "><a href="https://unityroom.com/games/run-space"><img src="aseet\aaaaaassdasfs.jpg" ><div class="relative"><div class="absoryute"style="font-size:20px;padding-top:20px; color:red;"><center>Unityroomで<br>公開したゲームです。</center></a></div></div> </a></div>
                           <div class="slider-item ">  <a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/"><img src="aseet\bbb.jpg" width=500px height=500px><div class="relative absoryute" style="font-size:20px; padding-top:20" ><center>スクリーンショットに<br>投稿した作品です。</center></div></a></div>
                           <div class="slider-item ">  <a href="https://satoshigp.github.io/satoshigp.github.io/aseet/web/"><img src="aseet\キャプチャ.jpg"><div class="relative absoryute" style="font-size:20px; padding-top:10" ><center>冬休みに<br>制作した<br>ゲームです。</center></div></a></div>
 
@@ -399,7 +434,7 @@
 
             <li><a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/">unityroomでゲームを投稿しました</a></li>
             <li><a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/">お題にチャレンジ！Vol.4： クリスマスのスクリーンショットに参加しました！</a></li>
-            <li><a href="https://satoshigp.github.io/satoshigp.github.io/aseet/web/">更に冬休み中にゲームを作成しました！是非やってみて下さい！</a></li>
+            <li><a href="https://satoshigp.github.io/satoshigp.github.io/">更に冬休み中にゲームを作成しました！是非やってみて下さい！</a></li>
 
           </font>
 </menu>
@@ -529,26 +564,38 @@
               </div>
         <hr>
           <div class="row starter-template">
-
-          <table id="second">
+            <center>
+          <table>
             <tr>
               <td>
-                <button type="button" name="button"></button>
+              <div id="clicker">
+
+              </div>
               </td>
               <td>
-                <div >
-                  <a href="https://satoshigp.github.io/satoshigp.github.io/aseet/web/"><img src="aseet\キャプチャ.jpg"></a>
+                <div id="second" >
+                  <ul>
+                    <div  >
+                  <a class="item" href="https://satoshigp.github.io/satoshigp.github.io/aseet/web/"><img src="aseet\キャプチャ.jpg"></a>
+                  <a class="item" href="https://satoshigp.github.io/satoshigp.github.io/aseet/web/"><img src="aseet\haruku.JPG"></a>
+                  <a　class="item" href="https://satoshigp.github.io/satoshigp.github.io/aseet/web/"><img src="C:\Users\ゲームプログラム1-2\Documents\GitHub\satoshigp.github.io\aseet\aaaaaassdasfs.jpg"></a>
+                    </div>
+                </ul>
                 </div>
               </td>
 
               <td>
-                <button type="button" name="button"></button>
+                &emsp;
+                &emsp;
+              <div id="clicker">
+
+              </div>
               </td>
 
             </tr>
 
           </table>
-
+        </center>
         </div>
         <hr>
 
