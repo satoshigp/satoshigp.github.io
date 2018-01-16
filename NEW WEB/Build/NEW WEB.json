@@ -1,0 +1,13 @@
+{
+"companyName": "Fcant",
+"productName": "fuyuyasumi",
+"dataUrl": "NEW WEB.data.unityweb",
+"asmCodeUrl": "NEW WEB.asm.code.unityweb",
+"asmMemoryUrl": "NEW WEB.asm.memory.unityweb",
+"asmFrameworkUrl": "NEW WEB.asm.framework.unityweb",
+"TOTAL_MEMORY": 536870912,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
