@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="ja">
 
-<head>
+<html lang="ja">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- BootstrapのCSS読み込み -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="./js/bootstrap.min.js"></script>
     <title>深田智士</title>
     <!-- Bootstrap -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+
 
     <style>
     html{
@@ -21,7 +25,7 @@
 
       }
       .body{
-      position: relative;
+      position: absolute;
         top: 15%;
         left: 20%;
         z-index:10;
@@ -40,7 +44,8 @@
         text-decoration: 900;
       }
       .sidemenu{
-        position: relative;;
+        position: fixed;
+
         width: 20%;
         height: 100%;
         background-color:rgb(0, 0, 0);
@@ -69,10 +74,6 @@
         .absoryute
         {
           position:absolute;
-          left:0;
-         bottom: 0;
-
-
           background-color: gray;
           width:250px;
           height: 100px;
@@ -87,86 +88,74 @@
 
         #slider-size
         {
-          z-index: 0;
 
-          width: 500px;
-          height: 500px;
+          padding-top: 75;
+          width: 100%;
+         height: 500px;
+
+
           overflow: hidden;
         }
         .slider-item
         {
-          z-index: 0;
-
-          width: 500px;
-          height: 500px;
+          position: relative;
           float: left;
-          position:relative;
+          z-index: 0;
+          width: 80%;
+          height: 500px;
 
         }
         .slider-Wall
         {
-
           width: 300%;
-          position: relative;
-          left: 0;
-          will-change: transform;
+          height: 500px;
+        left: 0;
+        overflow: hidden;
+        position: relative;
 
 
         }
       .slider-Wall:hover
-        {
 
-            animation:  slider_left  6s infinite;
-
-        }
 
 
          #menu{
-       z-index:1;
-        position: fixed;
-        padding:0;
-        margin:0;
-
-
-
-        width: 100%;
-        list-style-type: none;
+          position: relative;
+           z-index:1;
+            right: 0;
+            top: 144;
+           width: 100%;
 
 
          }
       #menu li
         {
-         width: 25%;
-         float: left;
-        padding: 0 ;
-        margin: 0;
+          list-style-type: none;
+
+         width:20%;
+         float: right;
+
+
          text-align: center;
+
       }
 
-      #menu li a {
+      #menu li a
+       {
 
-    width:auto;
-
-    color:#fff;
-
-    font-size:20px;
-
-    font-weight:800;
- border: solid 2px #000;
-    padding:15px 0;
-
-    text-decoration:none;
-
+    color:rgb(57, 207, 204);
+    font-size:30px;
+    font-weight:900;
+    border: solid 3px #000;
+    padding:10px 0;
     display:block;
-
     background:#666;
-
-  }
+    }
 
   #menu li a:hover {
-  color:#000;
+  color:rgba(170, 25, 45, 0.28);
     background:#555;
-
+    text-decoration: underline;
   }
 
 
@@ -191,38 +180,50 @@
     }
     .item{
       position: relative;
-      width: 500px;
-      height: 500px;
-      left: 0;
-      float: left;
-      will-change: transform;
-      overflow: hidden;
 
-      animation: slider_right  infinite;
+      left: 0;
+      left: 0;
+
+
+
+
 
     }
 
+    .index
+    {
+      position: relative;
+      color: black;
+      padding: 10 0;
+      background-color: rgba(42, 96, 120, 0.36);
+
+      right:0;
+      text-align: center;
+      font-weight: 900;
+      font-size: 45px;
+    }
 
 
         @keyframes slider_left
        {
 
          0% { transform: translateX(0); }
-         33% { transform: translateX(-500px); }
-         66% { transform: translateX(-1000px); }
-        100% { transform: translateX(0); }
-      }
-      @keyframes slider_right {
-        0% { transform: translateX(0); }
-        33% { transform: translateX(500px); }
-        66% { transform: translateX(1000px); }
+         33% { transform: translateX(-100%); }
+         66% { transform: translateX(-200%); }
         100% { transform: translateX(0); }
       }
 
 
-       }
+
+  menu li{
+    text-decoration:underline;
+    text-align: center;
+    list-style-type: decimal;
+    color: rgb(31, 162, 158);
+    font-size:30px;
 
 
+        }
 
     </style>
 </head>
@@ -233,10 +234,20 @@
 
   <div class="title">  深田ヒストリ～</div>
 
+    <div id="menu">
+
+      <li ><a href="" >Twitter</a></li>
+      <li><a href="">GitHub</a></li>
+      <li><a href="">ABOUTME</a></li>
+      <li><a href="">Works</a></li>
+
+
+  </div>
     <div class="sidemenu">
+
       <ul>
-        <li><a herf="#">TOP</a></li>
-        <li><a herf="#prof">自己紹介</a></li>
+        <li><a href="#">TOP</a></li>
+        <li><a href="prof">自己紹介</a></li>
         <li></li>
         <li></li>
         <li></li>
@@ -255,25 +266,64 @@
 
       </ul>
     </div>
-    <div class="body">
-      <a id="prof" media=""></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <a id="prof" ></a>
+  <div class="body">
+    <div id="slider-size">
+      <div class="slider-Wall">
+          <div class="slider-item"><a href=""><img src="aseet\bbb.jpg"></a></div>
+          <div class="slider-item"><a href=""><img src="aseet\pIWhd2Mb.jpg"></a></div>
+          <div class="slider-item"><a href=""><img src="aseet\bbb.jpg"></a></div>
+      </div>
     </div>
+      <hr>
+        <div class="index">目次</div>
+      <hr>
+     <menu>
 
+       <li><a href="#prof">自己紹介</a></li>
+       <li><a href="#near">近況報告</a></li>
+       <li><a href="#the">作品</a></li>
+       <li><a href="#Skill">スキル</a></li>
+       <li><a href="#ToDo">ToDo</a></li>
+       <li><a href="#shikaku">所持資格</a></li>
+       <li><a href="#Career">経歴</a></li>
+       <li><a href="Dream">将来の目標</a></li>
+
+     </menu>
+     <hr>
+
+       <a id="prof"></a>
+      <div class="index">自己紹介</div>
+
+      <a id="near"></a>
+      <a id="the"></a>
+      <a id="Skill"></a>
+      <a id="ToDo"></a>
+      <div class="index">ToDo</div>
+      <a id="shikaku"></a>
+      <div class="index">所持資格</div>
+      <a id="career"></a>
+      <div class="index">経歴</div>
+      <a id="Dream"></a>
+      <div class="index">将来の目標</div>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div><!-- ボディーの設定クラス-->
 
 
 
