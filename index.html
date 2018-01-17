@@ -6,38 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>深田智士(フカシュールブログ)</title>
+    <title>深田智士</title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
     <style>
     html{
       scroll-behavior: smooth;
     }
         body {
-          patdding:50px 50px;
+          background-color: rgba(0, 0, 0, 0.05);
 
-            animation: colorchange 20s infinite
-        }
-        @keyframes colorchange {
-            0%{background-color: red}
-            10%{background-color: blue}
-            20%{background-color:green }
-            30%{background-color: rgb(154, 8, 63) }
-            40%{background-color: :rgb(137, 245, 0)}
-            50%{background-color: rgb(12, 0, 108) }
-            60%{background-color:rgb(102, 32, 32)}
-            70%{background-color: rgb(97, 245, 245)}
-            80%{background-color: rgb(163, 34, 158)}
-            90%{background-color: rgb(219, 255, 0)}
-            100%{background-color: rgb(41, 4, 241)}
-        }
+      }
+      .body{
+      position: relative;
+        top: 15%;
+        left: 20%;
+        z-index:10;
+      }
+      .title
+      {
+        position: fixed;
+        width: 80%;
+        height: 15%;
+        right: 0;
+        background-color: rgba(165, 23, 215, 0.14);
+        color:white;
+        text-align: center;
 
-        .reraytive
-        {
-          position:relative;
-          width: 500px;
-          height:500px;
-        }
+       font-size: 80px;
+        text-decoration: 900;
+      }
+      .sidemenu{
+        position: relative;;
+        width: 20%;
+        height: 100%;
+        background-color:rgb(0, 0, 0);
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+
+      }
+
 
         .GoHOme
         {
@@ -109,24 +120,6 @@
 
         }
 
-        .box{
-          display:block;
-          display: output;
-    width: 50px;
-    height: 50px;
-
-          background-color: steelblue;
-
-           transition: all 800ms 0s ease;
-
-         }
-         .box:hover
-         {
-
-
-           transform: scale(3);
-           background-color: blue;
-         }
 
          #menu{
        z-index:1;
@@ -209,52 +202,7 @@
 
     }
 
-    #Clicker
-    {
-      position: relative;
-      display: inline-block;
-     padding: 50px ;
-      font-size: 40px;
-      color: rgb(231, 96, 161);
 
-      background-color: rgba(13, 37, 200, 0.36);
-      border-bottom: solid 3px rgba(0, 0, 0, 0.37);
-
-
-
-    }
-
-    #clicker a:hover
-    {
-
-
-
-    }
-
-    #clicker:active
-    {
-      transform: translateY(-3px);
-      border-bottom: solid 0;
-
-    }
-        .icon-size {
-            font-size: 200%;
-        }
-
-        .jumpotoron
-        {
-          width: auto ;
-          height: 400px ;
-            background-image: url("./aseet/haruku.JPG");
-            background-size: cover;
-            background-position: center ;
-
-    color: white;
-        }
-        .center{
-          text-align: center;
-          colorrgb(169, 0, 172);
-        }
 
         @keyframes slider_left
        {
@@ -270,346 +218,71 @@
         66% { transform: translateX(1000px); }
         100% { transform: translateX(0); }
       }
-      p{
-        color: rgb(115, 140, 27);
-      }
-       li a{
-         font-size: 30px;
+
 
        }
+
+
+
     </style>
 </head>
 
 <body>
-
-      <ul id="menu">
-
+  <a herf="#"></a>
 
 
-    <li><a href="#">TOP</a></li>
+  <div class="title">  深田ヒストリ～</div>
 
-    <li><a href="https://twitter.com/fusatoshi3104">TWITTER</a></li>
-
-    <li><a href="https://github.com/satoshigp">GitHub</a></li>
-
-    <li><a href="#prof">PROF</a></li>
-
-
-
-
-
-
+    <div class="sidemenu">
+      <ul>
+        <li><a herf="#">TOP</a></li>
+        <li><a herf="#prof">自己紹介</a></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
 
       </ul>
-
-  </div>
-  <!--  <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">トップ</a>
-                <a class="navbar-brand" href="https://github.com/satoshigp">GitHub</a>
-                <a class="navbar-brand" href="https://twitter.com/fusatoshi3104"><font color="steelblue">Twitter</font></a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#cards">資格</a></li>
-                    <li><a href="#prof">経歴</a></li>
-                    <li><a href="#dream">将来</a></li>
-                </ul>
-            </div>
-            /.nav-collapse -->
-        </div>
-    </nav>
-    <button type="button" name="HOME"><div class="GoHOme"><a href="#"><font style="font-size:38px;color:white;" ><u>TOP</u></font></a></button>
-    <div class="jumpotoron">
-        <div class"container">
-          <div class="row text-center">
-                <div style="padding-top:200">
-                    <font color="blue" size="7"><strong>智士の歩～とフォリオ作成日記</strong></font>
-                  <font size="6" color="rgb(170, 6, 16)">
-                    <br>
-                    ～ここから始まる物語～
-                  </font>
-                </div>
-
-          </div>
-
-
-        </div>
     </div>
-    <div class="container">
-        <div class="starter-template">
+    <div class="body">
+      <a id="prof" media=""></a>
 
 
-              <div class="row text-center">
-              <font style="font-size:18px">こんにちは深田智士と申します。<br></font>
-              <font style="font-size:18px">ポートフォリオの練習として作ってみました<br></font>
-              <font style="font-size:18px">このポートフォリオをいい機会として、また作品等を通じて深田のことを知って頂けたらうれぴーです<br></font>
 
 
 
-                <h2><font style="color:green; background-color:red;">－目次－</font></h2>
 
 
 
-  <li><a href="#Charange">在学中の成果</a></li>
-  <li><a href="#Skill">スキル</a></li>
-  <li><a href="#Other"> その他</a></li>
-  <li><a href="#cards">取得資格</a></li>
-    <li><a href="#prof">深田とは？</a></li>
-    <li><a href="#dream">将来</a></li>
 
 
-                    <p>一年生の間にいくつかの作品を作成しました</p>
 
-            </div>
 
-            </div>
 
 
 
-  <a id="Charange"></a>
-            <hr>
+    </div>
 
 
-            <div class="row starter-template">
 
-            <h2 id="works"><div class="text-center">Works</div></h2>
 
 
-      <center>
-        <table>
-            <tr>
 
-              <td>
-                <button type="button" name="button"style="width:50;height:50px"class="ccc"></button>
 
-              </td>
+    <div class="GoHOme"><a href="#"><font style="font-size:38px;color:white;" ><u>TOP</u></font></a></div>
 
-              <td>
 
-
-
-                    <div id="slider-size" >
-                      <div class="slider-Wall">
-
-
-
-
-                          <div class="slider-item "><a href="https://unityroom.com/games/run-space"><img src="aseet\aaaaaassdasfs.jpg" ><div class="relative"><div class="absoryute"style="font-size:20px;padding-top:20px; color:red;"><center>Unityroomで<br>公開したゲームです。</center></a></div></div> </a></div>
-                          <div class="slider-item ">  <a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/"><img src="aseet\bbb.jpg" width=500px height=500px><div class="relative absoryute" style="font-size:20px; padding-top:20" ><center>スクリーンショットに<br>投稿した作品です。</center></div></a></div>
-                          <div class="slider-item ">  <a href="https://satoshigp.github.io/satoshigp.github.io/aseet/web/"><img src="aseet\キャプチャ.jpg"><div class="relative absoryute" style="font-size:20px; padding-top:10" ><center>冬休みに<br>制作した<br>ゲームです。</center></div></a></div>
-
-              </td>
-          </div>
-
-         </div>
-       </tr>
-        </table>
-
-
-        </center>
-
-            <center>
-              <table border="5">
-                <tr>
-                  <th>
-                    <br>
-                <p>番号:<input type="text" name="aaa" value="かっこいいから配置" maxlength="5"><a herf="#net"></a></p>
-                    <p><input type="submit" name="aaa" value="検索できない">
-                    <input type="reset" name="aaa" value="リセットできない"><a id="net"></a></p>
-                  </th>
-                  </tr>
-              </table>
-
-
-
-<menu>
-              <font style="font-size:20;">
-
-            <li><a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/">unityroomでゲームを投稿しました</a></li>
-            <li><a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/">お題にチャレンジ！Vol.4： クリスマスのスクリーンショットに参加しました！</a></li>
-            <li><a href="https://satoshigp.github.io/satoshigp.github.io/">更に冬休み中にゲームを作成しました！是非やってみて下さい！</a></li>
-
-          </font>
-</menu>
-    </center>
-                     </div>
-
-                      </div>
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-            </div>
-
-            <hr>
-<div class="container">
-            <div class="row starter-template">
-
-            <h2 id="skills"><div class="text-center">Skills</div></h2>
-            <a id="Skill"></a>
-
-
-          <li>  <font style="font-size:30px">プログラミング言語</font></li>
-
-                          <br>
-                    <font style="font-size:20px">1.C++</font>
-                          <br>
-                          <font style="font-size:20px">2.C#</font>
-
-                          <br>
-                      <li>    <font style="font-size:30px">ゲームエンジン</font></li>
-                          <br>
-
-                          <font style="font-size:20px">Unity</font>
-                          <br>
-                      <li>    <font style="font-size:30px">編集ソフト</font></li>
-                          <br>
-
-                          <font style="font-size:20px">一応Photo Shop...</font>
-                          <br>
-                          <font style="font-size:15px">※主にC#を使用しUnityでゲームの製作をしています！</font>
-
-
-
-
-
-
-          </div>
-          <hr>
-          <a id="cards"></a>
-          <div class="row starter-template">
-            <h2 style="color:blue">所持資格</h2>
-            1.鋳鉄鋳物鋳造作業3級　動くのが遅かった２級も欲しい！<br>
-            2.基本情報技術者試験取得！<font style="color:red; text-decoration:none;">予定!!!</font><br>
-            3.
-            <br>
-            4.
-            <br>
-            .
-            <br>
-            .
-            <br>
-            .
-            <br>
-            .
-            <br>
-            <center>
-            <font style="font-size:25px;"> かなり少ない！<br>これから増やしていく<b>予定</b></font>
-          </center>
-          </div>
-
-          <hr>
-          <a id="prof"></a>
-            <div class="row starter-template">
-              <h2 style="color:blue">深田の軌跡</h2>
-              <table border="5" width="100%">
-                <tr>
-
-                  <th bgcolor=gray width=20%>西暦  </th>
-                    <th bgcolor=gray width=10%>月</th>
-                    <th bgcolor=gray>出来事</th>
-                </tr>
-              <tr>
-                <td>２０１４年</td>
-                <td width=50>４月</td>
-                <th >高校入学</th>
-              </tr>
-              <tr>
-                <td>２０１６年</td>
-                <td>８月</td>
-                <td>鋳鉄鋳物鋳造作業3級取得</td>
-
-              </tr>
-              <tr>
-              <td>２０１７年</td>
-              <td>３月</td>
-              <td>高校卒業</td>
-            </tr>
-              <tr>
-                <td>２０１９年</td>
-                <td>４月</td>
-                <td>卒業予定</td>
-
-              </tr>
-              <tr>
-                <td><a href="mailto:satoshidat@gmail.com">アドレス</a></td>
-
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
-
-
-            </div>
-            <hr>
-            <a id="dream"></a>
-              <div class="row starter-template">
-              <font style="font-size:30;color:steelblue">将来の目標</font>
-              <br>
-                <font style="font-size:20px">
-                    最終目標は株式会社Alimに就職！
-                    <br>まずはホワイト企業ゲーム会社に就職！
-                    <br>こつこつと上を目指して生きたい！
-                    <br>最近はプランナーもありかなと思っている！
-                  </font>
-              </div>
-        <hr>
-          <div class="row starter-template">
-            <center>
-          <table>
-            <tr>
-              <td>
-              <div id="clicker">
-
-              </div>
-              </td>
-              <td>
-                <div id="second" >
-                  <ul>
-                    <div  >
-                  <a class="item" href="https://satoshigp.github.io/NEW/"><img src="aseet\キャプチャ.jpg"></a>
-                  <a class="item" href="https://satoshigp.github.io/satoshigp.github.io/doc/"><img src="aseet\haruku.JPG"></a>
-                  <a　class="item" href="https://satoshigp.github.io/satoshigp.github.io/aseet/web/"><img src="aseet\aaaaaassdasfs.jpg"></a>
-                    </div>
-                </ul>
-                </div>
-              </td>
-
-              <td>
-                &emsp;
-                &emsp;
-              <div id="clicker">
-
-              </div>
-              </td>
-
-            </tr>
-
-          </table>
-        </center>
-        </div>
-        <hr>
-
-  </div>
     <!-- /.container -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
