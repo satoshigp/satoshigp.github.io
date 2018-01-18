@@ -24,6 +24,16 @@
           background-color: rgba(0, 0, 0, 0.05);
 
       }
+      th {
+        font-size: 25px;
+        background-color: gray;
+      }
+      .word
+      {
+        font-size: 25px;
+        color: black;
+
+      }
       .body{
       position: absolute;
         top: 15%;
@@ -32,7 +42,8 @@
       }
       .title
       {
-        position: fixed;
+
+        position: absolute;
         width: 80%;
         height: 15%;
         right: 0;
@@ -44,33 +55,64 @@
         text-decoration: 900;
       }
       .sidemenu{
-        position: fixed;
+        position: relative;;
 
         width: 20%;
-        height: 100%;
+        height: 250%;
         background-color:rgb(0, 0, 0);
         font-size: 20px;
         color: rgb(255, 255, 255);
 
-      }
 
+      }
+      .sidemenu li
+      {
+
+          list-style-type:square;
+          color:gray;
+      }
+      .sidemenu li a{
+
+        border:underline 100px white;
+
+        color: white;
+      }
 
         .GoHOme
         {
           position:fixed;
+          background-image: url("aseet/TOPIcon.png");
           bottom: 120px;
           right:0px;
-          width: 80px;
-          height: 80px;
-          background: steelblue;
+          width: 80;
+          height: 100px;
           z-index: 10;
           padding-top: 10;
+
+        }
+        .GoHome  a
+        {
+            position: relative;
+              left: 5%;
+              top: 5;
+              font-size: 250%;
+              color: blue;
+
         }
         .GoHome:hover{
-          bottom:123;
 
-          background-color: blue;
+
+          background-color: gray;
+          will-change: transform;
+          animation: icon 1s infinite;
         }
+
+        @keyframes icon {
+        0%{transform: translateY(0px);}
+        100%{transform: translateY(-10px);}
+
+        }
+
         .absoryute
         {
           position:absolute;
@@ -109,12 +151,12 @@
         {
           width: 300%;
           height: 500px;
-        left: 0;
-        overflow: hidden;
-        position: relative;
+          left: 0;
+          overflow: hidden;
+          position: relative;
 
           will-change: transform;
-            animation:  slider_left   infinite;
+          animation:  slider_left   infinite;
 
         }
 
@@ -214,17 +256,29 @@
         100% { transform: translateX(0); }
       }
 
+　menu{
 
+      }
 
   menu li{
+    position:relative;
+    left: 35%;
     text-decoration:underline;
-    text-align: center;
+
     list-style-type: decimal;
     color: rgb(31, 162, 158);
     font-size:30px;
+    }
+    menu li a
+    {
+      color: rgba(255,128,0,128);
+      transition: 800ms ;
+    }
+    menu li a:hover{
+      color: black;
+      font-size: 150%;
 
-
-        }
+    }
 
     </style>
 </head>
@@ -244,7 +298,7 @@
 
 
   </div>
-    <div class="sidemenu">
+    <div class="sidemenu"><!--サイドメニューバー -->
 
       <ul>
         <li><a href="#">TOP</a></li>
@@ -288,26 +342,78 @@
        <li><a href="#ToDo">ToDo</a></li>
        <li><a href="#shikaku">所持資格</a></li>
        <li><a href="#Career">経歴</a></li>
-       <li><a href="Dream">将来の目標</a></li>
+       <li><a href="#Dream">将来の目標</a></li>
 
      </menu>
      <hr>
 
        <a id="prof"></a>
+       <hr>
       <div class="index">自己紹介</div>
+      <div class="word">
+        こんにちは。<br>
+        深田と申します。<br>
+        ほぼＨＴＭＬ、ＣＳＳが初心者ですがJqueryを使わず根性だけでポートフォリオを作成したいと思います！<br>
+        普段は専門学校デジタルアーツ東京という学校でプログラミングの勉強をしています。
+        が！...予想以上にHTML,CSSが楽しすぎて手が離せません！<br>
 
+
+
+      </div>
+      <hr>
       <a id="near"></a>
+      <hr>
+      <div class="index">課外活動</div>
+
+      <div class="word">
+
+        現在は主に<a href="https://unity3d.com/jp">Unity</a>というゲームエンジンを使い<a href="https://unityroom.com/">UnityRoom</a>の一週間ゲームジャムをメインとして参加しています！
+      </div>
+      <hr>
       <a id="the"></a>
+      <hr>
+      <div class="index">作品</div>
+      <div class="word">
+
+      </div>
       <a id="Skill"></a>
+      <hr>
+      <div class="index">Skill</div>
+      <div class="word">
+
+      </div>
+      <hr>
       <a id="ToDo"></a>
+      <hr>
       <div class="index">ToDo</div>
+      <div class="word">
+        先ほども記述しましたがHTMLに度はまり中！<br>
+        なのでJS,PHP,Rubyのどれか１つを学校卒業までにはマスターしたい！<br>
+        そしてUnityと連動させ自分だけのゲームとオンラインランキングシステムを作りたいです！<br>
+
+
+      </div>
       <a id="shikaku"></a>
       <div class="index">所持資格</div>
-      <a id="career"></a>
+        <div class="word">
+          <center>
+          <table border="2">
+            <tr >
+              <th width="150px;">時期</th>
+              <th width=300px>資格名</th>
+            </tr>
+            <tr>
+              <td>2107年</td>
+              <td　><a href="https://ja.wikipedia.org/wiki/%E9%8B%B3%E9%80%A0%E6%8A%80%E8%83%BD%E5%A3%AB">鋳鉄鋳物鋳造作業３級</a></td>
+            </tr>
+          </table>
+        </center>
+        </div>
+      <a id="Career"></a>
       <div class="index">経歴</div>
       <a id="Dream"></a>
       <div class="index">将来の目標</div>
-     </div>
+
 
 
 
@@ -331,7 +437,7 @@
 
 
 
-    <div class="GoHOme"><a href="#"><font style="font-size:38px;color:white;" ><u>TOP</u></font></a></div>
+    <div class="GoHOme"><a href="#">TOP</a></div>
 
 
     <!-- /.container -->
