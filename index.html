@@ -8,6 +8,7 @@
 
     <!-- BootstrapのCSS読み込み -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\Mycss\original.css">
     <!-- jQuery読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- BootstrapのJS読み込み -->
@@ -15,288 +16,16 @@
     <title>深田智士</title>
 
 
-    <style>
-    html{
-      scroll-behavior: smooth;
-    }
-        body {
-          background-color: rgba(0, 0, 0, 0.05);
 
-      }
-      th {
-        text-align: center;
-        font-size: 25px;
-        background-color: gray;
-      }
-      td{
-        text-align: center;
-        font-size: 20px;
-      }
-      .word
-      {
-        font-size: 25px;
-        color: black;
-
-      }
-      .body{
-      position: absolute;
-        top: 15%;
-        left: 20%;
-        z-index:10;
-      }
-      .title
-      {
-
-        position: absolute;
-        width: 80%;
-        height: 15%;
-        right: 0;
-        background-color: rgba(165, 23, 215, 0.14);
-        color:white;
-        text-align: center;
-
-       font-size: 80px;
-        text-decoration: 900;
-      }
-      .sidemenu{
-        position: relative;;
-
-        width: 20%;
-        height: 250%;
-        background-color:rgb(0, 0, 0);
-        font-size: 20px;
-        color: rgb(255, 255, 255);
-
-
-      }
-      .sidemenu li
-      {
-
-          list-style-type:square;
-          color:gray;
-      }
-      .sidemenu li a{
-
-        border:underline 100px white;
-
-        color: white;
-      }
-
-        .GoHOme
-        {
-          position:fixed;
-          background-image: url("aseet/TOPIcon.png");
-          bottom: 120px;
-          right:0px;
-          width: 80;
-          height: 100px;
-          z-index: 10;
-          padding-top: 10;
-
-        }
-        .GoHome  a
-        {
-          　  position: relative;
-              left: 5%;
-              top: 5;
-              font-size: 250%;
-              color: blue;
-
-        }
-        .GoHome:hover{
-
-
-          background-color: gray;
-          will-change: transform;
-          animation: icon 1s infinite;
-        }
-
-
-
-        .absoryute
-        {
-          position:absolute;
-          background-color: gray;
-          width:250px;
-          height: 100px;
-          z-index: 10;
-        }
-        .starter-template {
-        padding: 50px 50px;
-            background-color: rgb(184, 191, 204);
-        }
-
-
-
-        #slider-size
-        {
-
-          padding-top: 75;
-          width: 100%;
-         height: 500px;
-
-
-          overflow: hidden;
-        }
-        .slider-item
-        {
-          position: relative;
-          float: left;
-          z-index: 0;
-          width: 80%;
-          height: 500px;
-
-        }
-        .slider-Wall
-        {
-          width: 300%;
-          height: 500px;
-          left: 0;
-          overflow: hidden;
-          position: relative;
-
-          will-change: transform;
-          animation:  slider_left   infinite;
-
-        }
-
-
-
-         #menu{
-          position: relative;
-           z-index:1;
-            right: 0;
-            top: 144;
-           width: 100%;
-
-
-         }
-      #menu li
-        {
-          list-style-type: none;
-
-         width:20%;
-         float: right;
-
-
-         text-align: center;
-
-      }
-
-      #menu li a
-       {
-
-    color:rgb(57, 207, 204);
-    font-size:30px;
-    font-weight:900;
-    border: solid 3px #000;
-    padding:10px 0;
-    display:block;
-    background:#666;
-    }
-
-  #menu li a:hover {
-  color:rgba(170, 25, 45, 0.28);
-    background:#555;
-    text-decoration: underline;
-  }
-
-
-
-
-
-　
-    #second
-    {
-
-      width:500px;
-      height:500px;
-
-
-      overflow:hidden;
-    }
-    #second ul{
-    position: relative;
-      left: 0;
-      width:300%;
-        animation: slider_left 6s infinite;
-    }
-    .item{
-      position: relative;
-
-      left: 0;
-      left: 0;
-
-
-
-
-
-    }
-
-    .index
-    {
-      position: relative;
-      color: black;
-      padding: 10 0;
-      background-color: rgba(42, 96, 120, 0.36);
-
-      right:0;
-      text-align: center;
-      font-weight: 900;
-      font-size: 45px;
-    }
-
-
-        @keyframes slider_left
-       {
-
-         0% { transform: translateX(0); }
-         33% { transform: translateX(-100%); }
-         66% { transform: translateX(-200%); }
-        100% { transform: translateX(0); }
-      }
-
-      @keyframes icon {
-      0%{transform: translateY(0px);}
-      100%{transform: translateY(-10px);}
-
-      }
-
-　menu{
-
-      }
-
-  menu li{
-    position:relative;
-    left: 35%;
-    text-decoration:underline;
-
-    list-style-type: decimal;
-    color: rgb(31, 162, 158);
-    font-size:30px;
-    }
-    menu li a
-    {
-      color: rgba(255,128,0,128);
-      transition: 800ms ;
-    }
-    menu li a:hover{
-
-      color: black;
-      font-size: 150%;
-
-
-    }
-
-
-    </style>
 </head>
 
 <body>
   <a herf="#"></a>
 
+  <header>
+    <div class="title">ポケモンマスター</div>
+  </header>
 
-  <div class="title">  深田ヒストリ～</div>
 
     <div id="menu">
 
@@ -343,7 +72,7 @@
         <div class="index">目次</div>
       <hr>
      <menu>
-<audio src="aseet\E-T_F.wav">
+
   <li><a href="#prof">自己紹介</a></li>
   <li><a href="#near">近況報告</a></li>
   <li><a href="#the">作品</a></li>
@@ -352,7 +81,7 @@
   <li><a href="#shikaku">所持資格</a></li>
   <li><a href="#Career">経歴</a></li>
   <li><a href="#Dream">将来の目標</a></li>
-</audio>
+
 
 
      </menu>
@@ -419,7 +148,7 @@
             </tr>
             <tr>
               <td>2019年</td>
-              <td><a href="https://ja.wikipedia.org/wiki/%E5%9F%BA%E6%9C%AC%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93">基本情報技術者試験</a></td>
+              <td><a href="https://ja.wikipedia.org/wiki/%E5%9F%BA%E6%9C%AC%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93">基本情報技術者試験</a>予定</td>
             </tr>
           </table>
         </center>
