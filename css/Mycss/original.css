@@ -41,7 +41,7 @@ html{
     text-decoration: 900;
   }
   .sidemenu{
-    position: relative;;
+    position: fixed;
 
     width: 20%;
     height: 250%;
