@@ -7,8 +7,205 @@
     <link rel="stylesheet" href="css\Mycss\original.css">
     <title> いい旅、夢ごこち</title>
   </head>
+<style >
+html{
+  scroll-behavior:smooth;
+}
 
+
+#slide-first
+{
+
+  padding-top: 25px;
+  position: relative;
+  overflow: hidden;
+
+  width: 1024px;
+  height: 576px;
+  z-index: 0;
+
+}
+.slide-wall
+{
+  position: relative;
+  width: 500%;
+  height: 576px;
+  overflow: hidden;
+  will-change: transform;
+  animation: slider_left 10s infinite;
+}
+.slide-item
+{
+  position: relative;
+  float: left;
+  width: 1024px;
+  height:576px;
+}
+
+td{
+  text-align: center;
+}
+
+.box
+{
+z-index: 10;
+  background-color: rgb(162, 162, 162);
+  display: block;
+  width: 25px;
+  height: 25px;
+
+
+  border-top:solid 10px rgb(98, 98, 98);
+  border-left:solid 8px rgb(115, 115, 115);
+  border-bottom:ridge 15px rgb(131, 131, 131);
+  border-right:ridge 10px rgb(131, 131, 131);
+  text-align:center;
+  padding-top: 5px;
+}
+.box:active
+{
+  width: 25px;
+  height: 25px;
+  padding:1px;
+  text-align:center;
+  padding-top: 5px;
+  border-top: solid 10px rgb(131, 131, 131);
+  border-right: solid 10px rgb(131, 131, 131);
+  border-left: solid 8px rgb(131, 131, 131);
+  border-bottom: solid 15px rgb(131, 131, 131);
+
+}
+.box1
+{
+z-index: 10;
+  background-color: rgb(162, 162, 162);
+  display: block;
+  width: 100px;
+  height: 25px;
+
+
+  border-top:solid 10px rgb(98, 98, 98);
+  border-left:solid 8px rgb(115, 115, 115);
+  border-bottom:ridge 15px rgb(131, 131, 131);
+  border-right:ridge 10px rgb(131, 131, 131);
+  text-align:center;
+  padding-top: 5px;
+}
+.box1:active
+{
+  width: 100px;
+  height: 25px;
+  padding:1px;
+  text-align:center;
+  padding-top: 5px;
+  border-top: solid 10px rgb(131, 131, 131);
+  border-right: solid 10px rgb(131, 131, 131);
+  border-left: solid 8px rgb(131, 131, 131);
+  border-bottom: solid 15px rgb(131, 131, 131);
+
+}
+
+  a{
+    color: rgb(193, 177, 33);
+    font-size: 30px;
+    transition: 150ms;
+  }
+  a:hover
+  {
+    color: rgb(166, 142, 238);
+    transform:scale(150%);
+  }
+  li{
+    padding: 0;
+  }
+  h1{
+      padding:20 ;
+  }
+
+
+</style>
   <body>
-  　gkg:dfsjb:pfdjbpj:
+    <center>
+    <font style="font-size:50px;">タイトル:いい旅、夢ごこち</font>
+
+    <menu>
+
+      <a href="#scshot"><li>プレイ画像</li></a>
+      <a href="#ruru"><li>やり方</li></a>
+      <a href="#aseet"><li>使用アセット</li></a>
+      <a href="https://satoshigp.github.io/"><li>ホームへ</li></a>
+
+
+    </menu>
+
+    <img src="..\..\..\aseet\aaaaaassdasfs.jpg" >
+
+    <a id="scshot"></a>
+    <img src="..\..\..\aseet\ccc.jpg" >
+    <img src="..\..\..\aseet\yume2.jpg" >
+    <a id="ruru"></a>
+
+    操作説明:移動
+      <table >
+        <tr>
+          <td></td>
+          <th>キー</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <th>矢印</th>
+        </tr>
+        <tr>
+          <td class="box">S</td>
+          <td></td>
+          <td></td>
+         <td class="box" colspan="2">D</td>
+       <th width="50px"></th>
+         <td class="box" >←</td>
+      <td></td>
+
+        <td class="box">→</td>
+        </tr>
+
+        <tr>
+        <td colspan="4">A,Dで左右移動</td>
+
+        <td colspan="20">左右矢印キー<br>でも操作可能！</td>
+        </tr>
+
+      </table>
+      攻撃
+      <table>
+        <tr>
+          <td class="box1">Space</td>
+        </tr>
+        <tr>
+          <td>弾丸を使い敵に攻撃！</td>
+        </tr>
+      </table>
+
+
+
+
+
+
+
+
+
+
+    <a id="aseet"></a>
+    <h2>使用アセット</h2>
+    <a href="https://assetstore.unity.com/packages/3d/characters/chibi-mummy-60462">Chibi Mummy</a>
+    <br>
+    <a href="https://assetstore.unity.com/packages/essentials/asset-packs/unity-particle-pack-73777">Unity Particle Pack</a>
+    <br>
+    <a href="https://assetstore.unity.com/packages/tools/modeling/probuilder-basic-11919">ProBuilder Basic</a>
+    <br>
+    <a href="https://assetstore.unity.com/packages/3d/characters/space-asteroids-96444">Space Asteroids</a>
+    <br>
+    <a href="https://assetstore.unity.com/packages/3d/vehicles/land/cartoon-minibus-free-54055">Cartoon Minibus FREE!</a>
+  </center>
+
   </body>
 </html>
