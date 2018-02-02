@@ -13,33 +13,40 @@ html{
 }
 
 
-#slide-first
+#slider-first
 {
 
   padding-top: 25px;
   position: relative;
   overflow: hidden;
-
   width: 1024px;
   height: 576px;
   z-index: 0;
 
 }
-.slide-wall
+.slider-wall
 {
   position: relative;
-  width: 500%;
+  width: 300%;
   height: 576px;
   overflow: hidden;
   will-change: transform;
-  animation: slider_left 10s infinite;
+  animation: slide 10s infinite;
 }
-.slide-item
+.slider-item
 {
   position: relative;
   float: left;
   width: 1024px;
   height:576px;
+}
+
+ @keyframes slide {
+  0%{transform: translateX(0px);}
+  33%{transform: translateX(-1024px);}
+  66%{transform: translateX(-2048px);}
+  100%{transform: translateX(0px);}
+
 }
 
 td{
@@ -141,12 +148,16 @@ z-index: 10;
     <img src="..\..\..\aseet\aaaaaassdasfs.jpg" >
 
     <a id="scshot"></a>
-    <img src="..\..\..\aseet\ccc.jpg" >
-    <img src="..\..\..\aseet\yume2.jpg" >
+    <div id="slider-first">
+      <div class="slider-wall">
+        <div class="slider-item"><img src="..\..\..\aseet\ccc.jpg"></div>
+        <div class="slider-item"><img src="..\..\..\aseet\yume2.jpg"></div>
+        </div>
+    </div>
     <a id="ruru"></a>
 
     操作説明:移動
-      <table >
+      <table>
         <tr>
           <td></td>
           <th>キー</th>
