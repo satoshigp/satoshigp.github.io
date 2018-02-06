@@ -10,9 +10,7 @@ select{
 html{
   scroll-behavior: smooth;
 }
-    body {
 
-  }
   th {
     z-index: 1;
     solid:4px #000;
@@ -86,12 +84,11 @@ html{
       height: 100px;
       z-index: 10;
       padding-top: 10;
-
     }
     #GoHome  a
     {
       　  position: relative;
-          left: 5%;
+          left: 50px;
           top: 5;
           font-size: 250%;
           color: blue;
@@ -262,12 +259,12 @@ position: relative;
   }
 
 　menu{
-
+width: 35%;
   }
 
 menu li{
 position:relative;
-left: 35%;
+
 text-decoration:underline;
 
 list-style-type: decimal;
