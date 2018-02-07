@@ -259,14 +259,14 @@ position: relative;
   }
 
 　menu{
-width: 35%;
+
   }
 
 menu li{
 position:relative;
 
 text-decoration:underline;
-
+text-align: center;
 list-style-type: decimal;
 color: rgb(31, 162, 158);
 font-size:30px;
