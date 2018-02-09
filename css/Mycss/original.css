@@ -191,7 +191,7 @@ text-decoration: underline;
 position: relative;
   left: 0;
   width:300%;
-    animation: slider_left 6s infinite;
+    animation: slider_left 10s infinite;
 }
 .index
 {
