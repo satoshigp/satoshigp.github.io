@@ -1,15 +1,142 @@
 <!DOCTYPE html>
-<html　language="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css\Mycss\original.css">
-    <title>2時間ゲームジャム</title>
-  </head>
-  <body>
-    <!--<header "Content-Type: application/vnd.android.package-archive">-->
-      <a href="..\..\..\fry2.apk" download="走れ！イーサン！">イーサン</a>
-    <!--</header>-->
-  </body>
-</html>
+    <html　language="ja">
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css\Mycss\original.css">
+        <title>2時間ゲームジャム</title>
+      </head>
+      <style>
+      h1{
+        padding:0px;
+        margin: 0px;
+      }
+      p{
+        margin: 0px;
+        padding: 0px;
+      }
+        h1,p{
+          color: rgb(203, 105, 99);
+
+        }
+        #slider-first
+        {
+
+          padding-top: 25px;
+          position: relative;
+          overflow: hidden;
+          left: 0;
+          width: 1024px;
+          height: 576px;
+          z-index: 0;
+
+        }
+        .slider-wall
+        {
+          position: relative;
+          width: 300%;
+          height: 576px;
+          overflow: hidden;
+          will-change: transform;
+          animation: slide 10s infinite;
+        }
+        .slider-item
+        {
+          position: relative;
+          float: left;
+          width: 1024px;
+          height:576px;
+        }
+        @keyframes slide {
+         0%{transform: translateX(0px);}
+         33%{transform: translateX(-1024px);}
+         66%{transform: translateX(-2048px);}
+         100%{transform: translateX(0px);}
+        }
+
+        a{
+          color: rgb(193, 177, 33);
+          font-size: 30px;
+          transition: 150ms;
+        }
+        a:hover
+        {
+          color: rgb(166, 142, 238);
+          transform:scale(150%);
+        }
+        li{
+          padding: 0;
+        }
+        .title{
+          font-size: 50px;
+          margin: 0;
+          padding-top: 20px;
+        }
+
+      </style>
+
+
+
+      <body>
+        <center>
+  <div class="body">
+        <h1>走れ！イーサン！</h1>
+        <p>~走れ、メ〇ス外伝~</p>
+
+        <menu>
+          <a href="#scshot"><li>プレイ画像</li></a>
+          <a href="#ruru"><li>やり方</li></a>
+          <a href="#aseet"><li>使用アセット</li></a>
+          <a href="#dl"> <li>ダウンロード</li> </a>
+          <a href="https://satoshigp.github.io/"><li>ホームへ</li></a>
+        </menu>
+
+
+
+
+        <div id="scshot"></div>
+        <img src="..\..\..\aseet\scshot.jpg" >
+        <div id="slider-first">
+          <div class="slider-wall">
+            <div class="slider-item"> <img src="..\..\..\aseet\title.jpg" > </div>
+              <div class="slider-item"> <img src="..\..\..\aseet\a1.jpg" > </div>
+            <div class="slider-item"> <img src="..\..\..\aseet\a2.jpg" > </div>
+        </div>
+
+        </div>
+        <br>
+      <div id="ruru">
+
+        <li>基本ルール</li>
+      <font style="font-size:20px;">  四角いオブジェクトに当たったらゲームオーバー<br>
+        アイテムを取ってスコアを稼ごう！ <br>
+      </font>
+
+        <li>プレイヤー移動</li>
+        左右の端にある青いボタンでプレイヤーを左右に移動することができます！
+        <table>
+          <tr>
+              <th>左移動</th>
+              <th>右移動</th>
+          </tr>
+          <tr>
+
+            <td> <img src="..\..\..\aseet\ButtonArrowOverSprite.png" width="75px" style="transform:scale(-1,1)" > </td>
+            <td> <img src="..\..\..\aseet\ButtonArrowOverSprite.png" width="75px"> </td>
+
+          </tr>
+        </table>
+      </div>
+        <div id="aseet"></div>
+          <h1>使用アセット</h1>
+            <a href="https://maoudamashii.jokersounds.com/">BGM:魔王魂</a>
+            <a id="dl"></a>
+        <h1>ダウンロード</h1>
+                  <button type="button" name="button">
+                    <a href="..\..\..\fry2.apk" download="走れ！イーサン！">イーサン</a>
+                 </button>
+               </div>
+             </center>
+    </body>
+    </html>
