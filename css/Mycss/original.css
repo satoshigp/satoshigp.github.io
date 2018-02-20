@@ -74,28 +74,7 @@ html{
     color: white;
   }
 
-    #GoHOme
-    {
-      position:fixed;
-      background-image: url("../../aseet/TOPIcon.png");
-      bottom: 120px;
-      right:0px;
-      width: 80px;
-      height: 100px;
-      z-index: 10;
-      padding-top: 10px;
-      font-size: 18px;
-    }
-    #GoHome  a
-    {
-      　  position: relative;
-          font-size: 250%;
-          color: blue;
-    }
-    #GoHome:hover{
-      background-color: gray;
-      animation: icon 1s infinite;
-    }
+  
 
     .resp
     {
