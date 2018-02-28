@@ -140,18 +140,15 @@ text-decoration: underline;
 　
 #second
 {
-
   width:500px;
   height:500px;
-
-
   overflow:hidden;
 }
 #second ul{
-position: relative;
+  position: relative;
   left: 0;
   width:300%;
-    animation: slider_left 10s infinite;
+  animation: slider_left 10s infinite;
 }
 .index
 {

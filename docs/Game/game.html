@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css\Mycss\styleboot.css">
     <link rel="stylesheet" href="css/Mycss/original.css">
     <title>ゲーム作品</title>
   </head>
@@ -25,8 +26,12 @@
         animation: slid 5s infinite;
       }
       td{
+
         font-size: 25px;
         text-align: center;
+        left: 200px;
+        top: 200px;
+        z-index: 0;
         }
 
       tr h1{
@@ -44,10 +49,17 @@
        font-size: 35px;
      }
      img{
+       position:inherit;
       width: 500px;
       height: 500px;
-
+      transition:ease 1s;
+      z-index: 10;
     }
+  img:hover
+  {
+    opacity: 0.3;
+    z-index: 0;
+  }
 
 
 
@@ -65,7 +77,7 @@
     <h1>  ～作品～</h1>
     </div>
     <center>
-     <table border="3">
+     <table border="5">
        <tr>
           <h1>ーゲーム作品ー</h1>
           <h2>画像クリックでプレイできます</h2>
@@ -83,23 +95,32 @@
 
        </tr>
        <tr>
+         <td>プラットフォーム:PC</td>
+         <td>プラットフォーム:PC</td>
+       </tr>
+       <tr>
          <td><a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/RURU/Jump.html">やり方・特徴</a></td>
          <td><a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/RURU/YUME.html  ">やり方・特徴</a></td>
        </tr>
        <tr>
          <th>走れ！イーサン</th>
+         <th>ストラックアウト</th>
        </tr>
        <tr>
-         <td> <img src="..\..\aseet\Screenshot_20180209-130040.png"> </td>
+         <td> ccc<img src="..\..\aseet\Screenshot_20180209-130040.png"> </td>
+         <!-- TODO: 画像の用意 -->
        </tr>
        <tr>
          <td>ジャンル:避けゲー</td>
+         <td>ジャンル:当てる！</td>
        </tr>
         <tr>
           <td>プラットフォーム：Android</td>
+          <td>プラットフォーム: PC</td>
         </tr>
        <tr>
          <td> <a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/RURU/i-than.html">やり方・特徴</a> </td>
+         <td> <a href=""></a>やり方・特徴 </td>
        </tr>
      </table>
      <table border="3">
