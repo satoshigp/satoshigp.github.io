@@ -1,5 +1,5 @@
 
-@media query and(max-width:500px) {
+@media query and( max-width:479px) {
   td{
   background-color: rgb(38, 195, 71);
     }
