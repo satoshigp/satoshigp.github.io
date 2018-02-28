@@ -237,6 +237,9 @@ menu li a:hover{
 
   color: black;
   font-size: 150%;
-
-
 }
+  @media query and( max-width:479px) {
+    h1{
+    color: rgb(38, 195, 71);
+      }
+  }
