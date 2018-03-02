@@ -10,9 +10,15 @@
   </head>
   <style >
 
-
+    .pos
+      {
+        position: relative;
+        text-align:center;
+        left: center;
+      }
 
    body{
+     scroll-behavior:smooth;
           background-color: rgba(0,0,0,0.06);
        }
       .title{
@@ -31,8 +37,7 @@
 
         font-size: 25px;
         text-align: center;
-        left: 200px;
-        top: 200px;
+
         z-index: 0;
         }
 
@@ -41,14 +46,21 @@
         color: rgb(28, 32, 126);
       }
 
-
+      h2
+      {
+        padding: 0px;
+        margin: 0px;
+        font-size: 35px;
+      }
      h1{
        font-size: 50px;
+       text-align: center;
        padding: 0;
        margin: 0;
      }
      th{
-       font-size: 35px;
+       font-weight: 900;
+       height: 60px;
      }
      img{
        position:inherit;
@@ -67,11 +79,7 @@
 
 
 
-      @keyframes slid
-       {
-        0%{transform: translateX(0px);  }
-        100%{transform:translateX(1000px);  }
-       }
+
 
 
 
@@ -81,13 +89,18 @@
 
     <h1>  ～作品～</h1>
     </div>
-
-      <div class="col">
+      <header>
+        <h1 class="pos">
+          今までの作品たち
+        </h1>
+      </header>
+     <center>
+      <div class="col-sm-5">
         <div class="span">
           <div class="item">
             <table border="5">
               <tr>
-                <th>いい旅、夢ごこち</th>
+                <th><h2>JUMP STAR</h2></th>
               </tr>
                 <td><a href="https://satoshigp.github.io/NEW/"　target="_blank"><img src="..\..\aseet\キャプチャ.jpg" ></a></td>
               <tr>
@@ -105,7 +118,7 @@
             <table border="5">
               <tr>
                 <th>
-                いい旅、夢ごこち
+              <h2>いい旅、夢ごこち</h2>
                </th>
               </tr>
               <tr>
@@ -120,38 +133,23 @@
               <tr>
                 <td> <a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/RURU/YUME.html">やり方・特徴</a> </td>
               </tr>
-
-            </table>  
-          </div>
-
-
-
-        </div>
-
-   </div>
-
-     <table border="3">
-       <tr>
-         <br>
-         <h1>ーその他の作品ー</h1>
-         <br>
-       </tr>
-       <tr>
-         <th>イベント名:お題にチャレンジ！Vol.4： クリスマスのスクリーンショット</th>
-       </tr>
-       <tr>
-         <td> <a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/" > <img src="..\..\aseet\haruku.JPG" style="width:1200px" > </a> </td>
-       </tr>
             </table>
+          </div>
+        </div>
+     </div>
+         <table border="3">
+ <h1>ーその他の作品ー</h1>
+           <tr>
+             <th>イベント名:お題にチャレンジ！Vol.4： クリスマスのスクリーンショット</th>
+           </tr>
+           <tr>
+             <td> <a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/" > <img src="..\..\aseet\haruku.JPG" style="width:1200px" > </a> </td>
+           </tr>
+        </table>
      <br>
      <h1><u>これからも追加予定！！！</u></h1>
      <br>
-
-
+</center>
    <a href="https://satoshigp.github.io/">トップへ</a>
-
-
-
-
   </body>
 </html>
