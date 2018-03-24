@@ -106,6 +106,7 @@ center th {
 
      function over()
      {
+
         var op=document.getElementById("sub");
        switch (cnt)
        {
@@ -134,14 +135,11 @@ center th {
      }
     function changeIMG()
     {
-        if(cnt>=2)
-        {
-          cnt=0;
-        }
-        else
-        {
-          cnt++;
-        }
+      cnt++;
+      if(cnt>2)
+      {
+        ctn=0;
+      }
           document.getElementById("gazo").src=img[cnt].src;
       }
     console.log(cnt);
