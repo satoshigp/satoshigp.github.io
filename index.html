@@ -67,14 +67,14 @@ center th {
     <div class="title">深田　智士</div>
   </header>
 
-      <menu>
+
         <div id="menu">
           <li ><a href="https://twitter.com/fusatoshi3104" >Twitter</a></li>
           <li><a href="https://github.com/satoshigp">GitHub</a></li>
           <li><a href="">ABOUTME</a></li>
           <li><a href="">Works</a></li>
        </div>
-     </menu>
+
      <nav>
          <div class="sidemenu"><!--サイドメニューバー -->
            <ul>
@@ -89,9 +89,9 @@ center th {
 
     <a id="prof" ></a>
   <div class="body">
- <div ><img class="item" id="gazo" src = "aseet/aaaaaassdasfs.jpg"> <a href="https://unityroom.com/games/run-space/webgl"><div class="resp abso"> Unity 1Week <br>で初めて出した作品 </a> </div></div>
-<br>
-<h4 id="op"></h4>
+ <div class="item"><a href="https://unityroom.com/games/run-space/webgl"><img class="item" id="gazo" src = "aseet/aaaaaassdasfs.jpg"> </a></div>
+<br><br>
+<h4 id="sub"style=" overflow:scroll">初めまして</h4>
  <input type="button" value="進む" onclick="changeIMG()">
     <script>
     //画像の用意
@@ -106,12 +106,13 @@ center th {
 
      function over()
      {
+        var op=document.getElementById("sub");
        switch (cnt)
        {
-         var op=document.getElementById("op");
            case 0:
            {
                op.innerHTML="初めて投稿したゲーム作品";
+
            }
            break;
            case 1:
@@ -143,7 +144,7 @@ center th {
         }
           document.getElementById("gazo").src=img[cnt].src;
       }
-
+    console(cnt);
     </script>
 
       <hr>
@@ -240,7 +241,7 @@ center th {
           <table border="2">
 
             <tr >
-              <th width="150px;">時期</th>
+              <th width="150px">時期</th>
               <th width=300px>資格名</th>
             </tr>
             <tr>
