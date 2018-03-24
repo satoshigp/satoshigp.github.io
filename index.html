@@ -11,9 +11,7 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css\Mycss\original.css">
     <!-- jQuery読み込み -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- BootstrapのJS読み込み -->
-    <script src="./js/bootstrap.min.js"></script>
+
 
     <title>深田智士</title>
 
@@ -44,62 +42,114 @@
 #GoHome:hover{
   background-color: gray;
   animation: icon 1s infinite;
+
+
 }
+center th {
+    z-index: 1;
+    solid:4px #000;
+    text-align: center;
+    font-size: 25px;
+    background-color: gray;
+  }
+  .item
+  {
+    position: relative;
+    top: 20px;
+    width: 500px;
+    height: 500px;
+  }
 </style>
 <body>
 
   <a herf="#"></a>
-
-
-
-
   <header>
     <div class="title">深田　智士</div>
   </header>
 
+      <menu>
+        <div id="menu">
+          <li ><a href="https://twitter.com/fusatoshi3104" >Twitter</a></li>
+          <li><a href="https://github.com/satoshigp">GitHub</a></li>
+          <li><a href="">ABOUTME</a></li>
+          <li><a href="">Works</a></li>
+       </div>
+     </menu>
+     <nav>
+         <div class="sidemenu"><!--サイドメニューバー -->
+           <ul>
+             <li><a href="#">TOP</a></li>
+             <li><a href="#prof">自己紹介</a></li>
+             <li></li>
+             <li></li>
+             <li></li>
+          </ul>
+       </div>
+     </nav>
 
-    <div id="menu">
-
-      <li ><a href="https://twitter.com/fusatoshi3104" >Twitter</a></li>
-      <li><a href="https://github.com/satoshigp">GitHub</a></li>
-      <li><a href="">ABOUTME</a></li>
-      <li><a href="">Works</a></li>
-　　　　
-
-  </div>
-    <div class="sidemenu"><!--サイドメニューバー -->
-
-      <ul>
-        <li><a href="#">TOP</a></li>
-        <li><a href="#prof">自己紹介</a></li>
-        <li></li>
-        <li></li>
-        <li></li>
-
-
-      </ul>
-    </div>
     <a id="prof" ></a>
   <div class="body">
-  <div id="slide-first">
-    <div class="slide-wall">
-      <div class="slide-item"> <a href="https://unityroom.com/games/run-space/webgl">  <img src="aseet\aaaaaassdasfs.jpg"> <div class="resp abso"> Unity 1Week <br>で初めて出した作品 </a> </div></div>
-      <div class="slide-item"><img src="aseet\キャプチャ.jpg"></div>
-      <div class="slide-item"><img src="aseet\aaaaaassdasfs.jpg"></div>
+ <div ><img class="item" id="gazo" src = "aseet/aaaaaassdasfs.jpg"> <a href="https://unityroom.com/games/run-space/webgl"><div class="resp abso"> Unity 1Week <br>で初めて出した作品 </a> </div></div>
+<br>
+<h4 id="op"></h4>
+ <input type="button" value="進む" onclick="changeIMG()">
+    <script>
+    //画像の用意
+    var img=new Array();
+    img[0] = new Image();
+    img[0].src = "aseet/aaaaaassdasfs.jpg";
+    img[1] = new Image();
+    img[1].src ="aseet/キャプチャ.jpg";
+    img[2] = new Image();
+    img[2].src= "aseet/scshot.jpg";
+     cnt=0;
 
-    </div>
-  </div>
-    <form action="index.html" method="post">
-      <input type="text" name="" placeholder="水瀬いのりかわいい" maxlength="10">
-      <input type="submit" name="" >
-      <input type="image"  src="aseet\Twitter_Social_Icon_Square_Color.png"width="30">
-    </form>
+     function over()
+     {
+       switch (cnt)
+       {
+         var op=document.getElementById("op");
+           case 0:
+           {
+               op.innerHTML="初めて投稿したゲーム作品";
+           }
+           break;
+           case 1:
+           {
+             op.innerHTML="一日でどのくらいゲームが作成できるかの挑戦した作品";
+           }
+           break;
+           case 2:
+           {
+             op.innerHTML="２時間でどのくらいがーむが作成出来るかの挑戦";
+           }
+           break;
+           default:
+           {
+           html.innerHTML="エラー";
+           }
+           break;
+       }
+     }
+    function changeIMG()
+    {
+        if(cnt>=2)
+        {
+          cnt=0;
+        }
+        else
+        {
+          cnt++;
+        }
+          document.getElementById("gazo").src=img[cnt].src;
+      }
+
+    </script>
 
       <hr>
         <div class="index">目次</div>
       <hr>
      <menu>
-
   <li><a href="#prof">自己紹介</a></li>
   <li><a href="#near">近況報告</a></li>
   <li><a href="#the">作品</a></li>
@@ -108,10 +158,6 @@
   <li><a href="#shikaku">所持資格</a></li>
   <li><a href="#Career">経歴</a></li>
   <li><a href="#Dream">将来の目標</a></li>
-
-
-
-
      </menu>
      <hr>
 
@@ -244,29 +290,17 @@
       <div class="index">将来の目標</div>
       <div class="word">
           <font style="font-size:35;color:blue;" >最終目標</font><br>
-          職種はゲームプログラマー、サーバーエンジニア、プランナー <br>
-          ・<a href="http://www.a-lim.co.jp/">Alim</a>に入社!<br>
+          Webプログラマー！ <br>
+          ロマンがある！理由はそれだけで十分！
+      <!--    ・<a href="http://www.a-lim.co.jp/">Alim</a>に入社!<br>
           まずは出来るだけホワイトな企業に就職！<br>
           こつこつと経験、技術を磨き目標の会社へと１歩１歩近づいていきたい！
-
+-->
 
       </div>
     </div><!-- ボディーの設定クラス-->
     <!-- /.container -->
-    <script language="JavaScript">
-    <!--
 
-   //window.alert("konnitijhs");
-
-      function eve1(a)
-      {
-      //  alert("positionX"+a.screenX+"\n"+"positionY"+a.screenY);
-      }
-      document.onmousedown=eve1;
-    //-->
-
-    //  alert("paiza");
-      </script>
       <noscript>
         JavaScript未対応。
       </noscript>
