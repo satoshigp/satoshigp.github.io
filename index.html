@@ -92,7 +92,7 @@ center th {
  <div class="item"><a href="https://unityroom.com/games/run-space/webgl"><img class="item" id="gazo" src = "aseet/aaaaaassdasfs.jpg"> </a></div>
 <br><br>
 <h4 id="sub"style=" overflow:scroll">初めまして</h4>
- <input type="button" value="進む" onclick="changeIMG()">
+ <input type="button" value="進む" onclick="changeIMG(),over()">
     <script>
     //画像の用意
     var img=new Array();
@@ -103,13 +103,26 @@ center th {
     img[2] = new Image();
     img[2].src= "aseet/scshot.jpg";
      cnt=0;
-
-     function over()
+     function changeIMG()
      {
 
+       if(cnt==2)
+       {
+         cnt=0;
+       }
+       else
+        {
+         cnt++;
+       }
+           document.getElementById("gazo").src=img[cnt].src;
+       }
+     function over()
+     {
+cnt++;
         var op=document.getElementById("sub");
        switch (cnt)
        {
+
            case 0:
            {
                op.innerHTML="初めて投稿したゲーム作品";
@@ -132,17 +145,10 @@ center th {
            }
            break;
        }
+         console.log(cnt);
      }
-    function changeIMG()
-    {
-      cnt++;
-      if(cnt>2)
-      {
-        ctn=0;
-      }
-          document.getElementById("gazo").src=img[cnt].src;
-      }
-    console.log(cnt);
+
+
     </script>
 
       <hr>
