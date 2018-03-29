@@ -59,6 +59,15 @@ center th {
     width: 500px;
     height: 500px;
   }
+
+.abs{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 100;
+}
+
+
 </style>
 <body>
 
@@ -89,10 +98,13 @@ center th {
 
     <a id="prof" ></a>
   <div class="body">
- <div class="item"><a href="https://unityroom.com/games/run-space/webgl"><img class="item" id="gazo" src = "aseet/aaaaaassdasfs.jpg"> </a></div>
+ <div class="item resp" ><a href="https://unityroom.com/games/run-space/webgl"><img class="item" id="gazo" src ="aseet/aaaaaassdasfs.jpg"></a>
+   <table> <td> <img src="aseet\ButtonArrowOverSprite.png" class="abs" width=50px onclick="ImgBack(),over()" style="transform:scale(-1,1);right:60;"></td>
+   <td> <img src="aseet\ButtonArrowOverSprite.png" class="abs" width=50px onclick="changeIMG(),over()"></td></table> </div>
 <br><br>
-<h4 id="sub"style=" overflow:scroll"></h4>
- <input type="button" value="進む" onclick="changeIMG(),over()">
+<h4 id="sub">初めて投稿したゲーム作品</h4>
+
+ <!-- javaScript  -->
     <script>
     //画像の用意
     var img=new Array();
@@ -103,6 +115,19 @@ center th {
     img[2] = new Image();
     img[2].src= "aseet/scshot.jpg";
      cnt=0;
+     function ImgBack()
+     {
+       if(cnt==0)
+       {
+         cnt=2;
+       }
+       else
+       {
+          cnt--;
+       }
+       document.getElementById("gazo").src=img[cnt].src;
+     }
+
      function changeIMG()
      {
 
@@ -177,7 +202,7 @@ center th {
         ほぼＨＴＭＬ、ＣＳＳが初心者ですがJqueryを使わず根性だけでポートフォリオを作成したいと思います！<br>
         普段は専門学校デジタルアーツ東京という学校でプログラミングの勉強をしています。
         が！...予想以上にHTML,CSSが楽しすぎて手が離せません！<br>
-        <a href="satoshigp.github.io/docs/item.html">もっと詳しく</a>
+        <a href="satoshigp.github.io/docs/item.html">もっと詳しく(現在はJavaScriptの練習サイト)</a>
 
 
       </div>
@@ -207,22 +232,17 @@ center th {
 
         <hr>
         <center>
-        <h2 >～使用プログラミング言語～</h2>
-        <form action="index.html" method="post">
-          <select name="scripts" value="言語" multiple>
-            <option>C#</option>
-            <option>C++</option>
-            <option>PHP(勉強中)</option>
-            <option>JS(女子小が....)</option>
-          </select>
-        </form>
-        <h2>～使用ゲームエンジン～</h2>
-        <form >
-          <select  name="engine" multiple>
-            <option value="Unity">Unity</option>
-          </select>
+        <h2> <strong>～使用プログラミング言語～ </strong></h2>
 
-        </form>
+
+          <h3>C#</h3>
+            <h3>C++</h3>
+            <h3>PHP(勉強中)</h3>
+            <h3>JavaScript</h3>
+
+
+        <h2> <strong>～使用ゲームエンジン～</strong></h2>
+        <h3>Unity</h3>
       </center>
 
       </div>
@@ -231,9 +251,9 @@ center th {
       <hr>
       <div class="index">ToDo</div>
       <div class="word">
-        先ほども記述しましたがHTMLに度はまり中！<br>
-        なのでJS,PHP,Rubyのどれか１つを学校卒業までにはマスターしたい！<br>
-        そしてUnityと連動させ自分だけのゲームとオンラインランキングシステムを作りたいです！<br>
+      このサイトを勉強の場としてJavaScriptを学んでいます。<br>
+      RubyかPHPは <a href="">paiza</a>というサイトを活用して学んでいます。<br>
+      ※特にRuby
 
 
       </div>
@@ -302,13 +322,12 @@ center th {
           こつこつと経験、技術を磨き目標の会社へと１歩１歩近づいていきたい！
 -->
 
+
+        </div>
       </div>
     </div><!-- ボディーの設定クラス-->
     <!-- /.container -->
 
-      <noscript>
-        JavaScript未対応。
-      </noscript>
   <div id="GoHOme"><a href="#">TOP</a></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
