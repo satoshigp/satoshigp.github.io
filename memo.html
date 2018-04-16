@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja" >
+  <head>
+    <meta charset="utf-8">
+    <title>Unityの書き置き場</title>
+  </head>
+  <style >
+    .index{
+      content: "★";
+      text-align: center;
+      font-size: 50px;
+      display: block;
+      background: rgb(47, 63, 92);
+      box-shadow: 1px 4px 1px 5px rgba(255, 248, 0, 0.41);
+    }
+    .index::before
+    {
+      content: "★"
+    }
+    .bun{
+      font-size: 23px;
+    }
+
+    .body{
+      background: rgb(175, 175, 175);
+    }
+    .script{
+      margin: 0px;
+      background: rgb(36, 36, 36);
+      color:rgb(255, 255, 255);
+    }
+    h2{
+      padding: 0px;
+      margin: 15 10 0 20
+    }
+  </style>
+  <body>
+    <body class="body">
+      <div style="color:rgb(73, 171, 72);font-size:80;text-align:center;background-color:rgb(66, 30, 1);">Unityの書き置き場</div> <br>
+      <div class="index">ダメージの計算</div>
+      <h2>-今まで-</h2>
+      <div class="bun">
+        敵に自身(プレイヤー)の攻撃が当たった際、
+        <strong>定数値</strong>でダメージの計算(ほぼ計算してない・・・)を行っていた。 <br>
+
+        ※例のスクリプト
+        <div class="script">
+          OnTriggerEnter(other)
+          {
+            <br>
+            //相手のタグ判定
+            <br>
+            if(other.comparetag("teki"))
+             {
+            <br>
+            //ダメージ計算？
+             <br>
+             HP-=dmage;
+            <br>
+           }
+            <br>
+          }
+        </div>
+          結論....めちゃ不便！ <br>
+          -メリット- <br>
+          ・簡単 <br>
+          -デメリット- <br>
+        ・プレイヤーも攻撃力や防御力等があった際計算ができなくなってしまう <br>
+        ・ ステータス更新時にとても不便！ <br>
+        etc...(思いうカバン！) <br>
+
+        <h2>-今回-</h2>
+        プレイヤー(攻撃する側)にもステータスがあり、敵にもステータスがある際のスクリプト！ <br>
+        <img src="aseet\mu.png" alt="hajime">
+        <img src="aseet\mune.png" alt="hahahahaha">
+        
+
+
+      </div>
+
+    </body>
+  </body>
+</html>

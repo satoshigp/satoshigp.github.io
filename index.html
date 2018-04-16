@@ -98,9 +98,9 @@ center th {
 
     <a id="prof" ></a>
   <div class="body">
- <div class="item resp" ><a href="https://unityroom.com/games/run-space/webgl"><img class="item" id="gazo" src ="aseet/aaaaaassdasfs.jpg"></a>
-   <table> <td> <img src="aseet\ButtonArrowOverSprite.png" class="abs" width=50px onclick="ImgBack(),over()" style="transform:scale(-1,1);left:0px;"></td>
-   <td> <img src="aseet\ButtonArrowOverSprite.png" class="abs" width=50px onclick="changeIMG(),over()" style="right:0px;"></td></table> </div>
+ <div class="item resp" ><img class="item" id="gazo" src ="aseet/aaaaaassdasfs.jpg" onclick="boe()" style="cursor:pointer">
+   <table> <td> <img src="aseet\ButtonArrowOverSprite.png" class="abs" width=50px onclick="ImgBack(),over()" style="transform:scale(-1,1);left:0px;cursor: zoom-out;"></td>
+   <td> <img src="aseet\ButtonArrowOverSprite.png" class="abs" width=50px onclick="changeIMG(),over()" style="right:0px; cursor:zoom-in;"></td></table> </div>
 <br><br>
 <h4 id="sub">初めて投稿したゲーム作品</h4>
 
@@ -115,6 +115,28 @@ center th {
     img[2] = new Image();
     img[2].src= "aseet/scshot.jpg";
      cnt=0;
+     //var key=document.getElementById("key");
+var name ="fry3.apk";
+    var a=document.CreateEvent("")
+     function boe()
+     {
+    //   alert("baka");
+    switch (cnt) {
+      case 0:
+      location.href="https://unityroom.com/games/run-space/webgl";
+        break;
+        case 1:
+          location.href="https://satoshigp.github.io/NEW/";
+          break;
+
+          case 2:
+
+            break;
+      default:
+
+    }
+     }
+
      function ImgBack()
      {
        if(cnt==0)
@@ -127,7 +149,7 @@ center th {
        }
        document.getElementById("gazo").src=img[cnt].src;
      }
-
+     //画像の切り替え
      function changeIMG()
      {
        if(cnt==2)
@@ -140,6 +162,7 @@ center th {
        }
            document.getElementById("gazo").src=img[cnt].src;
        }
+       //画像切り替えの際に文章も変える
      function over()
      {
 
@@ -150,6 +173,7 @@ center th {
            case 0:
            {
                op.innerHTML="初めて投稿したゲーム作品";
+
 
            }
            break;
