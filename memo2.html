@@ -5,6 +5,14 @@
     <title>動きについて</title>
   </head>
   <style>
+  body
+  {
+    font-weight: 900;
+    padding:0px;
+    margin: 0px;
+    font-size: 25px;
+  }
+
   html{
     scroll-behavior: smooth;
   }
@@ -31,6 +39,7 @@
     }
   .site li a:hover
     {
+      left: 0;
       color: rgb(186, 39, 199);
       font-size: 30px;
     }
@@ -48,14 +57,14 @@
   <body>
 
     <h1>フィールドでのプレイヤーの動き</h1>
-    <h2>今回やりたいこと</h2>
+    <h2 style="font-size:40">-今回やりたいこと-</h2>
     【MoveToWardsを使い1コマずつ移動する】
-    <br>　例作品）メガ〇ン風
-    <h2>参考にしたサイト</h2>
+    <br>※例作品）メガ〇ン風
+    <h2>-参考にしたサイト-</h2>
 
     <div class="site">
-      <li> <a href="http://fantom1x.blog130.fc2.com/blog-entry-249.html">プレイヤーの回転について</a> </li>
-      <li> <a href="http://tama-lab.net/2017/09/%E3%80%90unity%E3%80%91vector3-movetowards%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%EF%BC%91%E3%83%9E%E3%82%B9%E3%81%9A%E3%81%A4%E7%A7%BB%E5%8B%95%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">プレイヤーの動きについて </a> </li>
+      <li><a href="http://fantom1x.blog130.fc2.com/blog-entry-249.html">プレイヤーの回転について</a> </li>
+      <li><a href="http://tama-lab.net/2017/09/%E3%80%90unity%E3%80%91vector3-movetowards%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%EF%BC%91%E3%83%9E%E3%82%B9%E3%81%9A%E3%81%A4%E7%A7%BB%E5%8B%95%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">プレイヤーの動きについて </a> </li>
     </div>
     <h3>-考え方-</h3>
         <manu style="list-style-type:decimal; font-size:20px;">
@@ -84,29 +93,34 @@
       <div class="index">スクリプト</div>
 
       <a id="Script"></a>
-      <div id="Image" style="width:1100px;height:860px;">
-      <img src="aseet/MemoFolder/memo2[0].jpg" alt="画像1" onclick="preview">
-      </div>
+      <div  style="width:1100px;height:860px;">
+      <img id="img" src="aseet/MemoFolder/memo2[0].jpg"alt="画像1">
+    </div>
+      <input type="button"  value="進む" onclick="preview">
+
       <script>
-        var image =new Array();
-        image[0]=new Image();
-        image[0].src="aseet/MemoFolder/memo2[0].jpg";
-        image[1]=new Image();
-        image[1].src="aseet/MemoFolder/memo2[1].jpg";
+        var im =new Array();
+        im[0]=new Image();
+        im[0].src="aseet/MemoFolder/memo2[0].jpg";
+        im[1]=new Image();
+        im[1].src="aseet/MemoFolder/memo2[1].jpg";
+        im[2]=new Image();
+        im[2].src=""
         var cnt=0;
+        console.log(cnt);
         //image[2].src
         function preview()
         {
-          if(cnt==2)
+          if(cnt==1)
           {
             cnt=0;
           }
           else
           {
-          cnt++;
+            cnt++;
           }
-        document.getElementById("Image").src=image[cnt].src;
-          }
+            document.getElementById("img").src=im[cnt].src;
+        }
 
 
       </script>
