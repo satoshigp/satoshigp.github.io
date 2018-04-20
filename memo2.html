@@ -10,7 +10,7 @@
     font-weight: 900;
     padding:0px;
     margin: 0px;
-    font-size: 25px;
+    font-size:35px;
   }
 
   html{
@@ -46,12 +46,25 @@
 
     .index
     {
+      font-size: 35px;
     background: rgba(57, 202, 255, 0.75);
     box-shadow: 1px 2px 3px 3px rgb(34, 34, 34);
     }
     .index::before
     {
         content: "★"
+    }
+    .box
+    {
+      margin: 30px;
+      position:relative;
+      left: 30px;
+      display:block;
+      background: rgb(148, 148, 148);
+      color: rgb(255, 255, 255);
+      width: 500px;
+      border:5px double rgb(105, 105, 105);
+      line-height: 35px;
     }
   </style>
   <body>
@@ -69,7 +82,6 @@
     <h3>-考え方-</h3>
         <manu style="list-style-type:decimal; font-size:20px;">
             <li> <a href="#vec">前進</a> </li>
-            <li> <a href="#quavec">回転により前進の向きの動きを変える</a> </li>
             <li> <a href="#qua">回転</a> </li>
             <li> <a href="#problem">問題・課題</a> </li>
             <li> <a href="#Script">スクリプト</a> </li>
@@ -80,38 +92,75 @@
 
     <br>Vector3.MoveToWards(Vector3 A,Vector3 B,float X)
     <br>簡単に言えば<strong>開始Aから終点Bまでの間をX秒で移動する</strong>ということ
-    <br>
+    <br>この方法を使えば滑らかなコマ移動ができる！
+    <div class="box" style="height:175px; " >
+      ～ポイント～
+      <li>自身の向きによって進む方向が変わるので注意</li>
+      <li>プレイヤーの位置をしっかりと記憶しておく</li>
+      <li>後に出すスクリプトでは壁にめり込む</li>
+      <li>MoveToWardsで移動する</li>
+    </div>
 
-    <br>
-    <br>
-      <div class="index">回転</div>
+      <div class="index">回転(Quaternion.RotateTowards)</div>
       <a id="qua"></a>
-      <div class="index">回転により前進の向きの動きを変える</div>
-      <a id="quavec"></a>
-      <div class="index">問題・課題</div>
-      <a id="problem"></a>
-      <div class="index">スクリプト</div>
+      <a href="https://docs.unity3d.com/ja/current/ScriptReference/Quaternion.RotateTowards.html">Quaternion.RotateTowardsとは？</a>
+    <br>Quaternion.RotateTowards(Quaternion A,Quaternion B,float X)
+    <br>こちらも<strong>開始Aから終点Bまでの間をX秒で移動する</strong>ということ。
+    <br>こちらもこの方法で行うと一定数の回転が可能になる！
+
+    　<div class="box" style="height:250px;">
+      <li>オイラー角とクォータニオンとの違いが紛らわしい</li>
+      <li>クォータニオンで編集せずオイラー角で！</li>
+      <li>Unityのインスペクター上では360°以上を越せれるが実際は0～360°まで</li>
+      <li>オイラー角で編集を行うと0.000001単位(0が多かったような少なかったような...)で誤差が出る</li>
+      <li>RotateTowardsで回転する</li>
+     </div>
+     <a id="problem"></a>
+     <div class="index">問題・課題</div>
+     <br>
+     ー問題ー
+     <h3 style="margin:10px;">回転により前進の向きの動きを変える</h3>
+     ー解決方法ー
+     <br>
+     <li>前進後進がZ座標、左右がX座標。</li>
+     <li>自身が回転してもZ座標で進んでしまう。</li>
+     <li>私はswitch文で切り替えました！</li>
+     <li>方法はスクリプト文を見ていただければ！</li>
+     <br>
+     ー課題ー
+     <br>コルーチンを使ったやり方があるらしい！
+     <br>次回は是非やってみたい！
+     <br>
+     以上！
+     <br>
+
+
+      <div class="index" id="bun">スクリプト ページ1</div>
 
       <a id="Script"></a>
       <div  style="width:1100px;height:860px;">
-      <img id="img" src="aseet/MemoFolder/memo2[0].jpg"alt="画像1">
-    </div>
-      <input type="button"  value="進む" onclick="preview()">
+      <img id="img" src="aseet/MemoFolder/memo2[0].jpg"alt="画像1" onclick="preview()">
+     </div>
 
       <script>
         var im =new Array();
-        im[0]=new Image();
+        for(var i=0;i<5;i++)
+        {
+          im[i]=new Image();
+        }
         im[0].src="aseet/MemoFolder/memo2[0].jpg";
-        im[1]=new Image();
         im[1].src="aseet/MemoFolder/memo2[1].jpg";
-        im[2]=new Image();
-        im[2].src=""
+        im[2].src="aseet/MemoFolder/memo2[2].jpg";
+        im[3].src="aseet/MemoFolder/memo2[3].jpg";
+        im[4].src="aseet/MemoFolder/memo2[4].jpg";
+
         var cnt=0;
-        console.log(cnt);
         //image[2].src
         function preview()
         {
-          if(cnt==1)
+          //console.log(cnt);
+
+          if(cnt==4)
           {
             cnt=0;
           }
@@ -120,6 +169,30 @@
             cnt++;
           }
             document.getElementById("img").src=im[cnt].src;
+        }
+
+        function moji()
+        {
+          var go=document.getElementById("bun");
+
+          switch(cnt)
+          {
+            case 0:
+            go.innerHTML="スクリプト ページ1"
+            break;
+            case 1:
+            go.innerHTML="スクリプト ページ2";
+            break;
+            case 2:
+            go.innerHTML="スクリプト ページ3";
+            break;
+            case 3:
+            go.innerHTML="スクリプト ページ4";
+            break;
+            case 4:
+            go.innerHTML="スクリプト ページ5";
+            break;
+          }
         }
 
 
