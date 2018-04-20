@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>動きについて</title>
+  </head>
+  <style>
+  html{
+    scroll-behavior: smooth;
+  }
+    h1
+    {
+      font-style:oblique;
+      font-size: 50px;
+      text-align: center;
+      margin: 0px;
+      padding:20px;
+      background: rgb(0, 217, 255);
+　    color: rgb(149, 60, 167);
+    }
+    h2{
+      font-size:
+      margin: 20px;
+    }
+  .site li a
+    {
+
+        font-size: 25px;
+        color: rgb(198, 62, 18);
+        transition: ease 1s;
+    }
+  .site li a:hover
+    {
+      color: rgb(186, 39, 199);
+      font-size: 30px;
+    }
+
+    .index
+    {
+    background: rgba(57, 202, 255, 0.75);
+    box-shadow: 1px 2px 3px 3px rgb(34, 34, 34);
+    }
+    .index::before
+    {
+        content: "★"
+    }
+  </style>
+  <body>
+
+    <h1>フィールドでのプレイヤーの動き</h1>
+    <h2>今回やりたいこと</h2>
+    【MoveToWardsを使い1コマずつ移動する】
+    <br>　例作品）メガ〇ン風
+    <h2>参考にしたサイト</h2>
+
+    <div class="site">
+      <li> <a href="http://fantom1x.blog130.fc2.com/blog-entry-249.html">プレイヤーの回転について</a> </li>
+      <li> <a href="http://tama-lab.net/2017/09/%E3%80%90unity%E3%80%91vector3-movetowards%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%EF%BC%91%E3%83%9E%E3%82%B9%E3%81%9A%E3%81%A4%E7%A7%BB%E5%8B%95%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/">プレイヤーの動きについて </a> </li>
+    </div>
+    <h3>-考え方-</h3>
+        <manu style="list-style-type:decimal; font-size:20px;">
+            <li> <a href="#vec">前進</a> </li>
+            <li> <a href="#quavec">回転により前進の向きの動きを変える</a> </li>
+            <li> <a href="#qua">回転</a> </li>
+            <li> <a href="#problem">問題・課題</a> </li>
+            <li> <a href="#Script">スクリプト</a> </li>
+        </menu>
+      <div class="index">前進(Vector3.MoveToWards)</div>
+      <a id="vec"></a>
+      <a href="https://docs.unity3d.com/ja/current/ScriptReference/Vector3.MoveTowards.html">Vector3.MoveToWardsとは？</a>
+
+    <br>Vector3.MoveToWards(Vector3 A,Vector3 B,float X)
+    <br>簡単に言えば<strong>開始Aから終点Bまでの間をX秒で移動する</strong>ということ
+    <br>
+
+    <br>
+    <br>
+      <div class="index">回転</div>
+      <a id="qua"></a>
+      <div class="index">回転により前進の向きの動きを変える</div>
+      <a id="quavec"></a>
+      <div class="index">問題・課題</div>
+      <a id="problem"></a>
+      <div class="index">スクリプト</div>
+
+      <a id="Script"></a>
+      <div id="Image" style="width:1100px;height:860px;">
+      <img src="aseet/MemoFolder/memo2[0].jpg" alt="画像1" onclick="preview">
+      </div>
+      <script>
+        var image =new Array();
+        image[0]=new Image();
+        image[0].src="aseet/MemoFolder/memo2[0].jpg";
+        image[1]=new Image();
+
+        image[1].src="aseet/MemoFolder/memo2[1].jpg";
+        var cnt=0;
+        //image[2].src
+        function preview()
+        {
+          if(cnt==2)
+          {
+            cnt=0;
+          }
+          else
+          {
+          cnt++;
+          }
+
+        document.getElementById("Image").src=image[cnt].src;
+
+          }
+        
+
+      </script>
+
+  </body>
+</html>
