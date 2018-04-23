@@ -170,26 +170,25 @@ text-decoration: underline;
 
     padding-top: 25px;
     position: relative;
-    overflow: hidden;
-
     width: 500px;
     height: 500px;
     z-index: 0;
-
+overflow: hidden;
   }
-  #slide-wall
+  .slide-wall
   {
     position: relative;
     width: 500%;
+    left:0px;
     height: 500px;
-    overflow: hidden;
+    transition: ease;
 
   }
   .slide-item
   {
-
     position: relative;
     float: left;
+    left: 0px;
     width: 500px;
     height:500px;
   }

@@ -104,6 +104,15 @@ center th {
 <br><br>
 <h4 id="sub">初めて投稿したゲーム作品</h4>
 
+<div id="slide-first">
+  <div class="slide-wall" id="pos">
+    <div class="slide-item"> <img src="aseet\キャプチャ.jpg"></div>
+    <div class="slide-item"> <img src="aseet\aaaaaassdasfs.jpg"></div>
+    <div class="slide-item"> <img src="aseet\Screenshot_20180209-130040.png"> </div>
+  </div>
+</div>
+<input type="button" value="進む" onclick="FowardImage()">
+
  <!-- javaScript  -->
     <script>
     //画像の用意
@@ -115,9 +124,19 @@ center th {
     img[2] = new Image();
     img[2].src= "aseet/scshot.jpg";
      cnt=0;
-     //var key=document.getElementById("key");
-var name ="fry3.apk";
-    var a=document.CreateEvent("")
+var go=document.getElementById("pos");
+    function FowardImage()
+    {
+      go.style.transform+="translateX(-500px)";
+
+  
+    }
+  //  var pos =go.transform;
+
+console.log(pos);
+
+
+
      function boe()
      {
     //   alert("baka");
