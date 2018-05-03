@@ -19,12 +19,3 @@
   float: left;
   display:flex;
 }
-
-@media screen and (max-width:1081px)
-{
-  .item
-  {
-    float: none;
-    overflow: scroll;
-  }
-}
