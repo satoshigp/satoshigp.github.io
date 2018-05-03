@@ -116,13 +116,16 @@ center th {
  <!-- javaScript  -->
     <script>
     //画像の用意
+    for(var i=0;i<=3;i++)
+    {
+      img[i]=new Image();
+    }
     var img=new Array();
-    img[0] = new Image();
     img[0].src = "aseet/aaaaaassdasfs.jpg";
-    img[1] = new Image();
     img[1].src ="aseet/キャプチャ.jpg";
-    img[2] = new Image();
     img[2].src= "aseet/scshot.jpg";
+    //自身のカウント
+    //変更することで画像がきり変わる
      cnt=0;
 var go=document.getElementById("pos");
     function FowardImage()
