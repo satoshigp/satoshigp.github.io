@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="device-width,infinite=1.0">
+
+    <!-- BootstrapのCSS読み込み -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css\Mycss\original.css">
+    <!-- jQuery読み込み -->
+
+
+    <title>深田智士</title>
+
+
+
+</head>
+<style >
+#GoHome
+{
+  position:fixed;
+  background-image: url("aseet/TOPIcon.png");
+  bottom: 120px;
+  right:0px;
+  width: 80px;
+  height: 100px;
+  z-index: 10;
+  padding-top: 10px;
+  margin:0px;
+}
+#GoHome a
+{
+  　  position:absolute;
+      left: 0px;
+      top:0px;
+      font-size:45px;
+      color: rgb(31, 177, 132);
+}
+#GoHome:hover{
+  background-color: gray;
+  animation: icon 1s infinite;
+
+
+}
+center th {
+    z-index: 1;
+    solid:4px #000;
+    text-align: center;
+    font-size: 25px;
+    background-color: gray;
+  }
+  .item
+  {
+    position: relative;
+    top: 20px;
+    width: 500px;
+    height: 500px;
+  }
+
+.abs{
+  position: absolute;
+
+  bottom: 0px;
+  z-index: 100;
+}
+
+
+</style>
+<body>
+
+  <a herf="#"></a>
+  <div class="HtmlBody">
+
+  <header>
+    <div class="title">深田　智士</div>
+  </header>
+
+
+        <div id="menu">
+          <li ><a href="https://twitter.com/fusatoshi3104" >Twitter</a></li>
+          <li><a href="https://github.com/satoshigp">GitHub</a></li>
+          <li><a href="">ABOUTME</a></li>
+          <li><a href="">Works</a></li>
+       </div>
+
+     <nav>
+         <div class="sidemenu"><!--サイドメニューバー -->
+           <ul>
+             <li><a href="#">TOP</a></li>
+             <li><a href="#prof">自己紹介</a></li>
+             <li></li>
+             <li></li>
+             <li></li>
+          </ul>
+          <center>
+        <span> ー技術メモー</span>
+        <a href="https://satoshigp.github.io/docs/Unitymemo.html" style="color:rgb(255, 255, 255);">Unity</a>
+        <br>
+        <a href=""style="color:rgb(255, 255, 255);" >JavaScript</a>
+        </center>
+       </div>
+     </nav>
+
+    <a id="prof" ></a>
+  <div class="body">
+ <div class="item resp"><img class="item" id="gazo" src ="aseet/aaaaaassdasfs.jpg" onclick="boe()" style="cursor:pointer">
+   <table> <td> <img src="aseet\ButtonArrowOverSprite.png" class="abs" width=50px onclick="ImgBack(),over()" style="transform:scale(-1,1);left:0px;cursor: zoom-out;"></td>
+   <td> <img src="aseet\ButtonArrowOverSprite.png" class="abs" width=50px onclick="changeIMG(),over()" style="right:0px; cursor:zoom-in;"></td></table> </div>
+<br><br>
+<h4 id="sub">初めて投稿したゲーム作品</h4>
+
+<div id="slide-first">
+  <div class="slide-wall" id="pos">
+    <div class="slide-item"> <img src="aseet\キャプチャ.jpg"></div>
+    <div class="slide-item"> <img src="aseet\aaaaaassdasfs.jpg"></div>
+    <div class="slide-item"> <img src="aseet\Screenshot_20180209-130040.png"> </div>
+  </div>
+</div>
+<input type="button" value="進む" onclick="FowardImage()">
+
+ <!-- javaScript  -->
+    <script>
+    //画像の用意
+    for(var i=0;i<=3;i++)
+    {
+      img[i]=new Image();
+    }
+    var img=new Array();
+    img[0].src = "aseet/aaaaaassdasfs.jpg";
+    img[1].src ="aseet/キャプチャ.jpg";
+    img[2].src= "aseet/scshot.jpg";
+    //自身のカウント
+    //変更することで画像がきり変わる
+     cnt=0;
+var go=document.getElementById("pos");
+    function FowardImage()
+    {
+      go.style.transform+="translateX(-500px)";
+
+  if(go.style.transform=="translateX(-1500px)")
+  {
+    go.style.transform="translateX(0px)";
+  }
+    }
+
+
+
+
+     function boe()
+     {
+    //   alert("baka");
+    switch (cnt) {
+      case 0:
+      location.href="https://unityroom.com/games/run-space/webgl";
+        break;
+        case 1:
+          location.href="https://satoshigp.github.io/NEW/";
+          break;
+
+          case 2:
+
+            break;
+      default:
+
+    }
+     }
+
+     function ImgBack()
+     {
+       if(cnt==0)
+       {
+         cnt=2;
+       }
+       else
+       {
+          cnt--;
+       }
+       document.getElementById("gazo").src=img[cnt].src;
+     }
+     //画像の切り替え
+     function changeIMG()
+     {
+       if(cnt==2)
+       {
+         cnt=0;
+       }
+       else
+        {
+         cnt++;
+       }
+           document.getElementById("gazo").src=img[cnt].src;
+       }
+       //画像切り替えの際に文章も変える
+     function over()
+     {
+
+        var op=document.getElementById("sub");
+       switch (cnt)
+       {
+
+           case 0:
+           {
+               op.innerHTML="初めて投稿したゲーム作品";
+
+
+           }
+           break;
+           case 1:
+           {
+             op.innerHTML="一日でどのくらいゲームが作成できるかの挑戦した作品";
+           }
+           break;
+           case 2:
+           {
+             op.innerHTML="２時間でどのくらいがーむが作成出来るかの挑戦";
+           }
+           break;
+           default:
+           {
+             location.reload();
+           }
+           break;
+       }
+         console.log(cnt);
+     }
+
+
+    </script>
+
+      <hr>
+        <div class="index">目次</div>
+      <hr>
+     <menu>
+  <li><a href="#prof">自己紹介</a></li>
+  <li><a href="#near">近況報告</a></li>
+  <li><a href="#the">作品</a></li>
+  <li><a href="#Skill">スキル</a></li>
+  <li><a href="#ToDo">ToDo</a></li>
+  <li><a href="#shikaku">所持資格</a></li>
+  <li><a href="#Career">経歴</a></li>
+  <li><a href="#Dream">将来の目標</a></li>
+     </menu>
+     <hr>
+
+       <hr>
+      <div class="index">自己紹介</div>
+      <div class="word">
+
+        <a id="prof"></a>
+
+        こんにちは。<br>
+        深田と申します。<br>
+        ほぼＨＴＭＬ、ＣＳＳが初心者ですがJqueryを使わず根性だけでポートフォリオを作成したいと思います！<br>
+        普段は専門学校デジタルアーツ東京という学校でプログラミングの勉強をしています。
+        が！...予想以上にHTML,CSSが楽しすぎて手が離せません！<br>
+        <a href="satoshigp.github.io/docs/item.html">もっと詳しく(現在はJavaScriptの練習サイト)</a>
+
+
+      </div>
+      <hr>
+      <a id="near"></a>
+      <hr>
+      <div class="index">課外活動</div>
+
+      <div class="word">
+
+        現在は主に<q cite="https://unity3d.com/jp"><a href="https://unity3d.com/jp">Unity</a></q>というゲームエンジンを使い <q cite="https://unityroom.com/"><a href="https://unityroom.com/">UnityRoom</a></q>の一週間ゲームジャムをメインとして参加しています！
+      </div>
+      <hr>
+      <a id="the"></a>
+      <hr>
+      <div class="index">作品</div>
+      <div class="word">
+        <a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/game.html">作品</a>
+      </div>
+      <a id="Skill"></a>
+      <hr>
+      <div class="index">Skill</div>
+      <div class="word">
+
+          <h2>使用プログラミング言語</h2><br>
+
+
+        <hr>
+        <center>
+        <h2> <strong>～使用プログラミング言語～ </strong></h2>
+
+
+          <h3>C#</h3>
+            <h3>C++</h3>
+            <h3>PHP(勉強中)</h3>
+            <h3>JavaScript</h3>
+
+
+        <h2> <strong>～使用ゲームエンジン～</strong></h2>
+        <h3>Unity</h3>
+      </center>
+
+      </div>
+
+      <a id="ToDo"></a>
+      <hr>
+      <div class="index">ToDo</div>
+      <div class="word">
+      このサイトを勉強の場としてJavaScriptを学んでいます。<br>
+      RubyかPHPは <a href="">paiza</a>というサイトを活用して学んでいます。<br>
+      ※特にRuby
+
+
+      </div>
+      <a id="shikaku"></a>
+      <div class="index">所持資格</div>
+        <div class="word">
+          <center>
+            <caption>所持資格</caption>
+          <table border="2">
+
+            <tr >
+              <th width="150px">時期</th>
+              <th width=300px>資格名</th>
+            </tr>
+            <tr>
+              <td>2107年</td>
+                <ruby>
+              <td><a href="https://ja.wikipedia.org/wiki/%E9%8B%B3%E9%80%A0%E6%8A%80%E8%83%BD%E5%A3%AB">鋳鉄鋳物鋳造作業３級</a><rp>(</rp><rt>ちゅうてついものちゅうぞうさぎょう</rt><rp>)</rp> </td>
+                </ruby>
+            </tr>
+
+              <td>2019年</td>
+              <td><a href="https://ja.wikipedia.org/wiki/%E5%9F%BA%E6%9C%AC%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93">基本情報技術者試験</a>予定</td>
+            </tr>
+
+          </table>
+        </center>
+        </div>
+      <a id="Career"></a>
+      <div class="index">経歴</div>
+      <center>
+      <table border="4">
+        <tr>
+          <th width="20%;" z-index="1">年</th>
+            <th width="15%;">月</th>
+            <th width="65%">出来事</th>
+        </tr>
+        <tr>
+          <td>2017年</td>
+          <td>3月</td>
+          <td>埼玉県立狭山台工業高等学校 機械化 卒業</td>
+        </tr>
+        <tr>
+          <td>2017年</td>
+          <td>4月</td>
+          <td> <a href="https://www.dat.ac.jp/?gclid=CMquzKjm9dICFYyXvQodP28E3Q">専門学校デジタルアーツ東京</a>入学</td>
+        </tr>
+        <tr>
+          <td>2019年</td>
+          <td>3月</td>
+          <td>専門学校デジタルアーツ東京　卒業予定</td>
+
+        </tr>
+      </table>
+    </center>
+
+      <a id="Dream"></a>
+      <hr>
+      <div class="index">将来の目標</div>
+      <div class="word">
+          <font style="font-size:35;color:blue;" >最終目標</font><br>
+          Webプログラマー！ <br>
+          ロマンがある！理由はそれだけで十分！
+      <!--    ・<a href="http://www.a-lim.co.jp/">Alim</a>に入社!<br>
+          まずは出来るだけホワイトな企業に就職！<br>
+          こつこつと経験、技術を磨き目標の会社へと１歩１歩近づいていきたい！
+-->
+
+
+        </div>
+      </div>
+    </div><!-- ボディーの設定クラス-->
+    <!-- /.container -->
+  </div>
+
+  <div id="GoHome"><a href="#">TOP</a></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+
+</html>

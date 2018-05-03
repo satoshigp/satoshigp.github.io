@@ -1,21 +1,104 @@
 
 
-/*TODO カラムのさぃせい*/
-.col-sm-5
-{
-  width: 50%;
-  height: auto;
+/*TODO レスポンシブWebデザインの作成*/
+/*サイト全体に効果を反映します*/
+html{
+  scroll-behavior: smooth;
 }
-.span
+/*body全体の制約 画面解像度が変更された際一括で編集できるようにします！*/
+body
 {
-  position: relative;
-  width: 200%;
-  height: auto;
-  overflow:scroll;
+
+      width: 1000px;
+      font-size: 100%;
+    background-color:rgb(255, 255, 255);
 }
-.item
+/*サイドメニュー欄の設定*/
+.BODY
 {
-  position: relative;
-  float: left;
+    position: static;
+    width: 100%;
+    height: 100%;
+
+}
+
+nav{
+      position: fixed;
+      text-align: center;
+      background: rgb(0, 0, 0);
+      width: 20%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+}
+nav ul li
+{
+  color: rgb(255, 255, 255);
+  font-size: 1.5em;
+  padding-top: 5px;
+  list-style-type: decimal;
+}
+
+.title
+{
+      position: absolute;
+      text-align:center;
+      left: 20%;
+      top: 0px;
+      width: 80%;
+      color:rgb(184, 184, 184);
+      font-size: 5em;
+      background: rgb(3, 11, 41);
+      z-index: 10;
+
+}
+.menu
+{
+  background: rgb(55, 56, 52);
+  position: absolute;
   display:flex;
+
+  left: 20%;
+  top: 120px;
+  width: 100%;
 }
+
+
+.menu li
+{
+  list-style-type: none;
+    width:20%;
+    height: 40px;
+    color: rgb(143, 120, 167);
+    text-align: center;
+    vertical-align:center;
+    font-size: 35px;
+    border: solid 5px rgb(212, 0, 255);
+}
+
+@media screen and (max-width:479px){
+  body
+  {
+    width: 480px;
+    font-size: 50%;
+    background: rgb(104, 195, 124);
+  }
+
+
+  .menu
+  {
+      top:60px;
+  }
+
+  .menu li
+  {
+
+
+  }
+
+}
+/*@media screen and (max-width: 600px) {
+	.one {
+		background: #F9C;
+	}
+}*/
