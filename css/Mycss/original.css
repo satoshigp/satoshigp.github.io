@@ -167,9 +167,8 @@ text-decoration: underline;
 }
 .index
 {
-  position: relative;
   color: black;
-  padding: 10 0;
+  padding: 10 ;
   background-color: rgba(42, 96, 120, 0.36);
   box-shadow: 2px 5px 10px 1px rgba(47, 47, 47, 0.64);
 
