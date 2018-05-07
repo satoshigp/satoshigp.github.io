@@ -10,9 +10,9 @@
     font-weight: 900;
     padding:0px;
     margin: 0px;
-    font-size:35px;
+    font-size:25px;
     width: 1000px;
-    overflow: hidden;
+
   }
 
   html{
@@ -66,7 +66,7 @@
       color: rgb(255, 255, 255);
       width: 500px;
       border:5px double rgb(105, 105, 105);
-      line-height: 35px;
+      line-height: 30px;
     }
   </style>
   <body>
@@ -78,64 +78,81 @@
 
 
     <div class="site">
-    <li> <a href="http://www.urablog.xyz/entry/2017/02/07/233211"> Lerp,Slerpとは何ぞや？</a> </li>
     <h3>-考え方-</h3>
-        <manu style="list-style-type:decimal; font-size:20px;">
+        <menu style="list-style-type:decimal; ">
             <li> <a href="#kai">この前のMoveToWards,RotateTowardsとLerp,Slerpの違いを区別する！</a> </li>
             <li> <a href="#vec">前進</a> </li>
             <li> <a href="#qua">回転</a> </li>
             <li> <a href="#problem">問題・課題</a> </li>
             <li> <a href="#Script">スクリプト</a> </li>
         </menu>
+      </div>
         <div class="index">この前のMoveToWards,RotateTowardsとLerp,Slerpの違いを区別する！</div>
         <a id="kai"></a>
         <a href="https://docs.unity3d.com/ja/530/ScriptReference/Vector3.Lerp.html">Lerpとは？</a>　<br>
-        <a href="https://docs.unity3d.com/ja/current/ScriptReference/Vector3.Slerp.html">Slerpとは？</a>
-        
-      <div class="index">前進(Vector3.MoveToWards)</div>
+        public static Vector3 Lerp (Vector3 a, Vector3 b, float t); <br>
+        <a href="https://docs.unity3d.com/ja/current/ScriptReference/Vector3.Slerp.html">Slerpとは？</a><br>
+        public static Vector3 Slerp (Vector3 a, Vector3 b, float t);
+        <br>
+      　前回のMoveToWardsとほとんど違いが判らん！<br>
+
+      <a href="http://www.urablog.xyz/entry/2017/02/07/233211"> Lerp,Slerpとは何ぞや？</a>
+      このサイトをみてみた！　<br>
+      大体分かったようでわからない！
+      なので自分なりにまとめてみた！　<br>
+      <h2>MoveToWards,RotateTowardsとは？</h2>
+      <div class="box">
+        <li>AからBへX秒で移動するまたは回転する</li>
+        <li>Xはどの値でも構わない!X=100なら100秒後に移動が完了する</li>
+
+      </div>
+      <h2>Lerp(線形補間),Slerp(球面線形補間)とは？</h2>
+        <div class="box">
+          <li>第一引数のVector3 Aは開始時の値</li>
+          <li>第二引数のVector3 Bは処理後の値</li>
+          <li>第三引数のfloat tが重要！0-1の値を返す</li>
+          <li>t=0ならAの値を、t=1ならBの値を</li>
+
+        </div>
+          <h3>結局違いは？</h3>
+          Lerp,Slerpはt=(０～１)の間にAとBの値を返す！
+          <br>0→1の間にAの値がBに変化している的な感じ！(たぶん違う...)
+
+      <div class="index">前進(Vector3.Lerp)</div>
       <a id="vec"></a>
-      <a href="https://docs.unity3d.com/ja/current/ScriptReference/Vector3.MoveTowards.html">Vector3.MoveToWardsとは？</a>
 
     <br>Vector3.MoveToWards(Vector3 A,Vector3 B,float X)
-    <br>簡単に言えば<strong>開始Aから終点Bまでの間をX秒で移動する</strong>ということ
+    <br>簡単に言えば<strong>開始Aから終点Bまでの間を0～1の間に変化する</strong>ということ
     <br>この方法を使えば滑らかなコマ移動ができる！
-    <div class="box" style="height:175px; " >
+    <div class="box"  >
       ～ポイント～
-      <li>自身の向きによって進む方向が変わるので注意</li>
-      <li>プレイヤーの位置をしっかりと記憶しておく</li>
-      <li>後に出すスクリプトでは壁にめり込む</li>
-      <li>MoveToWardsで移動する</li>
+      <li>Aに自身の位置を記録</li>
+      <li>Bには相対距離（次に向かうべき位置）</li>
     </div>
 
-      <div class="index">回転(Quaternion.)</div>
+      <div class="index">回転(Vector3.Slerp)</div>
       <a id="qua"></a>
       <a href="https://docs.unity3d.com/ja/current/ScriptReference/Quaternion.RotateTowards.html">Quaternion.RotateTowardsとは？</a>
     <br>Quaternion.RotateTowards(Quaternion A,Quaternion B,float X)
-    <br>こちらも<strong>開始Aから終点Bまでの間をX秒で移動する</strong>ということ。
+    <br>こちらも<strong>開始Aから終点Bまでの間を0～1の間に変化する</strong>ということ。
     <br>こちらもこの方法で行うと一定数の回転が可能になる！
 
-    　<div class="box" style="height:250px;">
-      <li>オイラー角とクォータニオンとの違いが紛らわしい</li>
-      <li>クォータニオンで編集せずオイラー角で！</li>
-      <li>Unityのインスペクター上では360°以上を越せれるが実際は0～360°まで</li>
-      <li>オイラー角で編集を行うと0.000001単位(0が多かったような少なかったような...)で誤差が出る</li>
-      <li>RotateTowardsで回転する</li>
+    　<div class="box" style="height:300px;">
+      <li>Aに自身の向きを記録</li>
+      <li>Bには相対向き（次に向く向き）</li>
      </div>
      <a id="problem"></a>
      <div class="index">問題・課題</div>
      <br>
      ー問題ー
-     <h3 style="margin:10px;">回転により前進の向きの動きを変える</h3>
+     <h3 style="margin:10px;">壁にめりこんでしまう</h3>
      ー解決方法ー
      <br>
-     <li>前進後進がZ座標、左右がX座標。</li>
-     <li>自身が回転してもZ座標で進んでしまう。</li>
-     <li>私はswitch文で切り替えました！</li>
-     <li>方法はスクリプト文を見ていただければ！</li>
+     <li>Vector3.Lerp(当たった位置,元に居た位置,X)</li>
      <br>
      ー課題ー
-     <br>コルーチンを使ったやり方があるらしい！
-     <br>次回は是非やってみたい！
+     <br>フリックで移動
+     
      <br>
      以上！
      <br>
