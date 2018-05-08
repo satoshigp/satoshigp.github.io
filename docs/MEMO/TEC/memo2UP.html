@@ -18,6 +18,7 @@
   html{
     scroll-behavior: smooth;
   }
+
     h1
     {
       font-style:oblique;
@@ -68,6 +69,10 @@
       border:5px double rgb(105, 105, 105);
       line-height: 30px;
     }
+    .a
+    {
+        color:green;
+    }
   </style>
   <body>
 
@@ -85,6 +90,7 @@
             <li> <a href="#qua">回転</a> </li>
             <li> <a href="#problem">問題・課題</a> </li>
             <li> <a href="#Script">スクリプト</a> </li>
+            <li> <a href="#X">第三引数の求め方</a></li>
         </menu>
       </div>
         <div class="index">この前のMoveToWards,RotateTowardsとLerp,Slerpの違いを区別する！</div>
@@ -121,7 +127,7 @@
       <div class="index">前進(Vector3.Lerp)</div>
       <a id="vec"></a>
 
-    <br>Vector3.MoveToWards(Vector3 A,Vector3 B,float X)
+    <br>Vector3.Lerp(Vector3 A,Vector3 B,float X)
     <br>簡単に言えば<strong>開始Aから終点Bまでの間を0～1の間に変化する</strong>ということ
     <br>この方法を使えば滑らかなコマ移動ができる！
     <div class="box"  >
@@ -132,27 +138,65 @@
 
       <div class="index">回転(Vector3.Slerp)</div>
       <a id="qua"></a>
-      <a href="https://docs.unity3d.com/ja/current/ScriptReference/Quaternion.RotateTowards.html">Quaternion.RotateTowardsとは？</a>
-    <br>Quaternion.RotateTowards(Quaternion A,Quaternion B,float X)
+    <br>Vector3.Slerp(Quaternion A,Quaternion B,float X)
     <br>こちらも<strong>開始Aから終点Bまでの間を0～1の間に変化する</strong>ということ。
     <br>こちらもこの方法で行うと一定数の回転が可能になる！
+    <br>前回と一番違う点は<u>QuaternionのメソッドではなくVector3のメソッド</u>を使用していることであろう。
+    <br>だがSlerpとは球面線形補間というものであり線形補間の直線的な変化ではなく、円のような変化なのである。
 
-    　<div class="box" style="height:300px;">
-      <li>Aに自身の向きを記録</li>
-      <li>Bには相対向き（次に向く向き）</li>
+    　<div class="box">
+      <li>Aに自身の向き(向いてるベクトル)を記録</li>
+      <li>Bには相対向き(次に向く向き)</li>
      </div>
+     <div class="index">第三引く数の求め方</div>
+     <a id="X"></a>
+     上記でも述べたように第三引数の値はどう求めるのか？　<br>
+     1.移動キーを押した際にシーンの経過時間(Time.time)を保存します <br>
+     2.実際に動く際には(シーンの経過時間-上記で保存した時間)/どのくらいで完了するかの値 <br>
+     つまり<h2>正規化</h2>ということです...（多分）
+     <div class="box">
+       <li>まず変数A,B,Cを用意します</li>
+       <li>Aにはどれくらいで完了するかの値</li>
+       <li>Bには移動キーを押した時間を</li>
+       <li>Cには(経過時間-B)/Aの式を代入する</li>
+     </div>
+     <h3>スクリプト例）</h3>
+     <div style="width:80%;background:rgb(0, 0, 0);color:rgb(255, 255, 255); font-weight:100;font-size:20px;">
+       float A,B,C; <br>
+       <div class="a">//Cの初期化</div>
+       C=1.0f; <br>
+        <div class="a">//移動キーが入力されたとき</div>
+        void MATI() <br>
+        {<br>
+          A=Time.time;<br>
+        }<br>
+        <div class="a">//実際に動かす関数</div>
+        void UGOKU() <br>
+        {<br>
+          B=(Time.time-A)/B <br>
+          Vector3.Lerp( Vector3 Start, Vector3 Goal , B );<br>
+        }<br>
+        <div class="a">これで完了</div>
+     </div>
+
+
+
      <a id="problem"></a>
      <div class="index">問題・課題</div>
      <br>
      ー問題ー
-     <h3 style="margin:10px;">壁にめりこんでしまう</h3>
+     <h3 style="margin:10px;">1.壁にめりこんでしまう <br>2.前進中に回転、または回転中に前進すると中っと半端な結果になってしまう</h3>
      ー解決方法ー
      <br>
+     <h3 style="margin:0px;">1.の解決方法</h3>
      <li>Vector3.Lerp(当たった位置,元に居た位置,X)</li>
      <br>
+     <h3 style="margin:0px;">2.の解決方法</h3>
+     前進と回転のクラスを分ける <br>
+     回転中は前進のクラスを使えなくし<br>前進中は回転のスクリプトを使えなくするよう互いを管理しあう
      ー課題ー
-     <br>フリックで移動
-     
+     <br>Android用の開発のためにフリックで移動
+
      <br>
      以上！
      <br>
