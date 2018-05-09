@@ -8,7 +8,6 @@ html{
 /*body全体の制約 画面解像度が変更された際一括で編集できるようにします！*/
 body
 {
-
       width: 1000px;
       font-size: 100%;
     background-color:rgb(255, 255, 255);
@@ -16,21 +15,13 @@ body
 /*サイドメニュー欄の設定*/
 .BODY
 {
-  position: static;
-  left: 0px;
-  top: 0px;
-  display:inline-block;
+  position:absolute;
+  top:0px;
+  left:20%;
+  width:100%;
+  height:100%;
 }
 
-.index
-{
-  position: absolute;
-   font-size: 3em;
-   left: 0px;
-   width: 100%;
-   text-align: center;
-   background-color:rgb(95, 112, 110);
-}
 
 
 
@@ -38,8 +29,6 @@ nav{
     position: fixed;
     text-align: center;
     background: rgb(0, 0, 0);
-    width: 20%;
-    height: 100%;
     top: 0px;
     left: 0px;
 }
@@ -53,7 +42,6 @@ nav ul li
 
 .title
 {
-      position: absolute;
       text-align:center;
       left: 20%;
       top: 0px;
@@ -69,8 +57,7 @@ nav ul li
   background: rgb(55, 56, 52);
   position:absolute;
   display:flex;
-  left: 20%;
-  top: 120px;
+
   width: 100%;
 }
 
@@ -86,6 +73,7 @@ nav ul li
     padding:0px;
     font-size: 35px;
     border: solid 5px rgb(212, 0, 255);
+    float: left;
 }
 
 @media screen and (max-width:480px){
