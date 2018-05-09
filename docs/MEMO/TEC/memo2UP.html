@@ -206,27 +206,31 @@
 
       <a id="Script"></a>
       <div  style="width:100%;height:100%;">
-      <img id="img" src="aseet/MemoFolder/memo2[0].jpg"alt="画像1" onclick="preview(),moji()">
+      <img id="img" src="../../../aseet/PlayerMove/Forward1.png"alt="画像1" onclick="preview(),moji()">
      </div>
 
       <script>
         var im =new Array();
-        for(var i=0;i<8;i++)
+        for(var i=0;i<7;i++)
         {
           im[i]=new Image();
         }
-        im[0].src="aseet/MemoFolder/memo2[0].jpg";
-        im[1].src="aseet/MemoFolder/memo2[1].jpg";
-        im[2].src="aseet/MemoFolder/memo2[2].jpg";
-        im[3].src="aseet/MemoFolder/memo2[3].jpg";
-        im[4].src="aseet/MemoFolder/memo2[4].jpg";
+
+        im[0].src="../../../aseet/PlayerMove/Forward1.png";
+        im[1].src="../../../aseet/PlayerMove/Forward2.png";
+        im[2].src="../../../aseet/PlayerMove/Forward3.png";
+        im[3].src="../../../aseet/PlayerMove/Forward4.png";
+        im[4].src="../../../aseet/PlayerMove/Rotate1.png";
+        im[5].src="../../../aseet/PlayerMove/Rotate2.png";
+        im[6].src="../../../aseet/PlayerMove/Rotate3.png";
+        im[7].src="../../../aseet/PlayerMove/Rotate4.png";
 
         var cnt=0;
         //image[2].src
         function preview()
         {
           //console.log(cnt);
-          if(cnt==4)
+          if(cnt==7)
           {
             cnt=0;
           }
