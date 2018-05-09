@@ -16,7 +16,8 @@ body
 /*サイドメニュー欄の設定*/
 .BODY
 {
-    
+    left: 0px;
+    top: 0px
 
 
 }
