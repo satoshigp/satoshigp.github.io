@@ -73,6 +73,35 @@
     {
         color:green;
     }
+    .frame
+    {
+        width: 1000px;
+        height: 835px;
+        overflow:hidden;
+
+    }
+    .wall
+    {
+      width:800%;
+      height:835px;
+      transition: ease 1s;
+    }
+    .item
+    {
+      width: 1000px;
+      height: 835px;
+      float:left;
+
+    }
+
+
+    @media screen and (min-width:1000px){
+      body
+      {
+          width:1920px;
+      }
+
+    }
   </style>
   <body>
 
@@ -206,33 +235,28 @@
 
       <a id="Script"></a>
       <div  style="width:100%;height:100%;">
-      <img id="img" src="../../../aseet/PlayerMove/Forward1.png"alt="画像1" onclick="preview(),moji()">
+        <div class="frame">
+        <div class="wall" id="movewall">
+          <div class="item"><img src="../../../aseet\PlayerMove\Forward1.png"></div>
+          <div class="item">  <img src="../../../aseet\PlayerMove\Forward2.png"></div>
+        </div>
+      </div>
      </div>
-
+     <button type="button"  style="width:50px;height:50px;" onclick="preview()">先へ</button>
       <script>
         var im =new Array();
         for(var i=0;i<7;i++)
         {
           im[i]=new Image();
         }
-
-        im[0].src="../../../aseet/PlayerMove/Forward1.png";
-        im[1].src="../../../aseet/PlayerMove/Forward2.png";
-        im[2].src="../../../aseet/PlayerMove/Forward3.png";
-        im[3].src="../../../aseet/PlayerMove/Forward4.png";
-        im[4].src="../../../aseet/PlayerMove/Rotate1.png";
-        im[5].src="../../../aseet/PlayerMove/Rotate2.png";
-        im[6].src="../../../aseet/PlayerMove/Rotate3.png";
-        im[7].src="../../../aseet/PlayerMove/Rotate4.png";
-
         var cnt=0;
-        //image[2].src
+        var forward=document.getElementById("movewall").style;
         function preview()
         {
-          //console.log(cnt);
           if(cnt==7)
           {
             cnt=0;
+            forward.transform=translateX("1000px");
           }
           else
           {
@@ -240,32 +264,6 @@
           }
             document.getElementById("img").src=im[cnt].src;
         }
-
-        function moji()
-        {
-          var go=document.getElementById("bun");
-
-          switch(cnt)
-          {
-            case 0:
-            go.innerHTML="スクリプト ページ1";
-            break;
-            case 1:
-            go.innerHTML="スクリプト ページ2";
-            break;
-            case 2:
-            go.innerHTML="スクリプト ページ3";
-            break;
-            case 3:
-            go.innerHTML="スクリプト ページ4";
-            break;
-            case 4:
-            go.innerHTML="スクリプト ページ5";
-            break;
-          }
-        }
-
-
       </script>
 
   </body>
