@@ -75,7 +75,7 @@
     }
     .frame
     {
-        width: 1000px;
+        width: 960px;
         height: 835px;
         overflow:hidden;
 
@@ -88,7 +88,7 @@
     }
     .item
     {
-      width: 1000px;
+      width: 960px;
       height: 835px;
       float:left;
 
@@ -99,6 +99,11 @@
       body
       {
           width:1920px;
+
+      }
+      .frame
+      {
+        width: 1920px;
       }
 
     }
@@ -236,13 +241,19 @@
       <a id="Script"></a>
       <div  style="width:100%;height:100%;">
         <div class="frame">
-        <div class="wall" id="movewall">
+        <div class="wall" id="movewall" onclick="preview()">
           <div class="item"><img src="../../../aseet\PlayerMove\Forward1.png"></div>
           <div class="item">  <img src="../../../aseet\PlayerMove\Forward2.png"></div>
+          <div class="item"><img src="../../../aseet\PlayerMove\Forward3.png" alt=""> </div>
+          <div class="item"> <img src="../../../aseet\PlayerMove\Forward4.png" alt=""> </div>
+          <div class="item"> <img src="../../../aseet\PlayerMove\Rotate1.png" alt=""> </div>
+          <div class="item"> <img src="../../../aseet\PlayerMove\Rotate2.png" alt=""> </div>
+          <div class="item"> <img src="../../../aseet\PlayerMove\Rotate3.png" alt=""> </div>
+          <div class="item"> <img src="../../../aseet\PlayerMove\Rotate4.png" alt=""> </div>
+
         </div>
       </div>
      </div>
-     <button type="button"  style="width:50px;height:50px;" onclick="preview()">先へ</button>
       <script>
         var im =new Array();
         for(var i=0;i<7;i++)
@@ -256,10 +267,11 @@
           if(cnt==7)
           {
             cnt=0;
-            forward.transform=translateX("1000px");
+            forward.transform="translateX(0px)";
           }
           else
           {
+            forward.transform+="translateX(-1000px)";
             cnt++;
           }
             document.getElementById("img").src=im[cnt].src;

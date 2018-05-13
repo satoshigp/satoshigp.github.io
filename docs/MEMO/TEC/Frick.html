@@ -8,5 +8,200 @@
     <button type="button" name="button" >
     <a href="../../../aseet/apkfile/megami6.apk" download="新作！新女神転生リベレイターズ記念！">ダウンロード</a>
     </button>
+    <!DOCTYPE html>
+    <html lang="ja">
+      <head>
+        <meta charset="utf-8">
+        <title>動きについて 改良編</title>
+      </head>
+      <style>
+      body
+      {
+        font-weight: 900;
+        padding:0px;
+        margin: 0px;
+        font-size:25px;
+        width: 1000px;
+
+      }
+
+      html{
+        scroll-behavior: smooth;
+      }
+
+        h1
+        {
+          font-style:oblique;
+          font-size: 50px;
+          text-align: center;
+          margin: 0px;
+          padding:20px;
+          background: rgb(0, 217, 255);
+    　    color: rgb(149, 60, 167);
+        }
+        h2{
+          font-size:
+          margin: 20px;
+        }
+      .site li a
+        {
+
+            font-size: 25px;
+            color: rgb(198, 62, 18);
+            transition: ease 1s;
+        }
+      .site li a:hover
+        {
+          left: 0;
+          color: rgb(186, 39, 199);
+          font-size: 30px;
+        }
+
+        .index
+        {
+          font-size: 35px;
+        background: rgba(57, 202, 255, 0.75);
+        box-shadow: 1px 2px 3px 3px rgb(34, 34, 34);
+        }
+        .index::before
+        {
+            content: "★"
+        }
+        .box
+        {
+          margin: 30px;
+          position:relative;
+          left: 30px;
+          display:block;
+          background: rgb(148, 148, 148);
+          color: rgb(255, 255, 255);
+          width: 500px;
+          border:5px double rgb(105, 105, 105);
+          line-height: 30px;
+        }
+        .a
+        {
+            color:green;
+        }
+        .frame
+        {
+            width: 1000px;
+            height: 835px;
+            overflow:hidden;
+
+        }
+        .wall
+        {
+          width:800%;
+          height:835px;
+          transition: ease 1s;
+        }
+        .item
+        {
+          width: 1000px;
+          height: 835px;
+          float:left;
+
+        }
+
+
+        @media screen and (min-width:1000px){
+          body
+          {
+              width:1920px;
+          }
+
+        }
+      </style>
+      <body>
+
+        <h1>フリック操作</h1>
+        <h2 style="font-size:40">-今回やりたいこと-</h2>
+        【Android用の開発の為のプレイヤーの動き】
+        <br>※例作品）メガ〇ン風
+
+
+        <div class="site">
+        <h3>-考え方-</h3>
+            <menu style="list-style-type:decimal; ">
+              <li> <a href="#kai">全体的な考え方</a> </li>
+                <li> <a href="#vec">前進</a> </li>
+                <li> <a href="#qua">回転</a> </li>
+                <li> <a href="#problem">問題・課題</a> </li>
+                <li> <a href="#Script">スクリプト</a> </li>
+            </menu>
+          </div>
+
+
+            <div class="box">
+            </div>
+
+            <div class="index">全体的な考え方</div>
+            <a id="kai"></a>
+            <h3>画面の座標を利用します</h3>
+            <ul style="">
+              <li>Vector2を利用</li>
+              <li>押したポジションを記憶する変数を用意</li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          <div class="index">前進</div>
+          <a id="vec"></a>
+
+
+        <div class="box"  >
+
+        </div>
+
+          <div class="index">回転</div>
+          <a id="qua"></a>
+
+
+        　<div class="box">
+
+         </div>
+
+         <div class="box">
+
+         </div>
+
+
+
+
+
+         <a id="problem"></a>
+         <div class="index">問題・課題</div>
+         <br>
+
+
+         <h3 style="margin:0px;">1.の解決方法</h3>
+         <li>Vector3.Lerp(当たった位置,元に居た位置,X)</li>
+         <br>
+         <h3 style="margin:0px;">2.の解決方法</h3>
+
+         ー課題ー
+         <br>Android用の開発のためにフリックで移動
+
+         <br>
+         以上！
+         <br>
+
+
+          <div class="index" id="bun">スクリプト ページ1</div>
+
+          <a id="Script"></a>
+          <div  style="width:100%;height:100%;">
+            <div class="frame">
+            <div class="wall" id="movewall">
+            <!-- TODO: 画像の用意 -->
+            </div>
+          </div>
+         </div>
+
+
+      </body>
+    </html>
+
   </body>
 </html>
