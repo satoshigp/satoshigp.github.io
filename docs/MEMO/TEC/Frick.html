@@ -4,16 +4,10 @@
     <meta charset="utf-8">
     <title>フリック操作</title>
   </head>
-  <body>
-    <button type="button" name="button" >
-    <a href="../../../aseet/apkfile/megami6.apk" download="新作！新女神転生リベレイターズ記念！">ダウンロード</a>
-    </button>
+
     <!DOCTYPE html>
-    <html lang="ja">
-      <head>
-        <meta charset="utf-8">
-        <title>動きについて 改良編</title>
-      </head>
+
+
       <style>
       body
       {
@@ -98,6 +92,7 @@
         }
         .item
         {
+
           width: 1000px;
           height: 835px;
           float:left;
@@ -114,7 +109,9 @@
         }
       </style>
       <body>
-
+          <button type="button" name="button" >
+          <a href="../../../aseet/apkfile/megami6.apk" download="新作！新女神転生リベレイターズ記念！">ダウンロード</a>
+          </button>
         <h1>フリック操作</h1>
         <h2 style="font-size:40">-今回やりたいこと-</h2>
         【Android用の開発の為のプレイヤーの動き】
@@ -126,45 +123,42 @@
             <menu style="list-style-type:decimal; ">
               <li> <a href="#kai">全体的な考え方</a> </li>
                 <li> <a href="#vec">前進</a> </li>
-                <li> <a href="#qua">回転</a> </li>
+              <li> <a href="#qua">回転</a> </li>
                 <li> <a href="#problem">問題・課題</a> </li>
                 <li> <a href="#Script">スクリプト</a> </li>
             </menu>
           </div>
-
-
-            <div class="box">
+          <div class="box">
             </div>
 
             <div class="index">全体的な考え方</div>
             <a id="kai"></a>
             <h3>画面の座標を利用します</h3>
-            <ul style="">
+            <ul style="list-style-type:decimal;">
               <li>Vector2を利用</li>
-              <li>押したポジションを記憶する変数を用意</li>
-              <li></li>
-              <li></li>
-              <li></li>
+              <li>押した座標を記憶する変数を用意</li>
+              <li>離したときの座標を記憶する変数を用意</li>
+              <li>(離した座標の差-押した座標)の計算した式を変数に代入</li>
+              <li>条件式でｘ座標が大きいかy座標が大きいかを判断し大きい方向に動く関数を呼び出す</li>
             </ul>
           <div class="index">前進</div>
           <a id="vec"></a>
+          全体的な考え方の5でYよりもXの方がマイナス方向に大きい場合、
+        <br>前回紹介したLerpを呼び出し前進を行う
 
-
-        <div class="box"  >
-
+        <div class="box">
+          ～まとめ～
+          <ul>
+            <li></li>
+          </ul>
         </div>
 
           <div class="index">回転</div>
           <a id="qua"></a>
 
 
-        　<div class="box">
 
-         </div>
 
-         <div class="box">
-
-         </div>
 
 
 
@@ -172,29 +166,15 @@
 
          <a id="problem"></a>
          <div class="index">問題・課題</div>
-         <br>
-
-
-         <h3 style="margin:0px;">1.の解決方法</h3>
-         <li>Vector3.Lerp(当たった位置,元に居た位置,X)</li>
-         <br>
-         <h3 style="margin:0px;">2.の解決方法</h3>
-
-         ー課題ー
-         <br>Android用の開発のためにフリックで移動
-
-         <br>
-         以上！
-         <br>
-
-
           <div class="index" id="bun">スクリプト ページ1</div>
-
           <a id="Script"></a>
           <div  style="width:100%;height:100%;">
             <div class="frame">
             <div class="wall" id="movewall">
-            <!-- TODO: 画像の用意 -->
+              <!-- TODO: 画像の用意 -->
+              <script>
+
+              </script>
             </div>
           </div>
          </div>
@@ -202,6 +182,3 @@
 
       </body>
     </html>
-
-  </body>
-</html>
