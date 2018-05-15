@@ -98,6 +98,26 @@
           float:left;
 
         }
+        .pro
+        {
+          width: 750px;
+          height: auto;
+
+          background: rgb(0, 0, 0);
+        }
+
+        .pro pre
+        {
+          font-size: 25px;
+          color:rgb(255, 255, 255);
+          margin: 0px;
+          padding:0px;
+        }
+        .pro pre p{
+          color: rgb(1, 62, 29);
+          margin: 0px;
+          padding:0px;
+        }
 
 
         @media screen and (min-width:1000px){
@@ -121,7 +141,7 @@
         <div class="site">
         <h3>-考え方-</h3>
             <menu style="list-style-type:decimal; ">
-              <li> <a href="#kai">全体的な考え方</a> </li>
+              <li> <a href="#kai">全体的なフローチャート</a> </li>
                 <li> <a href="#vec">前進</a> </li>
               <li> <a href="#qua">回転</a> </li>
                 <li> <a href="#problem">問題・課題</a> </li>
@@ -131,33 +151,73 @@
           <div class="box">
             </div>
 
-            <div class="index">全体的な考え方</div>
+            <div class="index">全体的なフローチャート</div>
             <a id="kai"></a>
             <h3>画面の座標を利用します</h3>
+            なのでVector3ではなくVector2を使用します。<br>
+
             <ul style="list-style-type:decimal;">
-              <li>Vector2を利用</li>
-              <li>押した座標を記憶する変数を用意</li>
-              <li>離したときの座標を記憶する変数を用意</li>
-              <li>(離した座標の差-押した座標)の計算した式を変数に代入</li>
-              <li>条件式でｘ座標が大きいかy座標が大きいかを判断し大きい方向に動く関数を呼び出す</li>
+              <li>現在タッチされているのか？をif判定</li>
+              <li>tureなら押した座標をVector2のStartPosに代入、falseなら何もしない</li>
+              <li>指を移動させる</li>
+              <li>離したときの座標をVector2のEndPosに代入</li>
+              <li>(EndPos-StartPos)の計算した値をVector2のDistに絶対値(Mathf.Abs())で代入</li>
+              <li>if(Dist.x>Dist.y)を行いtrueなら前進か180度回転を、falseなら左右の回転を実行</li>
+              <li>上記の細かい設定は以下の前進、回転で説明します。</li>
             </ul>
-          <div class="index">前進</div>
+          <div class="index">上記のフローチャート6でtureだった場合、前進</div>
           <a id="vec"></a>
-          全体的な考え方の5でYよりもXの方がマイナス方向に大きい場合、
-        <br>前回紹介したLerpを呼び出し前進を行う
+          まずはスクリプトを見せます。
+          <div class="pro">
+  <pre>
+<p>//もしEndPos.x-StartPos.x＞0ならば前進します</p>
+if(EndPos.x-StartPos.x＞0) <br>
+ {<br>
+  前進の処理
+ }<br>
+ else <br>
+ {　<br>
+  180度回転の処理
+ } <br>
+</pre>
+          </div>
+          スマホ画面の座標の始点は左上なので（EndPos.x-StartPos.x>0）<br>だったら上方向にフリックされているのがわかりますよね？
+      　<br>もしfalseならばその逆を返すだけなのでとても単純です。
 
         <div class="box">
           ～まとめ～
           <ul>
-            <li></li>
+            <li>EndPos.x-StartPos.xを行い0よりも大きかったら前進する</li>
+            <li>その逆ならば180度回転処理をおこなう</li>
           </ul>
         </div>
 
           <div class="index">回転</div>
           <a id="qua"></a>
+          こちらもスクリプトを見せます
+<div class="pro">
+  <pre>
+<p>//(EndPos.y-StartPos.y>0)判定を行う</p>
+if(EndPos.y-StartPos.y>0)　<br>
+　{<br>
+　  右回転の処理<br>
+　}<br>
+　else <br>
+　{<br>
+　  左回転の処理 <br>
+　}<br>
+  </pre>
 
-
-
+</div>
+（EndPos.ｙ-StartPos.ｙ>0）<br>だったら右方向にフリックされているのがわかりますよね？
+　<br>もしfalseならばその逆を返すだけなのでこちらもとても単純です。
+<div class="box">
+  ポイント
+  <ul>
+    <li>EndPos.y-StartPos.yを行い0よりも大きかったら右回転する</li>
+    <li>その逆ならば左回転をおこなう</li>
+  </ul>
+</div>
 
 
 
@@ -166,6 +226,12 @@
 
          <a id="problem"></a>
          <div class="index">問題・課題</div>
+         <h2>問題</h2>
+         1.StartPosとEndPosが同じ値だった場合とてもキモイ<br>ほんの0.1ピクセルだけでも動かしたら実行されてしまう
+         <h2>解決</h2>
+         1の解決方法は許容値をつけてしまえば終わり
+         <h2>課題</h2>
+         スワイプ操作の作成（ほぼ完成）
           <div class="index" id="bun">スクリプト ページ1</div>
           <a id="Script"></a>
           <div  style="width:100%;height:100%;">
