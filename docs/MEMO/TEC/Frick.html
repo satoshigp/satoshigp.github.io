@@ -15,7 +15,7 @@
         padding:0px;
         margin: 0px;
         font-size:25px;
-        width: 1000px;
+        width: 960px;
 
       }
 
@@ -231,14 +231,35 @@ if(EndPos.y-StartPos.y>0)　<br>
          <h2>解決</h2>
          1の解決方法は許容値をつけてしまえば終わり
          <h2>課題</h2>
-         スワイプ操作の作成（ほぼ完成）
+         <li>スワイプ操作の作成（ほぼ完成）</li>
+         <li>列挙子を使えばもっときれいにできた</li>
           <div class="index" id="bun">スクリプト ページ1</div>
           <a id="Script"></a>
           <div  style="width:100%;height:100%;">
             <div class="frame">
-            <div class="wall" id="movewall">
-              <!-- TODO: 画像の用意 -->
+            <div class="wall" id="movewall" onclick="preview()">
+            <div class="item"> <img src="../../../aseet/SWIPE/SWIPE1.jpg" alt=""> </div>
+            <div class="item"> <img src="../../../aseet/SWIPE/SWIPE2.jpg" alt=""> </div>
+            <div class="item"> <img src="../../../aseet/SWIPE/SWIPE3.jpg" alt=""> </div>
+            <div class="item"> <img src="../../../aseet/SWIPE/SWIPE4.jpg" alt=""> </div>
+
               <script>
+
+              var cnt=0;
+              var forward=document.getElementById("movewall").style;
+              function preview()
+              {
+                if(cnt==3)
+                {
+                  cnt=0;
+                  forward.transform="translateX(0px)";
+                }
+                else
+                {
+                  forward.transform+="translateX(-1000px)";
+                  cnt++;
+                }
+              }
 
               </script>
             </div>
