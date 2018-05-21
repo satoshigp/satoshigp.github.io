@@ -6,31 +6,32 @@ html{
   scroll-behavior: smooth;
 }
 /*body全体の制約 画面解像度が変更された際一括で編集できるようにします！*/
-body
+.body
 {
-      width: 1000px;
+      width:1000px;
+      overflow: hidden;
       font-size: 100%;
     background-color:rgb(255, 255, 255);
 }
-/*サイドメニュー欄の設定*/
+/*本文*/
 .BODY
 {
-  position:absolute;
+  position:relative;
   top:0px;
-  left:20%;
+  display:inline-block;
+  left: 10%;
   margin: 0px;
   padding: 0px;
   width:100%;
 }
+/*サイドメニュー欄の設定*/
 
-
-
-
-.side{
+.side
+{
+  display: inline-block;
     position: fixed;
     text-align: center;
     background: rgb(0, 0, 0);
-    display: block;
     width:20%;
     height: 100%;
     top:0px;
@@ -46,44 +47,37 @@ body
 
 .title
 {
-      text-align:center;
-      left: 20%;
-      top: 0px;
-      width: 100%;
-      color:rgb(184, 184, 184);
-      font-size: 5em;
-      background: rgb(3, 11, 41);
-      z-index: 10;
-
+  text-align:center;
+top: 0px;
+width: 100%;
+color:rgb(184, 184, 184);
+font-size: 5em;
+background: rgb(3, 11, 41);
 }
 .menu
 {
-  background: rgb(55, 56, 52);
-  
-  display:flex;
-
+background: rgb(55, 56, 52);
+display:flex;
   width: 100%;
 }
 
 
 .menu li
 {
-    list-style-type: none;
-    width:20%;
-    height: 40px;
-    color: rgb(143, 120, 167);
-    text-align: center;
-    padding:0px;
-    font-size: 2em;
-    border: solid 5px rgb(212, 0, 255);
-    float: left;
+  list-style-type: none;
+  width:20%;
+  height: 40px;
+  color: rgb(143, 120, 167);
+  text-align: center;
+  padding:0px;
+  font-size: 2em;
+  border: solid 5px rgb(212, 0, 255);
 }
-
 @media screen and (max-width:480px){
   body
   {
     width: 480px;
-    font-size: 60%;
+    font-size: 80%;
     background: rgb(104, 195, 124);
   }
   .side
@@ -94,11 +88,9 @@ body
   .BODY
   {
     left:30%;
-    width: 100%;
+    width:80%;
   }
-
-
-  .menu
+   .menu
   {
 
       left:0%;
@@ -111,8 +103,3 @@ body
   }
 
 }
-/*@media screen and (max-width: 600px) {
-	.one {
-		background: #F9C;
-	}
-}*/
