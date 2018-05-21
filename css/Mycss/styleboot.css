@@ -20,8 +20,8 @@ overflow: hidden;
 {
   position:relative;
   top:0px;
-  left: 20%;
-  display:inline-block;
+  left: 10%;
+  display:block;
   margin: 0px;
   padding: 0px;
   width:100%;
@@ -31,7 +31,7 @@ overflow: hidden;
 {
 
     position: fixed;/*画面に固定*/
-    text-align: center;
+    text-align: center;/**/
     background: rgb(0, 0, 0);
     width:20%;
     left: 0px;
