@@ -8,8 +8,10 @@ html{
 /*body全体の制約 画面解像度が変更された際一括で編集できるようにします！*/
 .body
 {
+overflow: hidden;
       width:1000px;
-      overflow: hidden;
+    left:0px;
+    top: 0px;
       font-size: 100%;
     background-color:rgb(255, 255, 255);
 }
@@ -18,24 +20,22 @@ html{
 {
   position:relative;
   top:0px;
+  left: 20%;
   display:inline-block;
-  left: 10%;
   margin: 0px;
   padding: 0px;
   width:100%;
 }
 /*サイドメニュー欄の設定*/
-
 .side
 {
-  display: inline-block;
-    position: fixed;
+
+    position: fixed;/*画面に固定*/
     text-align: center;
     background: rgb(0, 0, 0);
     width:20%;
+    left: 0px;
     height: 100%;
-    top:0px;
-    left:0px;
 }
 .side ul li
 {
