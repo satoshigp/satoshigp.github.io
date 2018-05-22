@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>HTML上での動きについてのあれこれ</title>
+  </head>
+  <style>
+  body
+  {
+    font-weight: 900;
+    padding:0px;
+    margin: 0px;
+    font-size:20px;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+    h1
+    {
+      font-style:oblique;
+      font-size: 50px;
+      text-align: center;
+      margin: 0px;
+      padding:20px;
+      background: rgb(0, 217, 255);
+　    color: rgb(149, 60, 167);
+    }
+    h2{
+      font-size:
+      margin: 20px;
+    }
+  .site li a
+    {
+
+        font-size: 25px;
+        color: rgb(198, 62, 18);
+        transition: ease 1s;
+    }
+  .site li a:hover
+    {
+      left: 0;
+      color: rgb(186, 39, 199);
+      font-size: 30px;
+    }
+
+    .index
+    {
+      font-size: 35px;
+    background: rgba(57, 202, 255, 0.75);
+    box-shadow: 1px 2px 3px 3px rgb(34, 34, 34);
+    }
+    .index::before
+    {
+        content: "★"
+    }
+    .box
+    {
+      margin: 30px;
+      position:relative;
+      left: 30px;
+      display:block;
+      background: rgb(148, 148, 148);
+      color: rgb(255, 255, 255);
+      width: 500px;
+      border:5px double rgb(105, 105, 105);
+      line-height: 35px;
+    }
+
+    .a
+    {
+        width: 100px;
+        height: 50px;
+        display: block;
+        background: rgb(255, 0, 0);
+
+    }
+    .a:hover
+    {
+        width: 100%;
+        background: rgb(0, 0, 255);
+    }
+    .b
+    {
+        width: 50px;
+        height: 23px;
+        display: block;
+        background: rgb(255, 0, 0);
+
+    }
+    .b:hover
+    {
+      width: 100%;
+        background: rgb(0, 0, 255);
+    }
+
+    .subindex
+    {
+        display:block;
+        font-size: 35px;
+          width: 100%;
+
+    }
+    .code
+    {
+      position: relative;
+        display: block;
+        color: rgb(255, 255, 255);
+        background: rgb(41, 41, 41);
+        width: 800px;
+        left: 20%;
+        overflow-X: scroll;
+    }
+ @keyframes slide {
+   0% { transform: translateX(0); }
+   33% { transform: translateX(-500px); }
+   66% { transform: translateX(-1000px); }
+  100% { transform: translateX(0); }
+
+ }
+
+  .item
+  {
+    width: 500px;
+    height: 500px;
+    float: left;
+  }
+  .wall
+  {
+    width:300%;height:500px; animation: slide infinite 5s
+  }
+  </style>
+  <body>
+
+    <h1>Webブラウザのアニメーション1</h1>
+    <h2 style="font-size:40">-今回やりたいこと-</h2>
+    【サイト上でアニメーションを作成してみよう】
+
+    <h3>-前提条件-</h3>
+    アニメーションには2パターンの方法があります！
+        <manu style="list-style-type:decimal;">
+            <li> <a href="#tra">Transitionについて</a> </li>
+            <li> <a href="https://satoshigp.github.io/docs/MEMO/JTC/animation.html">Animationについて</a> </li>
+            <li> <a href="#Script">スクリプト</a> </li>
+        </menu>
+      <div class="index">transition(トランジション)とは？</div>
+      <a id="tra"></a>
+      <a href="http://www.htmq.com/css3/transition.shtml">transitionとは？</a><br>
+      <br>transitionとは直訳すると「変化」,「変わる」ということです。
+      <br>プロパティーを一つ一つ決めることもできますし、
+      <br>まとめてプロパティを決めることも可能です。
+      <br>イベントハンドラを設定しないとほぼ使えないです。
+      <br>
+      <tr>
+        要素名A,クラス名{transition:<span style="color:rgb(26, 156, 29)">-property</span><span style="color:rgb(43, 147, 161)">-delay</span><span style="color:rgb(187, 17, 118)">-duration</span><span style="color:rgb(226, 207, 37)">-timing-function</span>}
+        <table border="3" style="font-size:20px;" >
+          <tr>
+            <th>プロパティ名</th> <th>読み</th> <th>効果</th>
+          </tr>
+          <tr>
+            <th> <a href="#pro">property</a> </th> <td>プロパティ</td> <td> transitionを適応するプロパティの指定</td>
+          </tr>
+          <tr>
+            <th> <a href="#del">delay</a> </th> <td>ディレイ</td><td>変化が開始されるまでの時間</td>
+          </tr>
+          <tr>
+
+            <th> <a href="#dur">duration</a> </th> <td>デュレイション</td> <td>変化が始まって終わるまでの時間を指定します。</td>
+          </tr>
+          <tr>
+            <th> <a href="#t-m">timing-function</a> </th> <td>タイミングファンクション</td><td>変化の進行度</td>
+          </tr>
+
+        </table>
+      </tr>
+例）画像にマウスを乗せたら画像が大きくる等
+<span class="a" style="transition:ease 5s"></span>
+こういった動的な要素を簡単に作成出来るのがtransitionの特徴です
+
+ <div class="subindex">01.transition-property </div>
+ <hr>
+ <a id="pro"></a>
+
+ <div class="code">
+   <pre>要素名A,クラス名
+     {
+       transition-property:適応させたいプロパティ
+     }
+ </pre>
+ </div>
+
+  <table border="2" style="font-size:23px;padding:0px;">
+        transition.propertyのプロパティーは以下のようになります
+
+          <tr>
+            <td>all</td> <td>transitionが適応可能なプロパティすべてに効果を適応。</td>
+          </tr>
+          <tr>
+            <td>none</td> <td>どのプロパティにも適応させない</td>
+        </tr>
+      </table>
+      <div class="subindex">transition-delay</div>
+      <hr>
+      <a id="del"></a>
+      <div class="code">
+        <pre>
+          要素名a,クラス名
+          {
+              transition-delay:値（数値）
+          }
+        </pre>
+      </div>
+        値は以下の表で設定することができます。
+        <table border="2" style="font-size:23px;">
+
+          <tr>
+          <th>指定できる単位</th><th>単位/ｓ</th>
+          </tr>
+          <tr>
+            <td>s</td><td>1sは1秒</td>
+          </tr>
+          <tr>
+            <td>ms</td> <td>1msは1000分の1秒</td>
+          </tr>
+          </table>
+              <div class="subindex">transition-duration</div>
+              <a id="dur"></a>
+              <div class="code">
+                <pre>
+                  要素名a,クラス名
+                  {
+                      transition-delay:値（数値）
+                  }
+                </pre>
+              </div>
+                値は以下の表で設定することができます。
+                <table border="2" style="font-size:23px;">
+
+                  <tr>
+                  <th>指定できる単位</th><th>単位/ｓ</th>
+                  </tr>
+                  <tr>
+                    <td>s</td><td>1sは1秒</td>
+                  </tr>
+                  <tr>
+                    <td>ms</td> <td>1msは1000分の1秒</td>
+                  </tr>
+                  </table>
+                  <div class="subindex">transition-timinf-function</div>
+                  <a id="t-f"></a>
+                  <div class="code">
+                    <pre>
+                      要素名A,クラス名
+                      {
+                          transition-timinf-function:値
+                      }
+                    </pre>
+                  </div>
+                  変化の進行度はベジェ曲線で表すことができます。
+          <table border="2" style="font-size:23px;padding:0px; width:80%;">
+            <tr>
+              <td rowspan="2">ease</td><td> 変化の開始と終了付近の動きを滑らかに。 </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="b" style="transition:ease 3s;"></td>
+            </tr>
+            <tr>
+              <td rowspan="2">linear</td> <td>一定で変化します</td>
+            </tr>
+            <tr>
+              <td colspan="2" class="b" style="transition:linear 3s;"></td>
+            </tr>
+            <tr>
+              <td rowspan="2">ease-in</td> <td> 変化開始付近の動きを緩やかにします </td>
+            </tr>
+            <tr>
+               <td colspan="2" class="b" style="transition:ease-in 3s;"></td>
+            </tr>
+            <tr>
+              <td rowspan="2">ease-out</td><td> 変化終了付近の動きを緩やかにします </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="b" style="transition:ease-out 3s;"></td>
+            </tr>
+            <tr>
+              <td rowspan="2">ease-in-out</td> <td> 変化の開始と終了付近の動きを緩やかにします </td>
+            </tr>
+            <tr>
+              <td colspan="2"class="b"style="transition:ease-in-out 3s;" ></td>
+            </tr>
+            <tr>
+              <td rowspan="2">cubic-bezier()</td><td>任意で変化量を決めることができます。</td>
+            </tr>
+            <tr>
+              <td colspan="2" class="b" style="transition:cubic-bezier(0,0.01,0.01,1) 3s;"></td>
+            </tr>
+      </table>
+      <div class="index">Animation(アニメーション)とは？</div>
+      <a id="ani"></a>
+    <a href="http://www.htmq.com/css3/animation.shtml">Animationとは？</a>
+      ほぼほぼtransitionと動きは変わらない気がしますが <br>
+      <u>イベントハンドラ</u>を用意しなくとも動的処理が可能です。　<br>
+      しかし<span style="color:rgb(207, 19, 210);">@keyframe</span>を設定してあげないと動作はしません。
+      任意でアニメーションを止めることはできません。
+       <h3>animationのプロパティ</h3>
+       <table border="2"  style="font-size:20px;">
+         <tr>
+           <th>プロパティ名</th><th>読み</th><th>効果</th>
+         </tr>
+         <tr>
+           <th><a href="#name">name</a> </th> <td>ネーム</td><td>キーフレームの名前を指定します</td>
+         </tr>
+         <tr>
+           <th> <a href="#adel">delay</a> </th> <td>ディレイ</td><td>変化が開始されるまでの時間</td>
+         </tr>
+         <tr>
+
+           <th> <a href="#adur">duration</a> </th> <td>デュレイション</td> <td>変化が始まって終わるまでの時間を指定します。</td>
+         </tr>
+         <tr>
+           <th> <a href="#at-m">timing-function</a> </th> <td>タイミングファンクション</td><td>変化の進行度</td>
+         </tr>
+         <tr>
+           <th><a href="#ic">iteration-count</a></th><td>イテレーションカウント</td><td>アニメーションの再生回数を設定します</td>
+         </tr>
+         <tr>
+           <th> <a href="#dir">direction </a> </th> <td>ダイレクション</td><td>アニメーションを交互に反転再生させるかどうかを指定する</td>
+         </tr>
+       </table>
+
+       例）画像のスライド
+       <div style="width:500px;height:500px;overflow:hidden;">
+         <div class="wall">
+                <div class="item"><img src="../../../aseet/aaaaaassdasfs.jpg" alt=""></div>
+                <div class="item"><img src="../../../aseet/Screenshot_20180209-130040.png" alt=""></div>
+                <div class="item"><img src="../../../aseet/キャプチャ.jpg" alt=""></div>
+
+         </div>
+       </div>
+       <div class="subindex">animation-name</div>
+       <a id="name"></a>
+       <div class="code">
+         <pre>
+           要素名A,クラス名
+           {
+              animation-name:slide
+           }
+
+           @keyframe slide
+           {
+             処理だーーーーーーー
+           }
+         </pre>
+       </div>
+       初期値はnone。<br>
+        @keyframeで作成した関数名を指定してあげればOK！
+
+      <div class="index" id="bun">スクリプト ページ1</div>
+
+      <a id="Script"></a>
+      <div  style="width:1100px;height:860px;">
+      <img id="img" src="aseet/MemoFolder/memo2[0].jpg"alt="画像1" onclick="preview(),moji()">
+     </div>
+
+      <script>
+        var im =new Array();
+        for(var i=0;i<5;i++)
+        {
+          im[i]=new Image();
+        }
+        im[0].src="aseet/MemoFolder/memo2[0].jpg";
+        im[1].src="aseet/MemoFolder/memo2[1].jpg";
+        im[2].src="aseet/MemoFolder/memo2[2].jpg";
+        im[3].src="aseet/MemoFolder/memo2[3].jpg";
+        im[4].src="aseet/MemoFolder/memo2[4].jpg";
+
+        var cnt=0;
+        //image[2].src
+        function preview()
+        {
+          //console.log(cnt);
+          if(cnt==4)
+          {
+            cnt=0;
+          }
+          else
+          {
+            cnt++;
+          }
+            document.getElementById("img").src=im[cnt].src;
+        }
+
+        function moji()
+        {
+          var go=document.getElementById("bun");
+
+          switch(cnt)
+          {
+            case 0:
+            go.innerHTML="スクリプト ページ1";
+            break;
+            case 1:
+            go.innerHTML="スクリプト ページ2";
+            break;
+            case 2:
+            go.innerHTML="スクリプト ページ3";
+            break;
+            case 3:
+            go.innerHTML="スクリプト ページ4";
+            break;
+            case 4:
+            go.innerHTML="スクリプト ページ5";
+            break;
+          }
+        }
+
+
+      </script>
+
+  </body>
+</html>
