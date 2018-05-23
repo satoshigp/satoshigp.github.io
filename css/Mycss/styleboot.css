@@ -8,24 +8,28 @@ html{
 /*body全体の制約 画面解像度が変更された際一括で編集できるようにします！*/
 .body
 {
-  position:static;
-  overflow: hidden;
-  /*標準画面幅*/
-  width: 1000px;
+  position: relative;
+  margin: 0px;
+  max-width: 1920px;
+  min-width: 480px;
+    /*標準画面幅*/
+  width:1000px;
   background: rgb(255, 255, 255);
   height: 100%;
 
 }
+
 /*本文*/
-.BODY
+.main
 {
   position:relative;
   top:0px;
-  left: 10%;
+  left: 20%;
   display:block;
   margin: 0px;
   padding: 0px;
-  width:100%;
+  width:  80%;
+  z-index: -1;
 }
 /*サイドメニュー欄の設定*/
 .side
@@ -50,7 +54,7 @@ html{
 
 .title
 {
-
+text-align:center;
 width: 100%;
 color:rgb(184, 184, 184);
 font-size: 5em;
