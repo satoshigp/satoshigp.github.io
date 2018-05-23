@@ -16,6 +16,8 @@ html{
   width:1000px;
   background: rgb(255, 255, 255);
   height: 100%;
+  /*デバッグ用*/
+  background: rgb(129, 64, 148);
 
 }
 
@@ -77,12 +79,14 @@ display:flex;
   font-size: 2em;
   border: solid 5px rgb(212, 0, 255);
 }
-@media screen max(min-width:1001px) {
+@media screen max(min-width:1001px){
   .body
   {
-    width: 1920px;
+    width:1920px;
+    background: rgb(144, 249, 211);
   }
 }
+
 @media screen and (max-width:480px){
   .body
   {
