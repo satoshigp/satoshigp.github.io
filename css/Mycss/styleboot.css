@@ -79,7 +79,7 @@ display:flex;
   font-size: 2em;
   border: solid 5px rgb(212, 0, 255);
 }
-@media screen aaa (min-width:1001px){
+@media screen and (min-width:1001px){
   .body
   {
     width:1920px;
