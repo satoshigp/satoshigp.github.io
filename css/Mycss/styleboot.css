@@ -34,9 +34,7 @@ html{
 /*サイドメニュー欄の設定*/
 .side
 {
-
     position: fixed;/*画面に固定*/
-
     background: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     width:20%;
@@ -79,8 +77,14 @@ display:flex;
   font-size: 2em;
   border: solid 5px rgb(212, 0, 255);
 }
+@media screen max(min-width:1001px) {
+  .body
+  {
+    width: 1920px;
+  }
+}
 @media screen and (max-width:480px){
-  body
+  .body
   {
     width: 480px;
     font-size: 80%;
