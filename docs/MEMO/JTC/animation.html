@@ -8,6 +8,7 @@
   <style>
   body
   {
+    max-width: 1000px;
     font-weight: 900;
     padding:0px;
     margin: 0px;
@@ -108,8 +109,9 @@
         display: block;
         color: rgb(255, 255, 255);
         background: rgb(41, 41, 41);
-        width: 800px;
-        left: 20%;
+        max-width: 800px;
+        width: 80%;
+
         overflow-X: scroll;
     }
  @keyframes slide {
@@ -316,7 +318,7 @@
                <pre>
                  要素名A,クラス名
                  {
-                   transition-iteration-count:値
+                   transition-iteration-count:値;
                  }
                </pre>
              </div>
@@ -333,14 +335,35 @@
              </table>
              <div class="subindex">transition-direction</div>
              <a id="dir"></a>
-             <hr>
+             <div class="code">
+               <pre>
+                 要素名A,クラス名
+                 {
+                   transform-direction:値;
+                 }
+               </pre>
+             </div>
+             値は以下の表で設定できます！
+             <table border="2"  style="font-size:23px;padding:0px; width:80%;">
+               <tr>
+                 <th>値</th> <th>効果</th>
+               </tr>
+               <tr>
+                 <td>normal</td><td>通常の方向で再生されます</td>
+               </tr>
+               <tr>
+                 <td>revarse</td><td>逆の方向で再生されます</td>
+               </tr>
+               <tr>
+                 <td>altenate</td><td>アニメーションの繰り返し回数が奇数の場合通常方向、<br>偶数の場合は逆方向に再生されます</td>
+               </tr>
+               <tr>
+                 <td>altenate-revarse</td><td>アニメーションの繰り返し回数が偶数の場合通常方向、<br>奇数の場合は逆方向に再生されます</</td>
+               </tr>
+             </table>
+                 <hr>
 
-      <div class="index" id="bun">スクリプト ページ1</div>
 
-      <a id="Script"></a>
-      <div  style="width:1100px;height:860px;">
-      <img id="img" src="aseet/MemoFolder/memo2[0].jpg"alt="画像1" onclick="preview(),moji()">
-     </div>
 
 
   </body>
