@@ -20,7 +20,14 @@ html{
   background: rgb(129, 64, 148);
 
 }
-
+.index
+{
+  display:inline-block;
+  width: 100%;
+  height: 50px;
+  box-shadow:5px 3px 2px 3px rgb(165, 209, 189);
+  font-size: 3.5em;
+}
 /*本文*/
 .main
 {
@@ -60,24 +67,26 @@ color:rgb(184, 184, 184);
 font-size: 5em;
 background: rgb(3, 11, 41);
 }
-.menu
+.upmenu
 {
-background: rgb(55, 56, 52);
-display:flex;
   width: 100%;
 }
 
 
-.menu li
+.upmenu li
 {
   list-style-type: none;
-  width:20%;
+  background: rgb(43, 95, 196);
+  display: block;
+  /*border分の幅を引いた分*/
+  width: 390px;
   height: 40px;
   color: rgb(143, 120, 167);
   text-align: center;
   padding:0px;
   font-size: 2em;
-  border: solid 5px rgb(212, 0, 255);
+  border: solid 5px rgb(0, 0, 0);
+  float: left;
 }
 @media screen and (min-width:1001px){
   .body
@@ -92,8 +101,20 @@ display:flex;
   }
   .main
   {
+    left: 320px;
       width: 1600px;
   }
+  .upmenu
+ {
+
+
+ }
+
+ .upmenu li
+ {
+
+   width: 390px;
+ }
 }
 
 @media screen and (max-width:480px){
@@ -113,15 +134,15 @@ display:flex;
     left: 30%;
     width:336px;
   }
-   .menu
+   .upmenu
   {
 
       left:0%;
   }
 
-  .menu li
+  .upmenu li
   {
-
+    width: 326px;
     float: none;
   }
 
