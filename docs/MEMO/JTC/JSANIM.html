@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>JavScriptでスライドショー</title>
+  </head>
+  <style>
+  body
+  {
+    max-width: 1920px;
+    font-weight: 900;
+    padding:0px;
+    margin: 0px;
+    font-size:1.5em;
+    width: 960px;
+  }
+
+  li
+  {
+    margin: 0px;
+    padding-left: 0px;
+    list-style-type: decimal-leading-zero;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+    h1
+    {
+      font-style:oblique;
+      font-size: 50px;
+      text-align: center;
+      margin: 0px;
+      padding:20px;
+      background: rgb(0, 217, 255);
+　    color: rgb(149, 60, 167);
+    }
+    h2{
+      font-size:
+      margin: 20px;
+    }
+  .site li a
+    {
+
+        font-size: 25px;
+        color: rgb(198, 62, 18);
+        transition: ease 1s;
+    }
+  .site li a:hover
+    {
+      left: 0;
+      color: rgb(186, 39, 199);
+      font-size: 30px;
+    }
+
+    .index
+    {
+      font-size: 35px;
+    background: rgba(57, 202, 255, 0.75);
+    box-shadow: 1px 2px 3px 3px rgb(34, 34, 34);
+    margin-bottom:30px;
+    }
+    .index::before
+    {
+        content: "★"
+    }
+    .box
+    {
+      margin: 30px;
+      position:relative;
+      left: 30px;
+      display:block;
+      background: rgb(148, 148, 148);
+      color: rgb(255, 255, 255);
+      width: 500px;
+      border:5px double rgb(105, 105, 105);
+      line-height: 35px;
+    }
+
+    .a
+    {
+        width: 100px;
+        height: 50px;
+        display: block;
+        background: rgb(255, 0, 0);
+
+    }
+    .a:hover
+    {
+        width: 100%;
+        background: rgb(0, 0, 255);
+    }
+    .b
+    {
+        width: 50px;
+        height: 23px;
+        display: block;
+        background: rgb(255, 0, 0);
+
+    }
+    .b:hover
+    {
+      width: 100%;
+        background: rgb(0, 0, 255);
+    }
+
+    .subindex
+    {
+        display:block;
+        font-size: 35px;
+          width: 100%;
+
+    }
+    .code
+    {
+      position: relative;
+        display: block;
+        color: rgb(255, 255, 255);
+        background: rgb(41, 41, 41);
+        max-width: 800px;
+        width: 80%;
+
+        overflow-X: scroll;
+    }
+    .slider-frame
+    {
+      padding:0px;
+      margin:0px;
+      width:500px;
+      height:500px;
+      overflow:hidden;
+    }
+
+  .slider-item
+  {
+    width: 500px;
+    height: 500px;
+    float: left;
+  }
+  #slider-wall
+  {
+    width:300%;height:500px; animation: slide infinite 5s
+  }
+
+  </style>
+  <body>
+
+    <h1>JavaScriptでスライドショー</h1>
+    <h2 style="font-size:40">-今回やりたいこと-</h2>
+    【クリックしたらJavaScriptで画像を動かしてみよう！】
+
+   <br>
+    CSSをのanimationやtransitionを使用せずに動的な動きを作ってみよう！
+   <br>
+
+
+
+
+      <div class="index">JavaScriptとは？</div>
+      <a id="ani"></a>
+      <li>Webブラウザ上で起動するプログラミング言語であり <a href="https://furien.jp/columns/102/#1"> オブジェクト指向プログラミング言語</a>です。</li>
+      <li>最近ではWebブラウザ上だけではなく、サーバーサイド側でも動く<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a></li>
+      <li>IoTのデバイスコントロール言語として話題です！</li> <!-- TODO:  -->
+      <li>JavaScriptは インタープリタ言語です。</li>
+      <table border="2" style="font-size:0.8em">
+        ※インタープリンタ言語の他にもコンパイラ言語も存在します。
+        <tr>
+          <th>名前</th><th>用途</th><th>言語</th>
+        </tr>
+        <tr>
+          <td>コンパイラ言語</td><td>プログラムをコンピュータが理解できる形式に変換するプログラム言語</td><td>C++,C#,Java</td>
+        </tr>
+        <tr>
+          <td>インタープリンタ言語</td><td>プログラムをコンピュータが理解できる形式に逐次翻訳しながら、そのプログラムを実行してゆくプログラム言語(スクリプト言語とも言う)</td><td>JavaScript,Ruby,PHP</td>
+        </tr>
+      </table>
+      <h2>簡単に説明すると</h2>
+      コンパイラ言語:一回一回<u>ビルド</u>する。 <br>
+      インタープリンタ言語：コードを書いたら<u>即反映！</u>ビルドしない！
+
+
+        <div class="index">スライドショーを実行する前の準備</div>
+        <div class="subindex">CSS側でやるべきこと</div>
+        <hr>
+        スライドショーのフレームを作成します。 <br>
+        参考スクリプト）
+        <div class="code">
+          CSS
+          <pre>
+            //見える範囲の設定
+            .slider-frame
+            {
+              内側、外側の余白の設定(なくてもOK！)
+              padding:0px;
+              margin:0px;
+              //外側の範囲の設定
+              width:500px;
+              height:500px;
+              //はみ出たところは消す！
+              overflow:hidden;
+            }
+            //動く部分の設定
+            #slider-wall
+            {
+              //中身の範囲設定
+              width:300%;
+              height:500px;
+              //変化の度合い設定
+              transition:ease 3s;
+            }
+            //画像一つ一つに設定
+            .slider-item
+            {
+              //画像の範囲設定
+              width:500px;
+              height:500px;
+              //左ならべに設定
+              float:left;
+            }
+          </pre>
+        </div>
+        上記のスクリプトをCSSで設定します
+        実際に実行してみるとこんな感じ！
+        <div class="slider-frame">
+          <div id="slider-wall">
+            <div class="slider-item"> <img src="../../../aseet/bbb.jpg" alt=""> </div>
+          </div>
+        </div>
+        まだ動的な処理はしていないので動きまん。
+
+
+  </body>
+
+</html>
