@@ -12,8 +12,9 @@
     font-weight: 900;
     padding:0px;
     margin: 0px;
-    font-size:1.5em;
+    font-size:1.2em;
     width: 960px;
+
   }
 
   li
@@ -148,6 +149,16 @@
  {
    color: rgb(0, 96, 15);
  }
+ @media screen and (min-width:1001px){
+   body
+   {
+     position: relative;
+     left: 15%;
+      text-align: left;
+      width:70%;
+   }
+ }
+
   </style>
   <body>
 
@@ -164,11 +175,10 @@
 
       <div class="index">JavaScriptとは？</div>
       <a id="ani"></a>
-      <li>Webブラウザ上で起動するプログラミング言語であり <a href="https://furien.jp/columns/102/#1"> オブジェクト指向プログラミング言語</a>です。</li>
-      <li>最近ではWebブラウザ上だけではなく、サーバーサイド側でも動く<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a></li>
-      <li>IoTのデバイスコントロール言語として話題です！</li> <!-- TODO:  -->
+      <li>Webブラウザ上で起動する言語であり <a href="https://furien.jp/columns/102/#1"> オブジェクト指向プログラミング</a>です。</li>
+
       <li>JavaScriptは インタープリタ言語です。</li>
-      <table border="2" style="font-size:0.8em">
+      <table border="2" style="font-size:0.8em;width:80%;">
         ※インタープリンタ言語の他にもコンパイラ言語も存在します。
         <tr>
           <th>名前</th><th>用途</th><th>言語</th>
@@ -177,14 +187,15 @@
           <td>コンパイラ言語</td><td>プログラムをコンピュータが理解できる形式に変換するプログラム言語</td><td>C++,C#,Java</td>
         </tr>
         <tr>
-          <td>インタープリンタ言語</td><td>プログラムをコンピュータが理解できる形式に逐次翻訳しながら、そのプログラムを実行してゆくプログラム言語(スクリプト言語とも言う)</td><td>JavaScript,Ruby,PHP</td>
+          <td>インタプリンタ言語</td><td>プログラムをコンピュータが理解できる形式に逐次翻訳しながら、そのプログラムを実行してゆくプログラム言語(スクリプト言語とも言う)</td><td>JavaScript,Ruby,PHP</td>
         </tr>
       </table>
       <h2>簡単に説明すると</h2>
       コンパイラ言語:一回一回<u>ビルド</u>する。 <br>
-      インタープリンタ言語：コードを書いたら<u>即反映！</u>ビルドしない！
+      インタプリンタ言語：コードを書いたら<u>即反映！</u>ビルドしない！
 
-
+      <li>最近ではWebブラウザ上だけではなく、サーバーサイド側でも動く<a href="https://ja.wikipedia.org/wiki/Node.js">Node.js</a></li>
+      <li> <a href="https://www.internetacademy.jp/it/programming/programming-basic/case-study-internet-of-things-iot.html">IoT</a>のデバイスコントロール言語として話題です！</li> <!-- TODO:  -->
         <div class="index">スライドショーを実行する前の準備</div>
         <div class="subindex">CSS側でやるべきこと</div>
         <hr>
@@ -242,7 +253,7 @@
           HTML
           <pre>
             < div class="slider-frame">
-              < div id="slider-wall" onclick="move">---⓪
+              < div id="slider-wall" onclick="move()">---⓪
                 < div class="slider-item"> < img src="../../../aseet/bbb.jpg" > < /div>
                 < div class="slider-item"> < img src="../../../aseet/scshot.jpg" > < /div>
                 < div class="slider-item"> < img src="../../../aseet/aaaaaassdasfs.jpg" > < /div>
@@ -279,8 +290,10 @@
         </div>
         では実際にどう動かすのか順を追って説明します。 <br>
         <hr>
+        ⓪.動かしたいタグにイベントハンドラで後に記述する関数を呼び出しています。
+        <hr>
         ①.JavaScriptを書く場所の定義をします。<br>
-        今回はhtml内にscriptタグを定義することでそのタグ内でJavaScriptを使用することができます。 <br>
+        今回はhtml内のbodyタグにscriptタグを定義することでそのタグ内でJavaScriptを使用することができます。 <br>
         他にもJavaScriptをヘッダー内に書くことやファイルで分け読み込む方法もあります。 <br>
         <hr>
       ②.変数の定義をしています。 <br>
@@ -314,7 +327,7 @@
         <div class="slider-frame">
           <div id="slider-wall2"onclick="anim()" >
             <div class="slider-item"> <img src="../../../aseet/bbb.jpg" > </div>
-            <div class="slider-item"> <img src="../../../aseet/scshot.jpg" > </div>
+            <div css="slider-item"> <img src="../../../aseet/scshot.jpg" > </div>
             <div class="slider-item"> <img src="../../../aseet/aaaaaassdasfs.jpg" > </div>
           </div>
         </div>
@@ -338,6 +351,13 @@
 
           }
         </script>
+        <footer style="background:rgb(45, 45, 45);color:rgb(255, 255, 255)" >
+            HTML、CSSJavaScriptを学ぶ中でとても参考になった書籍<br>
+              <a href="https://www.amazon.co.jp/%E3%81%A7%E3%81%8D%E3%82%8B%E3%83%9D%E3%82%B1%E3%83%83%E3%83%88-HTML5-CSS3-2-1%E5%85%A8%E4%BA%8B%E5%85%B8-%E5%B0%8F%E5%B7%9D/dp/4844337394/ref=pd_lpo_sbs_14_img_1?_encoding=UTF8&psc=1&refRID=JJ6G6VED235054XS5SKC">できるポケット HTML5&CSS3/2.1全事典 単行本</a>
+              <p>	加藤 善規 (著)</p>
+
+
+        </footer>
   </body>
 
 </html>
