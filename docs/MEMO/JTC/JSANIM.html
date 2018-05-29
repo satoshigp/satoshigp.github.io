@@ -139,9 +139,15 @@
   }
   #slider-wall
   {
-    width:300%;height:500px; animation: slide infinite 5s
-  }
-
+    width:300%;height:500px; transition:ease 3s;  }
+    #slider-wall2
+    {
+      width:300%;height:500px; transition:ease 1s;
+    }
+ .com
+ {
+   color: rgb(0, 96, 15);
+ }
   </style>
   <body>
 
@@ -223,12 +229,115 @@
         実際に実行してみるとこんな感じ！
         <div class="slider-frame">
           <div id="slider-wall">
-            <div class="slider-item"> <img src="../../../aseet/bbb.jpg" alt=""> </div>
+            <div class="slider-item"> <img src="../../../aseet/bbb.jpg" > </div>
+            <div class="slider-item"> <img src="../../../aseet/scshot.jpg" > </div>
+            <div class="slider-item"> <img src="../../../aseet/aaaaaassdasfs.jpg" > </div>
           </div>
         </div>
-        まだ動的な処理はしていないので動きまん。
+        まだ動的な処理は書いていないので動きまん。
 
+        <div class="index">JavaScriptで動かしてみる！</div>
+        まずは実際に動かしているコードを表示します。
+        <div class="code">
+          HTML
+          <pre>
+            < div class="slider-frame">
+              < div id="slider-wall" onclick="move">---⓪
+                < div class="slider-item"> < img src="../../../aseet/bbb.jpg" > < /div>
+                < div class="slider-item"> < img src="../../../aseet/scshot.jpg" > < /div>
+                < div class="slider-item"> < img src="../../../aseet/aaaaaassdasfs.jpg" > < /div>
+              < /div>
+            < /div>
 
+          <span class="com"> //type属性は省略可能です。</span>
+          < script  type="text/javascript">---①
+
+          <span class="com">//グローバル変数の設定</span>
+            var cnt=0;---②
+
+          <span class="com">//関数の宣言　animは関数名</span>
+            function anim()---③
+            {
+              <span class="com">//変数Posにdocument.getElementById()で指定のidを設定しているタグの取得できる</span>
+                var pos=document.getElementById("slider-wall2").style;---③
+              if(cnt==2)
+                {
+                  pos.transform="translateX(0px)";---⑤
+                  cnt=0;
+                }
+                else
+                {
+                    cnt++;
+                  <span class="com">//上記で取得したタグのポジションを変更できる</span>
+                    pos.transform+="translateX(-500px)";---⑥
+                }
+
+            }
+            </script>
+
+          </pre>
+        </div>
+        では実際にどう動かすのか順を追って説明します。 <br>
+        <hr>
+        ①.JavaScriptを書く場所の定義をします。<br>
+        今回はhtml内にscriptタグを定義することでそのタグ内でJavaScriptを使用することができます。 <br>
+        他にもJavaScriptをヘッダー内に書くことやファイルで分け読み込む方法もあります。 <br>
+        <hr>
+      ②.変数の定義をしています。 <br>
+       <span style="color:rgb(194, 48, 179)">var</span>の後に適当に名前を書きます。<br>
+       ※予約語や特殊文字（演算子、数字等）を名前に入れることは出来ません。<br>
+       後に出てくる関数の外で定義しているのでこの変数はグローバル変数と言います。<br>
+       <hr>
+       ③.関数の定義　<br>
+       <span style="color:rgb(194, 48, 179)">function</span>で関数の定義をします。
+       そのあとに関数に名前を付けることができますし無名関数でも使用可能です。 <br>
+       今回は関数名をanimにしています <br>
+       <hr>
+       ④.idの取得
+       変数PosにdocumentオブジェクトのgetElementById("取得したいid名")メソッドの中で指定したidの設定をしているタグの取得ができます。 <br>
+       そのあとに付いているstyleは属性です。 <br>
+       これを取得することにより、アニメーションだけでなく、色やフォントサイズを変化させることが可能です。
+       <hr>
+       ⑤,⑥.実際に動かす命令文を書いてみる。 <br>
+       ④で取得した変数Posの後にtransformを記述し=の後にtranslateX(指定ピクセル)を記述することにより実際に動かすことができます。 <br>
+       transformはそのオブジェクト座標のことです。 <br>
+       回転、座標、スケールを変化させることができるプロパティです。 <br>
+       translateX()はX座標の変化量です。()内に値を指定することにより指定した分だけ動かします。 <br>
+       <hr>
+       余談ですが、④ではidを取得しましたが他にもnameなども取得できますが通常はidで十分です。
+       <hr>
+       上記の条件を満たすことで以下のスライドが完成します。
+       実際に画像をクリックして動かしてみてください。
+<br>
+       今回は簡単な方法でしたがほかにも面白い動きがあるかもしれませんね。
+
+        <div class="slider-frame">
+          <div id="slider-wall2"onclick="anim()" >
+            <div class="slider-item"> <img src="../../../aseet/bbb.jpg" > </div>
+            <div class="slider-item"> <img src="../../../aseet/scshot.jpg" > </div>
+            <div class="slider-item"> <img src="../../../aseet/aaaaaassdasfs.jpg" > </div>
+          </div>
+        </div>
+        <script>
+        //カウントする変数
+          var cnt=0;
+          var pos=document.getElementById("slider-wall2").style;
+
+          function anim()
+          {
+            if(cnt==2)
+              {
+                pos.transform="translateX(0px)";
+                cnt=0;
+              }
+              else
+              {
+                  cnt++;
+                  pos.transform+="translateX(-500px)";
+              }
+
+          }
+        </script>
   </body>
 
 </html>
