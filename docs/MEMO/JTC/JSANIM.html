@@ -253,7 +253,7 @@
           HTML
           <pre>
             < div class="slider-frame">
-              < div id="slider-wall" onclick="move()">---⓪
+              < div id="slider-wall">---⓪
                 < div class="slider-item"> < img src="../../../aseet/bbb.jpg" > < /div>
                 < div class="slider-item"> < img src="../../../aseet/scshot.jpg" > < /div>
                 < div class="slider-item"> < img src="../../../aseet/aaaaaassdasfs.jpg" > < /div>
@@ -325,18 +325,19 @@
        今回は簡単な方法でしたがほかにも面白い動きがあるかもしれませんね。
 
         <div class="slider-frame">
-          <div id="slider-wall2"onclick="anim()" >
+          <div id="slider-wall2">
             <div class="slider-item"> <img src="../../../aseet/bbb.jpg" > </div>
-            <div css="slider-item"> <img src="../../../aseet/scshot.jpg" > </div>
-            <div class="slider-item"> <img src="../../../aseet/aaaaaassdasfs.jpg" > </div>
+            <div class="slider-item"> <img src="../../../aseet/scshot.jpg" > </div>
+            <div class="slider-item"> <img src="../../../aseet/aaaaaassdasfs.jpg" alt=""> </div>
           </div>
         </div>
         <script>
         //カウントする変数
           var cnt=0;
-          var pos=document.getElementById("slider-wall2").style;
 
-          function anim()
+          var pos=document.getElementById("slider-wall2").style;
+          var anim=document.getElementById("slider-wall2");
+          anim.onclick=function()
           {
             if(cnt==2)
               {
@@ -348,7 +349,6 @@
                   cnt++;
                   pos.transform+="translateX(-500px)";
               }
-
           }
         </script>
         <footer style="background:rgb(45, 45, 45);color:rgb(255, 255, 255)" >
