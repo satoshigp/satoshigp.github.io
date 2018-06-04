@@ -1,10 +1,4 @@
-select{
-  position:relative;
 
-  width: 250px;
-  height: 75px;
-  z-index: 10;
-}
 
 
 html{
@@ -22,28 +16,27 @@ html{
     color: black;
 
   }
-  .body{
-  position: absolute;
+  .body
+  {
+    position:relative;
     top: 20%;
     left: 15%;
-  background-color:rgba(59, 34, 62, 0.04);
-
+    background-color:rgba(59, 34, 62, 0.04);
     z-index:10;
   }
   .title
   {
-
-    position: absolute;
+    position: relative;
+    margin: 0px;
+    padding:0px;
     width: 85%;
     height: 15%;
     right: 0;
     background-color: rgba(165, 23, 215, 0.14);
     color:white;
     text-align: center;
-
-   font-size: 80px;
+    font-size: 80px;
     text-decoration: 900;
-
   }
 
   .sidemenu{
@@ -55,6 +48,8 @@ html{
     font-size: 20px;
     color: rgb(255, 255, 255);
     z-index: 10;
+    margin: 0px;
+    padding-left: 0px;
 
   }
   .sidemenu li
@@ -99,14 +94,13 @@ html{
         background-color: rgb(184, 191, 204);
     }
     #menu{
-      position: relative;
-        top: 140px;
-       width: 100%;
+        position: relative;
+        top: 0px;
+        width: 100%;
 
      }
   #menu li
     {
-      position: static;
      left: 0;
      list-style-type: none;
      width:21.5%;
@@ -117,16 +111,14 @@ html{
   #menu li a
    {
      overflow:hidden;
-
-color:rgb(57, 207, 204);
-font-size:30px;
-font-weight:900;
-border: solid 3px #000;
-padding:10px 0;
-display:block;
-background:#666;
-
-}
+     color:rgb(57, 207, 204);
+     font-size:30px;
+     font-weight:900;
+     border: solid 3px #000;
+     padding:10px 0;
+     display:block;
+     background:#666;
+  }
 
 #menu li a:hover {
 color:rgba(170, 25, 45, 0.28);

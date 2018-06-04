@@ -2,39 +2,34 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>レスポンシブWebデザインに挑戦！</title>
+    <title>深田智士レスポンシブWebデザインに挑戦！</title>
     <link rel="stylesheet" href="css/Mycss/styleboot.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
   <style>
     a
     {
-      color: rgb(255, 255, 255);
+      font-size: 0.8em;
+      color:black;
+      text-decoration: none;
     }
-    a:hover
-    {
-        color: rgb(253, 0, 255);
-    }
-    h2{
-        text-align:center;
-      color: rgb(255, 255, 255);
-      padding: 10px 0px 10px 0px;
-      margin: 0px;
-    }
-
+  h2
+  {
+      text-decoration: underline;
+  }
   </style>
   <body class="body">
     <div class="side">
-      <h2>~MENU~</h2>
-
-      <menu>
+      <span style="font-size:1.5em;text-align:center; display:block;">~MENU~</span>
+      <menu >
         <li> <a href="#">Top</a> </li>
         <li> <a href="#">作品</a></li>
         <li> <a href="#">About Me</a> </li>
         <li> <a href="#">GitHub</a> </li>
         <li> <a href="#">Twitter</a> </li>
       </menu>
-      <h2>～実践型～</h2>
+      <span style="font-size:1.5em;text-align:center; display:block;">~やってみた系~</span>
+
       <menu>
         <li> <a href="#">Unity</a> </li>
         <li> <a href="#">Web</a> </li>
@@ -42,14 +37,139 @@
       </menu>
     </div>
     <div class="main">
-      <div class="title">フカシュール</div>
+      <div class="title">深田 智士</div>
       <div class="upmenu">
-      <li>aaa</li>
-      <li></li>
-      <li> <a href="https://github.com/satoshigp?tab=repositories">GitHub</a></li>
-      <li> <a href="https://twitter.com/fusatoshi3104">Twitter</a> </li>
+      <li>About Me</li>
+      <li>Works</li>
+      <!--今回はアンカーをつけない-->
+      <li>Twitter</li>
+      <li> <a href="https://github.com/satoshigp">GitHub</a> </li>
       </div>
+          
+        <menu style="font-size:1.5em;padding:0px;margin:0px;text-align:center;">
+          <li> <a href="#prof">自己紹介</a> </li>
+          <li> <a href="#action">課外活動</a> </li>
+          <li> <a href="#works">作品</a> </li>
+          <li> <a href="#skill">スキル</a> </li>
+          <li> <a href="#todo">ToDo</a> </li>
+          <li> <a href="#shikaku">所持資格</a> </li>
+          <li> <a href="#career">経歴</a> </li>
+          <li> <a href="#dream">将来目標</a> </li>
+        </menu>
+
+      <div class="index">自己紹介</div>
+
+        <a id="prof"></a>
+          <pre style="font-size: 1.2em;">
+ こんにちは。
+ ほぼＨＴＭＬ、ＣＳＳ、JavaScripptが初心者ですがこのサイトではjQueryやreactを使わず根性だけでポートフォリオを作成したいと思います！
+ 普段は専門学校デジタルアーツ東京という学校でプログラミングの勉強をしています。
+ が！...
+ 予想以上にHTML,CSSが楽しすぎて手が離せません！
+ なので現在進行形でサイトの制作の勉強をしています。
+ <a href="satoshigp.github.io/docs/item.html">もっと詳しく(現在はJavaScriptの練習サイト)</a>
+          </pre>
+
+
+        <a id="action"></a>
+
+        <div class="index">課外活動</div>
+
+
+
+          現在は主に<q cite="https://unity3d.com/jp"><a href="https://unity3d.com/jp">Unity</a></q>というゲームエンジンを使い
+           <q cite="https://unityroom.com/"><a href="https://unityroom.com/">UnityRoom</a></q>の一週間ゲームジャムをメインとして参加しています！
+           最近ではサイト作りを学んでおり、動的な動き、フレームワークについて学ぼうかと思っています。　<br>
+           フレームワークはReactを学ぼうと決めております。
+        <a id="works"></a>
+
+        <div class="index">作品</div>
+          このサイト自体が作品ですが他にもゲームの作品もあるので是非見てください。
+          このサイトも新しい技術を取り入れては作り直しの繰り返しです。
+          前のサイトもございますのでこのサイトと見比べてもらえるとありがたいです。
+          <a href="https://satoshigp.github.io/dumy.html">前サイト(かなりひどいです...)</a>
+          <a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/game.html">ゲーム作品はこちら。</a>
+        <a id="Skill"></a>
+        <div class="index">Skill</div>
+
+          <center>
+          <h2> <strong>～使用言語～ </strong></h2>
+              <h3>C#</h3>
+              <h3>C++</h3>
+              <h3>PHP(少し触れた程度)</h3>
+              <h3>JavaScript(絶賛勉強中)</h3>
+              <h3>HTML</h3>
+              <h3>CSS</h3>
+          <h2> <strong>～使用ゲームエンジン～</strong></h2>
+            <h3>Unity</h3>
+          <h2> <strong>～使用エディター～</strong></h2>
+            <h3>MicroSoft Visual Studio2017</h3>
+            <h3>Atom</h3>
+        </center>
+        <a id="ToDo"></a>
+        <div class="index">ToDo</div>
+        このサイトを勉強の場としてHTML5,,CSS,JavaScriptを学んでいます。<br>
+
+
+        <a id="shikaku"></a>
+        <div class="index">所持資格</div>
+          <div class="word">
+            <center>
+              <caption>所持資格</caption>
+            <table border="2">
+
+              <tr >
+                <th width="150px">時期</th>
+                <th width=300px>資格名</th>
+              </tr>
+              <tr>
+                <td>2017年</td>
+                  <ruby>
+                <td><a href="https://ja.wikipedia.org/wiki/%E9%8B%B3%E9%80%A0%E6%8A%80%E8%83%BD%E5%A3%AB">鋳鉄鋳物鋳造作業３級</a><rp>(</rp><rt>ちゅうてついものちゅうぞうさぎょう</rt><rp>)</rp> </td>
+                  </ruby>
+              </tr>
+
+                <td>2019年</td>
+                <td><a href="https://ja.wikipedia.org/wiki/%E5%9F%BA%E6%9C%AC%E6%83%85%E5%A0%B1%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93">基本情報技術者試験</a>予定</td>
+              </tr>
+
+            </table>
+          </center>
+          </div>
+        <a id="career"></a>
+        <div class="index">経歴</div>
+        <center>
+        <table border="3">
+          <tr>
+            <th width="20%;" z-index="1">年</th>
+              <th width="15%;">月</th>
+              <th width="65%">出来事</th>
+          </tr>
+          <tr>
+            <td>2017年</td>
+            <td>3月</td>
+            <td>埼玉県立狭山台工業高等学校 機械科 卒業</td>
+          </tr>
+          <tr>
+            <td>2017年</td>
+            <td>4月</td>
+            <td> <a href="https://www.dat.ac.jp/?gclid=CMquzKjm9dICFYyXvQodP28E3Q">専門学校デジタルアーツ東京</a>入学</td>
+          </tr>
+          <tr>
+            <td>2019年</td>
+            <td>3月</td>
+            <td>専門学校デジタルアーツ東京 ゲーム科ゲームプログラムコース　卒業見込み</td>
+          </tr>
+        </table>
+      </center>
+        <a id="dream"></a>
+        <div class="index">将来の目標</div>
+
+            <font style="font-size:35;color:blue;" >最終目標</font><br>
+          Webプログラマー！ <br>
+</div>
     </div>
+
 
 
   </body>
