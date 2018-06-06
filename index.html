@@ -21,7 +21,7 @@
       text-decoration: underline;
   }
   </style>
-  <body id="body" onload="responsiv()" >
+  <body id="main" onload="responsiv()" >
     <div id="side">
       <span style="font-size:1.5em;text-align:center; display:block;">~MENU~</span>
       <menu >
@@ -39,7 +39,7 @@
         <li> <a href="#">JavaScript</a> </li>
       </menu>
     </div>
-    <div id="main">
+    <div id="maincont">
       <div class="title">深田 智士</div>
       <div class="upmenu">
       <li>About Me</li>
@@ -170,18 +170,20 @@
             <font style="font-size:35;color:blue;" >最終目標</font><br>
           Webプログラマー！ <br>
           <script>
-          var widthsize=window.innerWidth;
-          var body= document.getElementById('body').style;
-          var side= document.getElementById("side").style;
-          var main= document.getElementById('main').style;
+
          function responsiv()
           {
-            body.width=widthsize;
+            var widthsize= window.innerWidth;//現在のウィンドウサイズの取得
+            var main= document.getElementById('main');//idの取得
+            var side= document.getElementById("side");
+            var maincont= document.getElementById('maincont');
+            main.clientWidth=widthsize;//現在のウィンドウサイズを最大ウィンドウ幅に代入
 
-            side.width=widthsize*"0.25";
-            main.left=side.width;
-            main.width=body.width-side.width;
-
+             var haba=widthsize*0.2;
+            side.style.width=haba+"px";
+            maincont.style.left=side.style.width;
+            maincont.style.clientWidth=widthsize-haba+"px";
+          // alert(side.style.width);
           }
 
 
