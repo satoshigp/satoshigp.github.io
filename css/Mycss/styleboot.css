@@ -91,20 +91,17 @@ div{
 
   margin: 0px;
   padding:0px;
-  width:200px;
+
   background: rgb(43, 95, 196);
   display:flex;
-  justify-content: center;/*コンテンツの横幅合わせ*/
+  justify-content:center;/*コンテンツの横幅合わせ*/
   margin: 0px;
   align-items: center;/*文字の高さ合わせ*/
-
-  /*border分の幅を引いた分*/
-
   top: 0px;
+  left: 0px;
   height: 40px;
   color: rgb(143, 120, 167);
-  font-size: 2.5em;
-
+  font-size: 2em;
   float: left;
 }
 
