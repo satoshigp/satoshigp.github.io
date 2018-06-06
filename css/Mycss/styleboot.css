@@ -40,7 +40,6 @@ html{
   padding: 0px;
   width:  80%;
   font-size: 1.2em;
-
 }
 /*サイドメニュー欄の設定*/
 #side
@@ -81,6 +80,7 @@ html{
 {
   vertical-align: text-bottom;
   width: 100%;
+  margin-bottom: 50px;
 }
 .upmenu li
 {
@@ -124,17 +124,17 @@ html{
 PC画面用の設定
 */
 @media screen and (min-width:1001px){
-  .body
+  #body
   {
     width:1920px;
 
   }
-  .side
+  #side
   {
     width: 320px;
 
   }
-  .main
+  #main
   {
     left: 320px;
       width: 1600px;
@@ -150,13 +150,13 @@ PC画面用の設定
 スマートフォンの画面用設定
 */
 @media screen and (max-width:480px){
-  .body
+  #body
   {
     width: 480px;
     font-size: 70%;
     background: rgb(104, 195, 124);
   }
-  .side
+  #side
   {
     width: 144px;
   }
@@ -164,7 +164,7 @@ PC画面用の設定
 {
 font-size: 3em;
 }
-  .main
+  #main
   {
     left: 30%;
     width:336px;
