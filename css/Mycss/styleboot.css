@@ -6,6 +6,9 @@ html{
   scroll-behavior: smooth;
 }
 /*body全体の制約 画面解像度が変更された際一括で編集できるようにします！*/
+div{
+  margin: 0px;
+}
 #main
 {
   position: relative;
@@ -74,29 +77,34 @@ html{
 /*
 タイトルの下のメニュ-
 */
-.upmenu
+#upmenu
 {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
   vertical-align: text-bottom;
   width: 100%;
   margin-bottom: 50px;
 }
-.upmenu li
+#upmenu li
 {
+
   margin: 0px;
   padding:0px;
+  width:200px;
   background: rgb(43, 95, 196);
   display:flex;
   justify-content: center;/*コンテンツの横幅合わせ*/
-
+  margin: 0px;
   align-items: center;/*文字の高さ合わせ*/
 
   /*border分の幅を引いた分*/
-  width: 390px;
+
   top: 0px;
   height: 40px;
   color: rgb(143, 120, 167);
   font-size: 2.5em;
-  border: solid 5px rgb(0, 0, 0);
+
   float: left;
 }
 
@@ -125,7 +133,7 @@ PC画面用の設定
 
 
 
- .upmenu li
+ #upmenu li
  {
    align-items: center;
    width: 390px;
@@ -145,12 +153,12 @@ PC画面用の設定
 font-size: 3em;
 }
 
-   .upmenu
+   #upmenu
   {
       left:0%;
   }
 
-  .upmenu li
+  #upmenu li
   {
     border: solid 2px rgb(0, 0, 0);
     width: 332px;
