@@ -6,7 +6,7 @@ html{
   scroll-behavior: smooth;
 }
 /*body全体の制約 画面解像度が変更された際一括で編集できるようにします！*/
-.body
+#body
 {
   position: relative;
   margin: 0px;
@@ -31,7 +31,7 @@ html{
   font-size: 3em;
 }
 /*本文*/
-.main
+#main
 {
   position:relative;
   top:0px;
@@ -40,10 +40,10 @@ html{
   padding: 0px;
   width:  80%;
   font-size: 1.2em;
-  overflow:hidden;
+
 }
 /*サイドメニュー欄の設定*/
-.side
+#side
 {
     position: fixed;/*画面に固定*/
     background: rgb(0, 0, 0);
@@ -52,7 +52,7 @@ html{
     left: 0px;
     height: 100%;
 }
-.side menu li a
+#side menu li a
 {
   left: 0px;
   color: rgb(255, 255, 255);

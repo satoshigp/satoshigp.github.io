@@ -21,8 +21,8 @@
       text-decoration: underline;
   }
   </style>
-  <body class="body">
-    <div class="side">
+  <body id="body" onload="responsiv()" onresize="responsiv()" >
+    <div id="side">
       <span style="font-size:1.5em;text-align:center; display:block;">~MENU~</span>
       <menu >
         <li> <a href="#">Top</a> </li>
@@ -39,14 +39,13 @@
         <li> <a href="#">JavaScript</a> </li>
       </menu>
     </div>
-    <div class="main">
+    <div id="main">
       <div class="title">深田 智士</div>
       <div class="upmenu">
       <li>About Me</li>
       <li>Works</li>
       <!--今回はアンカーをつけない-->
       <li>Twitter</li>
-
       <li> <a href="https://github.com/satoshigp">GitHub</a> </li>
       </div>
 
@@ -64,15 +63,14 @@
       <div class="index">自己紹介</div>
 
         <a id="prof"></a>
-          <pre style="font-size: 1.2em;">
+
  こんにちは。
  ほぼＨＴＭＬ、ＣＳＳ、JavaScripptが初心者ですがこのサイトではjQueryやreactを使わず根性だけでポートフォリオを作成したいと思います！
  普段は専門学校デジタルアーツ東京という学校でプログラミングの勉強をしています。
- が！...
  予想以上にHTML,CSSが楽しすぎて手が離せません！
  なので現在進行形でサイトの制作の勉強をしています。
  <a href="satoshigp.github.io/docs/item.html">もっと詳しく(現在はJavaScriptの練習サイト)</a>
-          </pre>
+
 
 
         <a id="action"></a>
@@ -82,16 +80,16 @@
 
 
           現在は主に<q cite="https://unity3d.com/jp"><a href="https://unity3d.com/jp">Unity</a></q>というゲームエンジンを使い
-           <q cite="https://unityroom.com/"><a href="https://unityroom.com/">UnityRoom</a></q>の一週間ゲームジャムをメインとして参加しています！
+           <q cite="https://unityroom.com/"><a href="https://unityroom.com/">UnityRoom</a></q>の一週間ゲームジャムをメインとして参加しています！ <br>
            最近ではサイト作りを学んでおり、動的な動き、フレームワークについて学ぼうかと思っています。　<br>
            フレームワークはReactを学ぼうと決めております。
         <a id="works"></a>
 
         <div class="index">作品</div>
-          このサイト自体が作品ですが他にもゲームの作品もあるので是非見てください。
-          このサイトも新しい技術を取り入れては作り直しの繰り返しです。
-          前のサイトもございますのでこのサイトと見比べてもらえるとありがたいです。
-          <a href="https://satoshigp.github.io/dumy.html">前サイト(かなりひどいです...)</a>
+          このサイト自体が作品ですが他にもゲームの作品もあるので是非見てください。 <br>
+          このサイトも新しい技術を取り入れては作り直しの繰り返しです。 <br>
+          前の<a href="https://satoshigp.github.io/dumy.html">サイト</a>もございますのでこのサイトと見比べてもらえるとありがたいです。 <br>
+
           <a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/game.html">ゲーム作品はこちら。</a>
         <a id="Skill"></a>
         <div class="index">Skill</div>
@@ -172,8 +170,21 @@
             <font style="font-size:35;color:blue;" >最終目標</font><br>
           Webプログラマー！ <br>
           <script>
-            var widthsize=window.innerWidth;
-            document.write(widthsize);
+          var widthsize=window.innerWidth;
+          var body= document.getElementById('body').style;
+          var side= document.getElementById("side").style;
+          var main= document.getElementById('main').style;
+         function responsiv()
+          {
+            body.width=widthsize;
+
+            side.width=widthsize*"0.25";
+            main.left=side.width;
+            main.width=body.width-side.width;
+
+          }
+
+
           </script>
 </div>
     </div>
