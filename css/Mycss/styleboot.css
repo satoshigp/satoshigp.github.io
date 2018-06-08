@@ -88,10 +88,8 @@ div{
 }
 #upmenu li
 {
-
   margin: 0px;
   padding:0px;
-
   background: rgb(43, 95, 196);
   display:flex;
   justify-content:center;/*コンテンツの横幅合わせ*/
@@ -105,33 +103,33 @@ div{
   float: left;
 }
 
-#slider
+#slideshow
 {
-  text-align: center;
   margin: 0px;
   padding: 0px;
-  height: 500px;
-  overflow:hidden;
+  max-width: 1500px;
+  min-width: 200px;
+  max-height: 600px;
+  min-height: 150;
+
 }
-#slider-wall
+.ImgFrame
 {
-  width: 300%;
-  height: 500px;
-
+  display: inline-block;
+  margin:20px 10% 10% 10%;
+  height: 10%;
+  overflow: hidden;
 }
-.slider-item
+.ImgItem img
 {
-  float :left;
+    float:left;
+    width: 150px;
+    padding:0px 5px 5px 0px;
 }
-
-
 /*
 PC画面用の設定
 */
 @media screen and (min-width:1001px){
-
-
-
  #upmenu li
  {
    align-items: center;
@@ -144,11 +142,11 @@ PC画面用の設定
 @media screen and (max-width:480px){
   #main
   {
-    font-size: 60%;
+    font-size: 40%;
   }
   #side
   {
-    min-width: 100px;
+
 
   }
    #upmenu

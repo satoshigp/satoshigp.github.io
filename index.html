@@ -20,12 +20,13 @@
     {
         color: rgb(67, 83, 194);
     }
-  h2
-  {
+    h2
+    {
       text-decoration: underline;
-  }
+    }
+
   </style>
-  <body id="main" onload="responsiv()" onresize="responsiv()" >
+  <body id="main" onload="responsiv(),topslide()" onresize="responsiv(),topslide()" >
     <div id="side">
       <span style="font-size:1.5em;text-align:center; display:block;">~MENU~</span>
       <menu >
@@ -52,13 +53,15 @@
           <li>Twitter</li>
           <li> <a href="https://github.com/satoshigp">GitHub</a> </li>
         </div>
-        <div id="slider" onclick="topslide()" name="topframe">
-          <div id="slider-wall" name="wall">
-            <div class="slider-item"><img src="aseet/aaaaaassdasfs.jpg" name="pic"></div>
-            <div class="slider-item"> <img src="aseet/aaaaaassdasfs.jpg" name="pic"></div>
-            <div class="slider-item"> <img src="aseet/aaaaaassdasfs.jpg" name="pic"></div>
-          </div>
+        <div style="text-align:center;"><img name="pic" id="slideshow"></div>
+        <div class="ImgFrame" id="TopFrame">
+          <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img" name="IMG" onmouseover="FUNCIMG('aseet/bbb.jpg')"></div>
+            <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img1" name="IMG" onmouseover="FUNCIMG('aseet/aaaaaassdasfs.jpg')"></div>
+            <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img2" name="IMG"></div>
+            <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img3" name="IMG"></div>
+            <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img4" name="IMG"></div>
         </div>
+
         <menu style="font-size:1.5em;padding:0px;margin:0px;text-align:center;">
           <li> <a href="#prof">自己紹介</a> </li>
           <li> <a href="#action">課外活動</a> </li>
@@ -172,46 +175,41 @@
           Webプログラマー！ <br>
           <script>
 
-          function s()
-          {
-            var widthsize=document.body.clientWidth;//現在のウィンドウサイズの取得
-            var main= document.getElementById('main');//idの取得
-            var side= document.getElementById("side");
-            var maincont= document.getElementById('maincont');
-            var MenuWid=document.getElementById('upmenu').style;
-            var haba=widthsize*0.2;
-            side.style.width=haba+"px";
-            maincont.style.left=side.style.width;
-            maincont.style.width=widthsize-haba+"px";
-            return maincont.style.width;
-          }
+
 
          function responsiv()
           {
             var widthsize=document.body.clientWidth;//現在のウィンドウサイズの取得
             var main= document.getElementById('main');//idの取得
             var side= document.getElementById("side");
-            var maincont= document.getElementById('maincont');
+             maincont= document.getElementById('maincont');//グローバル変数
             var MenuWid=document.getElementById('upmenu').style;
             main.clientWidth=widthsize;//現在のウィンドウサイズを最大ウィンドウ幅に代入
-
-
              var haba=widthsize*0.2;
              side.style.width=haba+"px";
              maincont.style.left=side.style.width;
              maincont.style.width=widthsize-haba+"px";
-             
+
           }
 
 
         function topslide()
         {
-            var widthsize=document.body.clientWidth;//現在のウィンドウサイズの取得
-            var imgsize=document.getElementById('slider').style.width;
-            var imgwall=document.getElementById('slider-wall').style.transform;
-            //var imgitem=document.topframe.wall.img;
-            alert(s());
+            var imgframe= document.getElementById('TopFrame').style;
+            var imgsize=document.getElementById('slideshow').style;
+            imgsize.width=maincont.style.width;
+            imgframe.width=maincont.style.width;
+            window.onload=FUNCIMG();
+
+           console.log(FUNCIMG());
         }
+         function FUNCIMG (img)
+        {
+
+          var ImgSrc=document.getElementById('slideshow').src=img;
+        }
+
+
           </script>
 </div>
     </div>
