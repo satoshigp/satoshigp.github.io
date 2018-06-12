@@ -1,70 +1,65 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>ここにページのタイトル書くよ！</title>
-    <meta charset="utf-8" />
-    <style type="text/css">
-      .foo-before {
-        background-color: white;
-        color: black;
-      }
-      .foo-after {
-        background-color: black;
-        color: yellow;
-      }
-    </style>
-  </head>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *{box-sizing: border-box;}
 
-  <body>
-    <p id="id_1">1. JS側にonclick書いてクリックイベント発火。</p>
-    <p id="id_2">2. JSでは無名関数も使えるよ！</p>
-    <p onclick="pClick()">3. HTMLでonclick属性書いた。クリックしてみて！</p>
-    <p id="id_3" class="foo-before">4. クリックするたび色変わるよ！（クラスの入れ替えをjQueryで実装）</p>
-    <p id="id_4">5. クリックするとCSS追加されるよ！</p>
+    html, body{height: 100%;}
 
-    <script type="text/javascript">
-      // 変数定義（「//」から始まる行はコメントアウト）
-      var id_1 = document.getElementById("id_1");
-      var id_2 = document.getElementById("id_2");
-      var id_3 = document.getElementById("id_3");
+    .bgs{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-      // id_1（id_2）をクリックしたら、functionの中身を実行
-      id_1.onclick = function id1Click() {
-        alert("id_1クリックしたよ！");
-      }
-      id_2.onclick = function () {
-        alert("id_2クリック！関数名は書いても書かなくてもOK！");
-      }
+    .bgs .bg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 3s ease;
+    }
+    .bgs .bg.is_active{opacity: 1;}
 
-      // HTML側にクリックイベント記述
-      function pClick() {
-        alert("pタグクリック！HTMLでonclick属性書いたよ！");
-      }
-    </script>
+    .bgs .bg.bg--1{background: red;}
+    .bgs .bg.bg--2{background: blue;}
+    .bgs .bg.bg--3{background: yellow;}
+    .bgs .bg.bg--4{background: purple;}
+    .bgs .bg.bg--5{background: green;}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="bgs">
+    <div class="bg bg--1 is_active" id="js-first"></div>
+    <div class="bg bg--2"></div>
+    <div class="bg bg--3"></div>
+    <div class="bg bg--4"></div>
+    <div class="bg bg--5"></div>
+  </div>
+  <script>
+    var $first_bg = $('#js-first'), //スライド部分の最後に行った時に1枚目を登録するために変数に置く
+    $current_bg = $first_bg; //現在のスライドを1枚目にセット
 
-    <script type="text/javascript">
-      var stylesheet = document.styleSheets.item(0);
+    setInterval(function(){
+      //DOMを見て現在のスライドの次の要素があればそれを登録
+      //現在のスライドが最後の要素の場合、1番目のスライドを登録
+      var $next_bg = $current_bg.next()[0] ? $current_bg.next() : $first_bg;
+    　　　　
+      //現在のスライドからis_activeを削除、次のスライドにis_activeを付与
+      $current_bg.removeClass('is_active');
+      $next_bg.addClass('is_active');
 
-      // 上で定義したid_4はここでも使えるよ！
-      id_4.onclick = function () {
-        //第2引数は、「CSSの何番目のルールにするか」。0始まりの番号。
-        stylesheet.insertRule("#id_4 {font-size: 20px;}", 0);
-        stylesheet.insertRule("#id_4 {background-color: rgb(32, 102, 68);}", stylesheet.cssRules.length);
-      }
-    </script>
+      //現在のスライドに今is_activeを付与したスライドをセット
+      $curreng_bg = $next_bg;
 
-    <!-- これでjQuery使える。ただしネットつながってれば。 -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-
-    <script type="text/javascript">
-      // $関数はjQueryの定番！
-      $('#id_3').click(function() {
-        this.className = (this.className === 'foo-before') ? 'foo-after' : 'foo-before';
-      });
-
-      document.writeln("<p>6. JSでHTML記述！（リロードするたび少し表示が遅れてるけど、わかるかな？）</p>");
-      document.writeln("<p>7. URLは、" + document.URL + "だよ！</p>");
-      document.writeln("<p>8. このページのtitleは、「" + document.title + "」だよ！</p>");
-    </script>
-  </body>
+    }, 5000);//5秒ごとにスライドを変更
+  </script>
+</body>
 </html>

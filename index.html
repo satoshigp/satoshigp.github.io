@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>深田智士レスポンシブWebデザインに挑戦！</title>
     <link rel="stylesheet" href="css/Mycss/styleboot.css">
+    <script type="text/javascript" src="js\Original.js">
+
+    </script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
 
@@ -26,7 +29,7 @@
     }
 
   </style>
-  <body id="main" onload="responsiv(),topslide()" onresize="responsiv(),topslide()" >
+  <body id="main" onload="responsiv()" onresize="responsiv()" >
     <div id="side">
       <span style="font-size:1.5em;text-align:center; display:block;">~MENU~</span>
       <menu >
@@ -53,14 +56,20 @@
           <li>Twitter</li>
           <li> <a href="https://github.com/satoshigp">GitHub</a> </li>
         </div>
-        <div style="text-align:center;"><img name="pic" id="slideshow"></div>
-        <div class="ImgFrame" id="TopFrame">
-          <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img" name="IMG" onmouseover="FUNCIMG('aseet/bbb.jpg')"></div>
-            <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img1" name="IMG" onmouseover="FUNCIMG('aseet/aaaaaassdasfs.jpg')"></div>
+        <div id="slideshow">
+          <img src="aseet/aaaaaassdasfs.jpg" name="pic" id="TopFrame"  >
+         <div id="ImgFrame">
+           <div id="FrameWall">
+            <div class="ImgItem" > <img src="aseet/bbb.jpg" alt="img" name="IMG" onmouseover=FUNCIMG('aseet/bbb.jpg')></div>
+            <div class="ImgItem"> <img src="aseet/aaaaaassdasfs.jpg" alt="img1" name="IMG" onmouseover=FUNCIMG('aseet/aaaaaassdasfs.jpg')></div>
             <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img2" name="IMG"></div>
             <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img3" name="IMG"></div>
             <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img4" name="IMG"></div>
+          </div>
         </div>
+      </div>
+      <input type="button" name="" value="先へ" onclick="PlusScr()">
+
 
         <menu style="font-size:1.5em;padding:0px;margin:0px;text-align:center;">
           <li> <a href="#prof">自己紹介</a> </li>
@@ -83,17 +92,16 @@
          <a href="satoshigp.github.io/docs/item.html">もっと詳しく(現在はJavaScriptの練習サイト)</a>
          <a id="action"></a>
         <div class="index">課外活動</div>
-            現在は主に<q cite="https://unity3d.com/jp"><a href="https://unity3d.com/jp">Unity</a></q>というゲームエンジンを使い
-            <q cite="https://unityroom.com/"><a href="https://unityroom.com/">UnityRoom</a></q>の一週間ゲームジャムをメインとして参加しています！ <br>
-            最近ではサイト作りを学んでおり、動的な動き、フレームワークについて学ぼうかと思っています。　<br>
-            フレームワークはReactを学ぼうと決めております。
+          現在は主に<q cite="https://unity3d.com/jp"><a href="https://unity3d.com/jp">Unity</a></q>というゲームエンジンを使い
+          <q cite="https://unityroom.com/"><a href="https://unityroom.com/">UnityRoom</a></q>の一週間ゲームジャムをメインとして参加しています！ <br>
+          最近ではサイト作りを学んでおり、動的な動き、フレームワークについて学ぼうかと思っています。　<br>
+          フレームワークはReactを学ぼうと決めております。
         <a id="works"></a>
 
         <div class="index">作品</div>
           このサイト自体が作品ですが他にもゲームの作品もあるので是非見てください。 <br>
           このサイトも新しい技術を取り入れては作り直しの繰り返しです。 <br>
           前の<a href="https://satoshigp.github.io/dumy.html">サイト</a>もございますのでこのサイトと見比べてもらえるとありがたいです。 <br>
-
           <a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/game.html">ゲーム作品はこちら。</a>
         <a id="Skill"></a>
         <div class="index">Skill</div>
@@ -113,7 +121,7 @@
             <h3>Atom</h3>
         </center>
         <a id="ToDo"></a>
-        <div class="index">ToDo</div>
+      <div class="index">ToDo</div>
         このサイトを勉強の場としてHTML5,,CSS,JavaScriptを学んでいます。<br>
 
 
@@ -173,45 +181,8 @@
 
             <font style="font-size:35;color:blue;" >最終目標</font><br>
           Webプログラマー！ <br>
-          <script>
 
-
-
-         function responsiv()
-          {
-            var widthsize=document.body.clientWidth;//現在のウィンドウサイズの取得
-            var main= document.getElementById('main');//idの取得
-            var side= document.getElementById("side");
-             maincont= document.getElementById('maincont');//グローバル変数
-            var MenuWid=document.getElementById('upmenu').style;
-            main.clientWidth=widthsize;//現在のウィンドウサイズを最大ウィンドウ幅に代入
-             var haba=widthsize*0.2;
-             side.style.width=haba+"px";
-             maincont.style.left=side.style.width;
-             maincont.style.width=widthsize-haba+"px";
-
-          }
-
-
-        function topslide()
-        {
-            var imgframe= document.getElementById('TopFrame').style;
-            var imgsize=document.getElementById('slideshow').style;
-            imgsize.width=maincont.style.width;
-            imgframe.width=maincont.style.width;
-            window.onload=FUNCIMG();
-
-           console.log(FUNCIMG());
-        }
-         function FUNCIMG (img)
-        {
-
-          var ImgSrc=document.getElementById('slideshow').src=img;
-        }
-
-
-          </script>
-</div>
+        </div>
     </div>
 
 

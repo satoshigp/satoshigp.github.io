@@ -105,27 +105,60 @@ div{
 
 #slideshow
 {
+  position: relative;
+  /*高さは設定しない*/
+  text-align: center;
+  width: 100%;
   margin: 0px;
   padding: 0px;
-  max-width: 1500px;
-  min-width: 200px;
-  max-height: 600px;
-  min-height: 150;
-
+  cursor: pointer;
 }
-.ImgFrame
+
+#TopFrame
 {
-  display: inline-block;
-  margin:20px 10% 10% 10%;
-  height: 10%;
-  overflow: hidden;
+  margin-bottom: 20px;
+  width: 90%;
+  max-height: 650px;
+  transition: ease 1.5s;
+}
+
+
+#ImgFrame
+{
+  position: relative;
+  left: 10%;
+
+  height: 70px;
+  width:80%;
+  overflow:hidden;
+  background:rgb(4, 254, 209);
+}
+#FrameWall
+{
+  width: 1000%;
+  transition: ease 1s;
+
 }
 .ImgItem img
 {
-    float:left;
-    width: 150px;
-    padding:0px 5px 5px 0px;
+  margin: 0px;
+  padding:0px;
+  cursor: pointer;
+  float:left;
+  width: 100px;
+  height:100%;
+  margin:0px 10px 10px 10px;
+  left: auto;
 }
+
+.fedeout
+{
+}
+
+
+
+
+
 /*
 PC画面用の設定
 */
@@ -144,20 +177,12 @@ PC画面用の設定
   {
     font-size: 40%;
   }
-  #side
-  {
 
 
-  }
-   #upmenu
-  {
-      left:0%;
-  }
 
   #upmenu li
   {
     border: solid 2px rgb(0, 0, 0);
-    width: 332px;
     border:solid 2px black;
     font-size: 1.2em;
     height: 20px;
