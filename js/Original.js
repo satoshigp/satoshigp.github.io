@@ -28,8 +28,23 @@ function FUNCIMG (img)
  ImgSrc.style.opacity=1;
 }
 
-function  PlusScr()
+var cnt=0;
+
+function  PlusScr(scr)
 {
-  var wall=document.getElementById("FrameWall").style;
-  wall.transform+="translateX(-120px)";
+ var min=0;
+
+ var max=document.getElementsByName('Items').length;
+ var wall=document.getElementById("FrameWall").style;
+ if(cnt==max)
+ {
+   cnt=0;
+ }
+ else
+ {
+   cnt++;
+ }
+
+ wall.transform+="translateX("+scr+"px)";
+ console.log(cnt);
 }
