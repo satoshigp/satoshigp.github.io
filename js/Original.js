@@ -30,21 +30,37 @@ function FUNCIMG (img)
 
 var cnt=0;
 
-function  PlusScr(scr)
+function  PlusScr()
 {
  var min=0;
-
  var max=document.getElementsByName('Items').length;
  var wall=document.getElementById("FrameWall").style;
- if(cnt==max)
+ if(cnt==max-1)
  {
    cnt=0;
+   wall.transform="translateX(0px)";
  }
  else
  {
    cnt++;
+   wall.transform+="translateX(-120px)";
  }
 
- wall.transform+="translateX("+scr+"px)";
- console.log(cnt);
+}
+function MinusScr()
+{
+  var wall=document.getElementById("FrameWall").style;
+
+if(cnt==0)
+  {
+    cnt=4;
+    wall.transform="translateX(-480px)";
+  }
+  else
+  {
+    wall.transform+="translateX(120px)";
+    cnt--;
+  }
+
+
 }

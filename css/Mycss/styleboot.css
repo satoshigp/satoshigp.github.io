@@ -124,26 +124,31 @@ div{
 
 .SlideContent
 {
-    float: left;
+    float:left;
+
 }
 
 #SliderWidth
 {
+
+  background-color: rgb(6, 251, 192);
+  /*スライドの全体幅*/
     width: 100%;
     height: 70px;
 }
 #ImgFrame
 {
-  position: relative;
+  /*画像スライドの見える部分を表示*/
   height: 70px;
   width:70%;
   overflow:hidden;
-  background:rgb(4, 254, 209);
 }
 #FrameWall
 {
+  /*画像を持っている壁的存在。これが動くクラス*/
   width: 1000%;
   transition: 1.5s;
+  background: rgb(184, 55, 4);
 }
 .ImgItem img
 {
