@@ -22,7 +22,7 @@ function FUNCIMG (img)
 {
  var ImgSrc=document.getElementById('TopFrame');
  //現在の画像を取得しておく
- var dumyImgSrc=this.Item();
+ //var dumyImgSrc=this.Item();
 //console.log(dumyImgSrc);
  ImgSrc.src=img;
  ImgSrc.style.opacity=1;
