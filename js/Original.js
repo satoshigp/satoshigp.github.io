@@ -1,3 +1,6 @@
+/*
+ウィンドウサイズを変更した際に画面幅を変更する関数
+*/
 function responsiv()
  {
    var widthsize=document.body.clientWidth;//現在のウィンドウサイズの取得
@@ -21,12 +24,17 @@ function responsiv()
 function FUNCIMG (img)
 {
  var ImgSrc=document.getElementById('TopFrame');
+ var dumyImgSrc=document.getElementById('TopFrame').src;
  //現在の画像を取得しておく
- //var dumyImgSrc=this.Item();
-//console.log(dumyImgSrc);
+console.log(dumyImgSrc);
  ImgSrc.src=img;
  ImgSrc.style.opacity=1;
 }
+
+
+/*
+画像をスライドさせる為の関数
+*/
 
 var cnt=0;
 
