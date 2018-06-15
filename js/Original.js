@@ -21,7 +21,7 @@ function responsiv()
 
 
 //マウスを枠の中に入れたらTOP画像が変わる仕組み。
-function FUNCIMG (img)
+ function FUNCIMG (img)
 {
  var ImgSrc=document.getElementById('TopFrame');
  var dumyImgSrc=document.getElementById('TopFrame').src;
