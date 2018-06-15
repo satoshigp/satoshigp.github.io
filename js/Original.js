@@ -27,6 +27,7 @@ function FUNCIMG (img)
  var dumyImgSrc=document.getElementById('TopFrame').src;
  //現在の画像を取得しておく
 console.log(dumyImgSrc);
+dumyImgSrc.opacity=0;
  ImgSrc.src=img;
  ImgSrc.style.opacity=1;
 }
