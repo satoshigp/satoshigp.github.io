@@ -8,6 +8,8 @@
   <style>
   .BackGroundLogo
   {
+    overflow: hidden;
+
     background: rgb(189, 189, 189);
     width: 100%;
     height: 100%;
@@ -18,7 +20,7 @@
     text-align: left;
     width:60%;
     height: 100%;
-    min-width: 600px;
+    min-width: 500px;
     background: rgb(255, 255, 255);
   }
 
@@ -35,7 +37,7 @@
   {
     width: 100%;
     height: 100%;
-    margin: 10px;
+    margin: 20px;
     overflow: hidden;
   }
 
@@ -48,11 +50,40 @@
           TITLE
         </div>
           <h1>画像配置</h1>
-          <div id="">
+          <div id="SlideFrame">
+              <img src="../aseet/aaaaaassdasfs.jpg" id="Items">
+              <img src="../aseet/ButtonArrowOverSprite.png" alt="プラス" onclick="FowardShow()" width="70px" style="position:relative;bottom:70px;right:-80%;">
+              <img src="../aseet/ButtonArrowOverSprite.png" alt="マイナス"  width="70px" style="position:relative;bottom:70px;right:-50%;transform:scale(-1,1);">
 
           </div>
       </div>
     </div>
     </center>
+    <script>
+     ///画像の準備
+      var ImgA=new Array()
+      for(var i=0;i<=19;i++)
+      {
+        ImgA[i]=new Image();
+      }
+      ImgA[0].src="../aseet/bbb.jpg";
+      ImgA[1].src="../aseet/bbb.jpg";
+      var cnt=0;// グローバル変数でも初期値はNULL
+      var Max=Img.length;
+
+      function FowardShow()
+      {
+      console.log(cnt);
+        if(cnt==Max-1)
+        {
+            cnt=0;
+        }
+        else
+        {
+          cnt++;
+        }
+        document.getElementById('Items').src=ImgA[cnt].src;
+      }
+    </script>
   </body>
 </html>
