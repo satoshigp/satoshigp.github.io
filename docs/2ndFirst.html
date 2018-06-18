@@ -33,11 +33,10 @@
     background:rgb(156, 13, 37)
   }
 
-  #SlideFrame
+  .SlideFrame
   {
-    width: 100%;
-    height: 100%;
-    margin: 20px;
+    display: inline-block;
+    margin:20px;
     overflow: hidden;
   }
 
@@ -50,11 +49,13 @@
           TITLE
         </div>
           <h1>画像配置</h1>
-          <div id="SlideFrame">
-              <img src="../aseet/aaaaaassdasfs.jpg" id="Items">
-              <img src="../aseet/ButtonArrowOverSprite.png" alt="プラス" onclick="FowardShow()" width="70px" style="position:relative;bottom:70px;right:-80%;">
-              <img src="../aseet/ButtonArrowOverSprite.png" alt="マイナス"  width="70px" style="position:relative;bottom:70px;right:-50%;transform:scale(-1,1);">
-
+          <div class="SlideFrame">
+              <img src="../aseet/Slide/Slide0.jpg" id="Items" style="width:90%">
+              <span style="font-size:30px;position:relative;" id="page">1</span>
+              <div style="display: inline-block;background:rgb(20, 20, 20);height:90px;width:100%;">
+                <img src="../aseet/ButtonArrowOverSprite.png" alt="プラス" onclick="FowardShow()" width="70px" style="position:relative;bottom:-10px;left:60%;">
+                <img src="../aseet/ButtonArrowOverSprite.png" alt="マイナス"  width="70px" style="position:relative;bottom: -10px;left:30%;;transform:scale(-1,1);" onclick="BackShow()">
+              </div>
           </div>
       </div>
     </div>
@@ -62,19 +63,41 @@
     <script>
      ///画像の準備
       var ImgA=new Array()
-      for(var i=0;i<=19;i++)
+      for(var i=0;i<=17;i++)
       {
         ImgA[i]=new Image();
       }
-      ImgA[0].src="../aseet/bbb.jpg";
-      ImgA[1].src="../aseet/bbb.jpg";
+      var Path="../aseet/Slide/Slide";
+      //画像の準備
+      ImgA[0].src="../aseet/Slide/Slide0.jpg";
+      ImgA[1].src="../aseet/Slide/Slide1.jpg";
+      ImgA[2].src="../aseet/Slide/Slide2.jpg";
+      ImgA[4].src="../aseet/Slide/Slide3.jpg";
+      ImgA[3].src="../aseet/Slide/Slide4.jpg";
+      ImgA[5].src="../aseet/Slide/Slide5.jpg";
+      ImgA[6].src="../aseet/Slide/Slide6.jpg";
+      ImgA[7].src="../aseet/Slide/Slide7.jpg";
+      ImgA[8].src="../aseet/Slide/Slide8.jpg";
+      ImgA[9].src="../aseet/Slide/Slide9.jpg";
+      ImgA[10].src="../aseet/Slide/Slide10.jpg";
+      ImgA[11].src="../aseet/Slide/Slide11.jpg";
+      ImgA[12].src="../aseet/Slide/Slide12.jpg";
+      ImgA[13].src="../aseet/Slide/Slide13.jpg";
+      ImgA[14].src="../aseet/Slide/Slide14.jpg";
+      ImgA[15].src="../aseet/Slide/Slide15.jpg";
+      ImgA[16].src="../aseet/Slide/Slide16.jpg";
+      ImgA[17].src="../aseet/Slide/Slide17.jpg";
+
+    //  ImgA[0].src=path+"1.jpg";
+    //  ImgA[0].src=path+"1.jpg";
+
       var cnt=0;// グローバル変数でも初期値はNULL
       var Max=Img.length;
 
       function FowardShow()
       {
       console.log(cnt);
-        if(cnt==Max-1)
+        if(cnt==17)
         {
             cnt=0;
         }
@@ -83,6 +106,22 @@
           cnt++;
         }
         document.getElementById('Items').src=ImgA[cnt].src;
+        document.getElementById('page').innerHTML=cnt+1;
+
+      }
+      function BackShow()
+      {
+      console.log(cnt);
+        if(cnt==0)
+        {
+            cnt=18;
+        }
+        else
+        {
+          cnt--;
+        }
+        document.getElementById('Items').src=ImgA[cnt].src;
+        document.getElementById('page').innerHTML=cnt+1;
       }
     </script>
   </body>
