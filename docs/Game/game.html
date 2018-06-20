@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="..\..\css\Mycss\styleboot.css">
 
     <title>ゲーム作品</title>
   </head>
@@ -14,13 +13,14 @@
       {
         position: relative;
         text-align:center;
-        left: center;
       }
 
-   body{
+   body
+   {
      scroll-behavior:smooth;
-          background-color: rgba(0,0,0,0.06);
-       }
+     overflow-x: hidden;
+     background-color: rgba(0,0,0,0.06);
+    }
       .title{
       position:relative;
 
@@ -31,7 +31,12 @@
       .title h1
       {
         font-size: 75px;
-        animation: slid 5s infinite;
+
+      }
+      table
+      {
+        float: left;
+        margin:15px;
       }
       td{
 
@@ -74,36 +79,69 @@
       opacity: 0.3;
       z-index: 0;
     }
+    .Parent
+    {
+      text-align: center;
+    }
+    .Items
+    {
 
-
-
-
-
-
-
-
-
-  </style>
+      display:inline-block;
+    }
+</style>
   <body>
     <div class="title">
-
-    <h1>  ～作品～</h1>
+     <h1>  ～作品～</h1>
     </div>
       <header>
         <h1 class="pos">
-          今までの作品たち
+          今までのゲーム作品たち
         </h1>
       </header>
      <center>
-      <div class="col-sm-5">
-        <div class="span">
-          <div class="item">
+       <div class="Parent">
+
+       <div class="Items">
+
+         <table border="5">
+           <tr>
+             <th>
+               <h2>いい旅、夢ごこち</h2>
+             </th>
+           </tr>
+           <tr>
+             <td> <img src="..\..\aseet\aaaaaassdasfs.jpg" alt="JAMP STAR"> </td>
+           </tr>
+           <tr>
+             <td>制作期間：1週間</td>
+           </tr>
+           <tr>
+             <td>公開日:2017年 11月</td>
+           </tr>
+           <tr>
+             <td>ジャンル:強制前スクロール</td>
+           </tr>
+           <tr>
+             <td>プラットフォーム:PC</td>
+           </tr>
+           <tr>
+             <td> <a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/RURU/YUME.html">やり方・特徴</a> </td>
+           </tr>
+         </table>
+       </div>
+       <div class="Items">
             <table border="5">
               <tr>
                 <th><h2>JUMP STAR</h2></th>
               </tr>
                 <td><a href="https://satoshigp.github.io/NEW/"　target="_blank"><img src="..\..\aseet\キャプチャ.jpg" ></a></td>
               <tr>
+                <tr>
+                  <td>制作期間：1日</td>
+                </tr>
+                <tr>
+                  <td>公開日:2018年 6月</td>
+                </tr>
                 <td>ジャンル:アクションゲーム</td>
               </tr>
               <tr>
@@ -114,37 +152,23 @@
               </tr>
             </table>
           </div>
-          <div class="item">
-            <table border="5">
-              <tr>
-                <th>
-              <h2>いい旅、夢ごこち</h2>
-               </th>
-              </tr>
-              <tr>
-                <td> <img src="..\..\aseet\aaaaaassdasfs.jpg" alt="JAMP STAR"> </td>
-              </tr>
-              <tr>
-                <td>ジャンル:強制前スクロール</td>
-              </tr>
-              <tr>
-                <td>プラットフォーム:PC</td>
-              </tr>
-              <tr>
-                <td> <a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/RURU/YUME.html">やり方・特徴</a> </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-     </div>
-     <div class="col-sm-5">
-       <div class="span">
-         <div class="item">
+
+            <div class="Items">
+
            <table border="5">
              <tr>
-               <th><h2>JUMP STAR</h2></th>
+               <th><h2>走れ！イーサン！</h2></th>
              </tr>
+             <tr>
                <td><a href="https://satoshigp.github.io/NEW/"　target="_blank"><img src="../../aseet/scshot.jpg" ></a></td>
+             </tr>
+             <tr>
+               <td>制作期間：3時間</td>
+             </tr>
+             <tr>
+               <td>公開日:2018 1月</td>
+             </tr>
+
              <tr>
                <td>ジャンル:前スクロール</td>
              </tr>
@@ -156,7 +180,8 @@
              </tr>
            </table>
          </div>
-         <div class="item">
+
+         <div class="Items">
            <table border="5">
              <tr>
                <th>
@@ -176,18 +201,21 @@
                <td> <a href="https://satoshigp.github.io/satoshigp.github.io/docs/Game/RURU/ateru.html">やり方・特徴</a> </td>
              </tr>
            </table>
+
          </div>
        </div>
-    </div>
+         <h1>ーその他の作品ー</h1>
+         <div class="Items">
+
          <table border="3">
- <h1>ーその他の作品ー</h1>
            <tr>
              <th>イベント名:お題にチャレンジ！Vol.4： クリスマスのスクリーンショット</th>
            </tr>
            <tr>
-             <td> <a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/" > <img src="..\..\aseet\haruku.JPG" style="width:1200px" > </a> </td>
+             <td> <a href="http://assetstore.info/eventandcontest/themechallenge/chiristmas/" > <img src="..\..\aseet\bbb.JPG"  > </a> </td>
            </tr>
         </table>
+      </div>
      <br>
      <h1><u>これからも追加予定！！！</u></h1>
      <br>

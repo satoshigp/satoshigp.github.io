@@ -8,17 +8,96 @@
     <title> JUMP STAR</title>
   </head>
   <style >
+  body
+  {
+    text-align: center;
+  }
+  a{
+    color: rgb(193, 177, 33);
+    font-size: 30px;
+    transition: 150ms;
+  }
+  a:hover
+  {
+    color: rgb(166, 142, 238);
+    transform:scale(150%);
+  }
 
+  /*画像の収める設定*/
+  .slider-wall
+  {
+    position: relative;
+    width: 300%;
+    height: 576px;
+
+    animation: slide 5s infinite;
+  }
+
+
+   @keyframes slide {
+    0%{transform: translateX(0px);}
+    50%{transform: translateX(-700px);}
+    100%{transform: translateX(0px);}
+
+  }
   </style>
   <body>
-    <h2>お休み</h2>
   <div class="index">JUMP STAR</div>
-  <menu>
-     <li> <a href="#gai">概要</a></li>
-     <li><a href="#ruru">遊び方</a></li>
-     <li><a href="#aseet">使用アセット</a></li>
-  <li><a href="#">プレイ</a></li>
 
-  </menu>
+  <a href="#scshot"><li>プレイ画像</li></a>
+  <a href="#ruru"><li>プレイ方法</li></a>
+  <a href="#aseet"><li>使用アセット</li></a>
+  <a href="https://satoshigp.github.io/NEW/"><li>プレイ！</li></a>
+  <a href="https://satoshigp.github.io/"><li>ホームへ</li></a>
+
+
+  <img src="../../../aseet/キャプチャ.jpg" alt="タイトル画像"width="500px"style="margin:50px;">
+
+  <a id="scshot"></a>
+  <center>
+  <h1>～プレイ画像～</h1>
+  <div id="slider-first" >
+    <div class="slider-wall">
+      <div class="slider-item"> <img src="../../../aseet/aaa.jpg" alt=""> </div>
+      <div class="slider-item"> <img src="../../../aseet/Jum2 1.jpg" alt=""> </div>
+    </div>
+  </div>
+
+  <a id="ruru"></a>
+  <h1>～プレイ方法～</h1>
+
+  <h2>操作説明:移動</h2>
+  <!--ボタン配置-->
+
+    <div class="GridBase">
+      <span style="grid-row:1;grid-column:5" class="box">↑</span>
+      <span style="grid-row:1;grid-column:2" class="box">w</span>
+      <span style="grid-row:2;grid-column:1" class="box">A</span>
+      <span style="grid-row:2;grid-column:2" class="box">S</span>
+      <span style="grid-row:2;grid-column:3" class="box">D</span>
+      <span style="grid-row:2;grid-column:4" class="box">←</span>
+      <span style="grid-row:2;grid-column:5" class="box">↓</span>
+      <span style="grid-row:2;grid-column:6" class="box">→</span>
+      <div style="display:grid;grid-template-rows:60px 60px 120px;grid-template-columns:160px 200px;">
+        <span style="grid-row:3;grid-column:1" >WASDで左右  前進移動</span>
+        <span style="grid-row:3;grid-column:2" >左右矢印キーでも操作可能！</span>
+      </div>
+
+    </div>
+
+
+  　  攻撃
+    <table>
+      <tr>
+        　　　　　　<td class="box1">Space</td>
+      </tr>
+      <tr>
+        <td>弾を撃ち敵に攻撃！</td>
+      </tr>
+    </table>
+    <h2>勝敗条件</h2>
+    プレイヤーが他オブジェクトに当たったら負け。
+    
+
   </body>
 </html>
