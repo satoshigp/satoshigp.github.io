@@ -8,7 +8,7 @@
 
     </script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    
+
 
   </head>
   <style>
@@ -55,28 +55,29 @@
           <li>Twitter</li>
           <li> <a href="https://github.com/satoshigp">GitHub</a> </li>
         </div>
-
+<!--スライドショーの設定-->
         <div id="slideshow">
-           <img src="aseet/aaaaaassdasfs.jpg" name="pic" id="TopFrame"  >
-          <div id="SliderWidth">
-            <img src="aseet/ButtonArrowOverSprite.png" class="SlideContent" alt="前へ" value="先へ" onclick="MinusScr()" width="70" style="transform:scale(-1,1)">
-         <div id="ImgFrame" class="SlideContent">
-           <div id="FrameWall" >
-            <div class="ImgItem" > <img src="aseet/bbb.jpg" alt="img" name="Items" onmouseover=FUNCIMG('aseet/bbb.jpg')></div>
-            <div class="ImgItem"> <img src="aseet/aaaaaassdasfs.jpg" alt="img1" name="Items" onmouseover=FUNCIMG('aseet/aaaaaassdasfs.jpg')></div>
-            <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img2" name="Items"></div>
-            <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img3" name="Items"></div>
-            <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img4" name="Items"></div>
-          </div>
-        </div>
-        <img src="aseet/ButtonArrowOverSprite.png" class="SlideContent" alt="前へ" value="先へ" onclick="PlusScr()" width="70">
-      </div>
-  </div>
 
+          <img src="aseet/aaaaaassdasfs.jpg" name="pic" id="TopFrame"   >
+            <div id="SliderWidth">
+              <img src="aseet/Arrow.png" class="SlideContent" alt="前へ" value="先へ" onclick="MinusScr()" width="60" >
+              <div id="ImgFrame" class="SlideContent">
+                <div id="FrameWall" >
+                  <div id="ImgItem" > <img src="aseet/bbb.jpg" alt="img" name="Items" onmouseover=FUNCIMG('aseet/bbb.jpg')></div>
+                  <div id="ImgItem"> <img src="aseet/aaaaaassdasfs.jpg" alt="img1" name="Items" onmouseover=FUNCIMG('aseet/aaaaaassdasfs.jpg')></div>
+                  <div id="ImgItem"> <img src="aseet/bbb.jpg" alt="img2" name="Items"></div>
+                  <div id="ImgItem"> <img src="aseet/bbb.jpg" alt="img3" name="Items"></div>
+                  <div id="ImgItem"> <img src="aseet/bbb.jpg" alt="img4" name="Items"></div>
+                </div>
+              </div>
+              <img src="aseet/Arrow.png" class="SlideContent" alt="前へ" value="先へ" onclick="PlusScr()"width="60"style="transform:scale(-1,1);">
+            </div>
+          </div>
+
+<!--目次-->
         <menu style="font-size:1.5em;padding:0px;margin:0px;text-align:center;">
           <li> <a href="#prof">自己紹介</a></li>
           <li> <a href="#action">課外活動</a></li>
-          <li> <a href="#katu">在学中の活動記録</a></li>
           <li> <a href="#works">作品</a></li>
           <li> <a href="#skill">スキル</a></li>
           <li> <a href="#todo">ToDo</a></li>
@@ -84,14 +85,13 @@
           <li> <a href="#career">経歴</a></li>
           <li> <a href="#dream">将来目標</a></li>
         </menu>
-
+        <!--文章-->
         <div class="index">自己紹介</div>
          <a id="prof"></a>
          こんにちは。
-         ほぼＨＴＭＬ、ＣＳＳ、JavaScripptが初心者ですがこのサイトではjQueryやreactを使わず根性だけでポートフォリオを作成したいと思います！
+         ＨＴＭＬ、ＣＳＳ、JavaScripptが初心者ですがこのサイトでは<q>jQuery</q>や<q>React</q>を使わず <br>
+         根性だけでポートフォリオを作成したいと思います！
          普段は専門学校デジタルアーツ東京という学校でプログラミングの勉強をしています。
-         予想以上にHTML,CSSが楽しすぎて手が離せません！
-         なので現在進行形でサイトの制作の勉強をしています。
          <a href="satoshigp.github.io/docs/item.html">もっと詳しく(現在はJavaScriptの練習サイト)</a>
          <a id="action"></a>
         <div class="index">課外活動</div>
@@ -99,9 +99,7 @@
           <q cite="https://unityroom.com/"><a href="https://unityroom.com/">UnityRoom</a></q>の一週間ゲームジャムをメインとして参加しています！ <br>
           最近ではサイト作りを学んでおり、動的な動き、フレームワークについて学ぼうかと思っています。　<br>
           フレームワークはReactを学ぼうと決めております。
-          <a id="katu"></a>
-            <div class="index">在学中の活動記録</div>
-              <a href="./docs/2ndFirst.html">2018/4/1～6/25</a>
+
         <a id="works"></a>
         <div class="index">作品</div>
           このサイト自体が作品ですが他にもゲームの作品もあるので是非見てください。 <br>

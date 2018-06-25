@@ -121,23 +121,32 @@ div{
   max-height: 650px;
   transition: ease 1.5s;
 }
+#fadeout
+{
+  opacity: 0;
+}
+#fadeout:active
+{
+  opacity: 1;
+}
 
 .SlideContent
 {
     float:left;
-
 }
+
 
 #SliderWidth
 {
 
-  background-color: rgb(6, 251, 192);
   /*スライドの全体幅*/
     width: 100%;
-    height: 70px;
+    height: 76px;/*6pxは枠線*/
     min-width:250px;
-    overflow: hidden;
+    padding:10px;
+    /*中央合わせをするために設定*/
     display: inline-flex;
+    /*コンテンツの中央合わせ*/
     justify-content: center;
 
 }
@@ -146,6 +155,8 @@ div{
   /*画像スライドの見える部分を表示*/
   height: 70px;
   width:70%;
+  border:solid 3px rgb(45, 45, 45);
+
   overflow:hidden;
 }
 #FrameWall
@@ -153,11 +164,10 @@ div{
   /*画像を持っている壁的存在。これが動くクラス*/
   width: 1000%;
   transition: 1.5s;
-  background: rgb(184, 55, 4);
+
 }
-.ImgItem img
+#ImgItem img
 {
-  margin: 0px;
   padding:0px;
   cursor: pointer;
   float:left;

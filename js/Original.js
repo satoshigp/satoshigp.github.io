@@ -24,12 +24,12 @@ function responsiv()
  function FUNCIMG (img)
 {
  var ImgSrc=document.getElementById('TopFrame');
- var dumyImgSrc=document.getElementById('TopFrame').src;
+ var dumyImgSrc=document.getElementById('ImgItem').src;
  //現在の画像を取得しておく
 console.log(dumyImgSrc);
-dumyImgSrc.opacity=0;
- ImgSrc.src=img;
+ ImgSrc.src=dumyImgSrc;
  ImgSrc.style.opacity=1;
+
 }
 
 
@@ -54,7 +54,6 @@ function  PlusScr()
    cnt++;
    wall.transform+="translateX(-120px)";
  }
-
 }
 function MinusScr()
 {
