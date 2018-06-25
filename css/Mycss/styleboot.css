@@ -137,7 +137,9 @@ div{
     height: 70px;
     min-width:250px;
     overflow: hidden;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+
 }
 #ImgFrame
 {
