@@ -79,21 +79,23 @@ div{
 */
 #upmenu
 {
-  display: inline-block;
+
   margin: 0px;
   padding: 0px;
   vertical-align: text-bottom;
   width: 100%;
   margin-bottom: 50px;
+  overflow:hidden;
 }
 #upmenu li
 {
   margin: 0px;
   padding:0px;
   background: rgb(43, 95, 196);
-  display:flex;
+  display:inline-flex;
   justify-content:center;/*コンテンツの横幅合わせ*/
   margin: 0px;
+  border:solid 5px rgb(0, 0, 0);
   align-items: center;/*文字の高さ合わせ*/
   top: 0px;
   left: 0px;
@@ -123,12 +125,9 @@ div{
 }
 #fadeout
 {
-  opacity: 0;
+
 }
-#fadeout:active
-{
-  opacity: 1;
-}
+
 
 .SlideContent
 {
@@ -143,7 +142,7 @@ div{
     width: 100%;
     height: 76px;/*6pxは枠線*/
     min-width:250px;
-    padding:10px;
+    padding:25px 0px 25px 0px;
     /*中央合わせをするために設定*/
     display: inline-flex;
     /*コンテンツの中央合わせ*/
@@ -156,7 +155,6 @@ div{
   height: 70px;
   width:70%;
   border:solid 3px rgb(45, 45, 45);
-
   overflow:hidden;
 }
 #FrameWall
@@ -193,6 +191,7 @@ PC画面用の設定
 @media screen and (max-width:480px){
   #main
   {
+    background: rgb(69, 120, 177);
     font-size: 40%;
   }
 
@@ -200,8 +199,9 @@ PC画面用の設定
 
   #upmenu li
   {
+    display: inline-block;
+
     border: solid 2px rgb(0, 0, 0);
-    border:solid 2px black;
     font-size: 1.2em;
     height: 20px;
     float: none;

@@ -13,7 +13,6 @@ function responsiv()
     side.style.width=haba+"px";
     maincont.style.left=side.style.width;
     maincont.style.width=widthsize-haba+"px";
-
  }
 
  //TOPの画像表示範囲の設定。
@@ -24,10 +23,8 @@ function responsiv()
  function FUNCIMG (img)
 {
  var ImgSrc=document.getElementById('TopFrame');
- var dumyImgSrc=document.getElementById('ImgItem').src;
- //現在の画像を取得しておく
-console.log(dumyImgSrc);
- ImgSrc.src=dumyImgSrc;
+
+ ImgSrc.src=img;
  ImgSrc.style.opacity=1;
 
 }
