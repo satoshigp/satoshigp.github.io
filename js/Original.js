@@ -22,10 +22,14 @@ function responsiv()
 //マウスを枠の中に入れたらTOP画像が変わる仕組み。
  function FUNCIMG (img)
 {
- var ImgSrc=document.getElementById('TopFrame');
+  var ImgSrc=document.getElementById('TopFrame');
+  var a=document.getElementById('777');
+
+  a.style.opacity=0.5;
+  ImgSrc.style.opacity=1;
+
 
  ImgSrc.src=img;
- ImgSrc.style.opacity=1;
 
 }
 
