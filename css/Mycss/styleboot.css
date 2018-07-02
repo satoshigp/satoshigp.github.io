@@ -9,10 +9,6 @@ html{
 div{
   margin: 0px;
 }
-table
-{
-font-size: 120%;
-}
 #main
 {
   position: relative;
@@ -122,27 +118,23 @@ font-size: 120%;
 
 #TopFrame
 {
-  position: relative;
   margin-bottom: 20px;
   width: 90%;
   max-height: 650px;
   transition: ease 0.5s;
 }
-<<<<<<< HEAD
 
 
 
-.SlideContent
-=======
-.fadein
->>>>>>> d129485ec24e060e92203b90a6f12477e6f07515
+#SlideContent
 {
-    opacity:1;
+    float:left;
 }
 
 
 #SliderWidth
 {
+
   /*スライドの全体幅*/
     width: 100%;
     height: 76px;/*6pxは枠線*/
@@ -196,13 +188,10 @@ PC画面用の設定
 @media screen and (max-width:480px){
   #main
   {
+    background: rgb(69, 120, 177);
     font-size: 40%;
   }
 
-  #maincont
-  {
-    font-size: 200%;
-  }
 
 
   #upmenu li
@@ -218,8 +207,5 @@ PC画面用の設定
   {
     height: 50px;
   }
-table
- {
-    font-size: 150%;
- }
+
 }
