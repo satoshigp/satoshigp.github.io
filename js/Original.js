@@ -20,14 +20,30 @@ function responsiv()
 
 
 //マウスを枠の中に入れたらTOP画像が変わる仕組み。
- function FUNCIMG (img)
+var flag=false;
+var x=1;
+ function FUNCIMG (img,url)
 {
- var ImgSrc=document.getElementById('TopFrame');
+  var ancurl=document.getElementById('AncerUrl');
+  var imgsrc=document.getElementById('TopFrame');
+   var a= a =>( x * x);
+if(imgsrc.src!=img)
+  {
+    x++;
+    alert(a());
+    imgsrc.style.opacity=0;
+    //無名関数にアロー演算子を使うことで中身を書きreturnで返すことができる。
+    setTimeout(()=>{imgsrc.style.opacity=1;imgsrc.src=img;},500);
+  }
+  else
+  {
+      return;
+  }
 
- ImgSrc.src=img;
- ImgSrc.style.opacity=1;
-
+    //不透明度の処理
+  ancurl.href=url;
 }
+
 
 
 /*
@@ -36,7 +52,7 @@ function responsiv()
 
 var cnt=0;
 
-function  PlusScr()
+function PlusScr()
 {
  var min=0;
  var max=document.getElementsByName('Items').length;

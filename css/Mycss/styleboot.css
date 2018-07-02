@@ -121,12 +121,9 @@ div{
   margin-bottom: 20px;
   width: 90%;
   max-height: 650px;
-  transition: ease 1.5s;
+  transition: ease 0.5s;
 }
-#fadeout
-{
 
-}
 
 
 .SlideContent
