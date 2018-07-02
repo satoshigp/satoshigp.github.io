@@ -24,6 +24,7 @@ var flag=false;
 var x=1;
  function FUNCIMG (img,url)
 {
+<<<<<<< HEAD
   var ancurl=document.getElementById('AncerUrl');
   var imgsrc=document.getElementById('TopFrame');
    var a= a =>( x * x);
@@ -39,6 +40,16 @@ if(imgsrc.src!=img)
   {
       return;
   }
+=======
+  var ImgSrc=document.getElementById('TopFrame');
+  var a=document.getElementById('777');
+
+  a.style.opacity=0.5;
+  ImgSrc.style.opacity=1;
+
+
+ ImgSrc.src=img;
+>>>>>>> d129485ec24e060e92203b90a6f12477e6f07515
 
     //不透明度の処理
   ancurl.href=url;
