@@ -23,16 +23,10 @@ function responsiv()
  function FUNCIMG (img)
 {
   var ImgSrc=document.getElementById('TopFrame');
-  var a=document.getElementById('777');
-
-  a.style.opacity=0.5;
-  ImgSrc.style.opacity=1;
-
-
- ImgSrc.src=img;
-
+  var item=document.getElementById('a');
+  console.log(img);
+  ImgSrc.src=img;
 }
-
 
 /*
 画像をスライドさせる為の関数

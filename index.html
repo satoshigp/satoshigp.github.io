@@ -57,18 +57,22 @@
         </div>
 <!--スライドショーの設定-->
         <div id="slideshow">
-          <div id="777" >
-            <img src="aseet/aaaaaassdasfs.jpg" name="pic" style="opacity:1;"id="TopFrame">
+          <div id="777">
+            <a href="https://unityroom.com/games/run-space" id="GAMEURL">
+            <img src="aseet/aaaaaassdasfs.jpg" name="pic" id="TopFrame">
+            </a>
           </div>
             <div id="SliderWidth">
+
               <img src="aseet/Arrow.png" class="SlideContent" alt="前へ" value="先へ" onclick="MinusScr()" width="60" >
               <div id="ImgFrame" class="SlideContent">
                 <div id="FrameWall" >
-                  <div id="ImgItem" > <img src="aseet/bbb.jpg" alt="img" name="Items" onmouseover=FUNCIMG('aseet/bbb.jpg')></div>
-                  <div id="ImgItem"> <img src="aseet/aaaaaassdasfs.jpg" alt="img1" name="Items" onmouseover=FUNCIMG('aseet/aaaaaassdasfs.jpg')></div>
-                  <div id="ImgItem"> <img src="aseet/Screenshot_20180209-130040.png" alt="img2" name="Items" onmouseover=FUNCIMG('aseet/Screenshot_20180209-130040.png') ></div>
-                  <div id="ImgItem"> <img src="aseet/キャプチャ.jpg" alt="img3" name="Items" onmouseover=FUNCIMG('aseet/キャプチャ.jpg')></div>
-                  <div id="ImgItem"> <img src="aseet/bbb.jpg" alt="img4" name="Items"></div>
+
+                  <div id="ImgItem"> <img id="a" src="aseet/bbb.jpg" alt="img" name="Items" onmouseover=FUNCIMG(this.src)></div>
+                  <div id="ImgItem"> <img id="a" src="aseet/aaaaaassdasfs.jpg" alt="img1" name="Items" onmouseover=FUNCIMG(this.src)></div>
+                  <div id="ImgItem"> <img id="a" src="aseet/Screenshot_20180209-130040.png" alt="img2" name="Items" onmouseover=FUNCIMG(this.src) ></div>
+                  <div id="ImgItem"> <img id="a" src="aseet/キャプチャ.jpg" alt="img3" name="Items" onmouseover=FUNCIMG(this.src)></div>
+                  <div id="ImgItem"> <img id="a" src="aseet/bbb.jpg" alt="img4" name="Items"></div>
                 </div>
               </div>
               <img src="aseet/Arrow.png" class="SlideContent" alt="前へ" value="先へ" onclick="PlusScr()"width="60"style="transform:scale(-1,1);">
@@ -89,23 +93,22 @@
         <!--文章-->
         <div class="index">自己紹介</div>
          <a id="prof"></a>
-         こんにちは。
-         ＨＴＭＬ、ＣＳＳ、JavaScripptが初心者ですがこのサイトでは<q>jQuery</q>や<q>React</q>を使わず <br>
-         根性だけでポートフォリオを作成したいと思います！
-         普段は専門学校デジタルアーツ東京という学校でプログラミングの勉強をしています。
-         <a href="satoshigp.github.io/docs/item.html">もっと詳しく(現在はJavaScriptの練習サイト)</a>
+          専門学校デジタルアーツ東京、ゲーム科ゲームプログラムコースの深田と申します。 <br>
+          高校生の時にゲーム制作に興味を持ち本校に入学しました <br>
+          初めはパソコン初心者で電源のファイルを開く程度しかできませんでしたが、現在ではゲーム制作、そしてWebのホームページ制作までできるようになりました。 <br>
+          最近はWeb系統にとても興味あり、HTML,CSS,JavaScriptを重点的に学んでおります。 <br>
+          本当はホームページを作る際には「jQuery」を使うことが多いらしいのですが、あの悪魔的な文法を見て混乱してしまいそうなので今は使わないようにしています。 <br>
+          けどjQuery等を使わないとデザイン的にほかの方々よりも劣ってしまうのでCSSとJavaScriptを使いデザインをしてみようかなと思っております！　<br>
+          jQueryでできるならJavaScriptでもできるでしょ！という俺理論的な感じでこのサイトを制作しております。
          <a id="action"></a>
         <div class="index">課外活動</div>
           現在は主に<q cite="https://unity3d.com/jp"><a href="https://unity3d.com/jp">Unity</a></q>というゲームエンジンを使い
-          <q cite="https://unityroom.com/"><a href="https://unityroom.com/">UnityRoom</a></q>の一週間ゲームジャムをメインとして参加しています！ <br>
-          最近ではサイト作りを学んでおり、動的な動き、フレームワークについて学ぼうかと思っています。　<br>
-          フレームワークはReactを学ぼうと決めております。
+          <q cite="https://unityroom.com/"><a href="https://unityroom.com/">UnityRoom</a></q>の一週間ゲームジャムをメインとして参加しました。　<br>
 
         <a id="works"></a>
         <div class="index">作品</div>
-          このサイト自体が作品ですが他にもゲームの作品もあるので是非見てください。 <br>
-          このサイトも新しい技術を取り入れては作り直しの繰り返しです。 <br>
-          前の<a href="./dumy.html">サイト</a>もございますのでこのサイトと見比べてもらえるとありがたいです。 <br>
+          このサイト自体が作品ですが他にもゲームの作品もあるので是非見てください。<br>
+          このサイト以外にもゲーム作品を作りましたのでそちらも見てください。
           <a href="./docs/Game/game.html">ゲーム作品はこちら。</a>
         <a id="Skill"></a>
         <div class="index">Skill</div>
@@ -180,10 +183,8 @@
       </center>
         <a id="dream"></a>
         <div class="index">将来の目標</div>
-
             <font style="font-size:35;color:blue;" >最終目標</font><br>
-          Webプログラマー！ <br>
-
+            幾つか希望はありますが一番はフロントエンドエンジニアです。<br>
 
     </div>
 
