@@ -9,10 +9,6 @@ html{
 div{
   margin: 0px;
 }
-table
-{
-font-size: 120%;
-}
 #main
 {
   position: relative;
@@ -40,7 +36,6 @@ font-size: 120%;
 {
   position:relative;
   top:0px;
-
   margin: 0px;
   padding: 0px;
 
@@ -81,29 +76,25 @@ font-size: 120%;
 /*
 タイトルの下のメニュ-
 */
-#upmenu
+.upmenuzone
 {
-
-  margin: 0px;
-  padding: 0px;
-  vertical-align: text-bottom;
+  margin: 0px 0px 30px 0px;
+  display: inline-block;
   width: 100%;
-  margin-bottom: 50px;
-  overflow:hidden;
 }
-#upmenu li
+.UpMenuList
 {
   margin: 0px;
   padding:0px;
   background: rgb(43, 95, 196);
-  display:inline-flex;
-  justify-content:center;/*コンテンツの横幅合わせ*/
-  margin: 0px;
+  box-sizing: border-box;
   border:solid 5px rgb(0, 0, 0);
-  align-items: center;/*文字の高さ合わせ*/
+  text-align: center;
+  margin: 0px;
   top: 0px;
   left: 0px;
-  height: 40px;
+  height: 45px;
+  width: 50%;
   color: rgb(143, 120, 167);
   font-size: 2em;
   float: left;
@@ -122,20 +113,23 @@ font-size: 120%;
 
 #TopFrame
 {
-  position: relative;
   margin-bottom: 20px;
   width: 90%;
   max-height: 650px;
-  transition: ease 1.5s;
+  transition: ease 0.5s;
 }
-.fadein
+
+
+
+#SlideContent
 {
-    opacity:1;
+    float:left;
 }
 
 
 #SliderWidth
 {
+
   /*スライドの全体幅*/
     width: 100%;
     height: 76px;/*6pxは枠線*/
@@ -162,7 +156,7 @@ font-size: 120%;
   transition: 1.5s;
 
 }
-#ImgItem img
+.ImgItem img
 {
   padding:0px;
   cursor: pointer;
@@ -177,10 +171,10 @@ font-size: 120%;
 PC画面用の設定
 */
 @media screen and (min-width:1001px){
- #upmenu li
+ .UpMenuList
  {
    align-items: center;
-   width: 390px;
+   width: 25%;
  }
 }
 /*
@@ -192,18 +186,14 @@ PC画面用の設定
     font-size: 40%;
   }
 
-  #maincont
+
+
+  .UpMenuList
   {
-    font-size: 200%;
-  }
 
-
-  #upmenu li
-  {
-    display: inline-block;
-
+    width: 100%;
     border: solid 2px rgb(0, 0, 0);
-    font-size: 1.2em;
+    font-size: 2em;
     height: 20px;
     float: none;
   }
@@ -211,8 +201,5 @@ PC画面用の設定
   {
     height: 50px;
   }
-table
- {
-    font-size: 150%;
- }
+
 }

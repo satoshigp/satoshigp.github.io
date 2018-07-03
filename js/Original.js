@@ -7,7 +7,6 @@ function responsiv()
    var main= document.getElementById('main');//idの取得
    var side= document.getElementById("side");
    var  maincont= document.getElementById('maincont');//グローバル変数
-   var MenuWid=document.getElementById('upmenu').style;
    main.clientWidth=widthsize;//現在のウィンドウサイズを最大ウィンドウ幅に代入
     var haba=widthsize*0.2;
     side.style.width=haba+"px";
@@ -20,12 +19,23 @@ function responsiv()
 
 
 //マウスを枠の中に入れたらTOP画像が変わる仕組み。
- function FUNCIMG (img)
+ function FUNCIMG (img,url)
 {
-  var ImgSrc=document.getElementById('TopFrame');
-  var item=document.getElementById('a');
-  console.log(img);
-  ImgSrc.src=img;
+
+  var ancurl=document.getElementById('AncerUrl');
+  var imgsrc=document.getElementById('TopFrame');
+
+
+if(imgsrc.src!=img)
+  {
+    imgsrc.style.opacity=0;
+    //無名関数にアロー関数（ラムダ式）を使うことで関数内ををreturnで返すことができる。
+    setTimeout(()=>{imgsrc.style.opacity=1;imgsrc.src=img;ancurl.href=url;},500);
+  }
+  else
+  {
+      return;
+  }
 }
 
 /*
@@ -34,7 +44,7 @@ function responsiv()
 
 var cnt=0;
 
-function  PlusScr()
+function PlusScr()
 {
  var min=0;
  var max=document.getElementsByName('Items').length;
