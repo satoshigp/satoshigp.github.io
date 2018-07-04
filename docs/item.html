@@ -2,64 +2,44 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <style>
-    *{box-sizing: border-box;}
-
-    html, body{height: 100%;}
-
-    .bgs{
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .bgs .bg{
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 3s ease;
-    }
-    .bgs .bg.is_active{opacity: 1;}
-
-    .bgs .bg.bg--1{background: red;}
-    .bgs .bg.bg--2{background: blue;}
-    .bgs .bg.bg--3{background: yellow;}
-    .bgs .bg.bg--4{background: purple;}
-    .bgs .bg.bg--5{background: green;}
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
   <title>Document</title>
 </head>
+<style >
+
+</style>
+<script>
+
+    ()=>
+    {
+      console.log(flag);
+      if(flag==true)
+      {
+      document.body.addEventListener("mousemove", function(e)
+        {
+            console.log(1);
+          var mX = e.pageX;  //X座標
+          var mY = e.pageY;  //Y座標
+          document.getElementById("txtX").value = mX;
+          document.getElementById("txtY").value = mY;
+        });
+  }
+}
+
+  var flag=false;
+  function flagFunction()
+  {
+    flag=!flag;
+    if(flag)
+    document.getElementById('777').value="止める"
+    else
+    document.getElementById('777').value="始める"
+  }
+
+
+</script>
 <body>
-  <div class="bgs">
-    <div class="bg bg--1 is_active" id="js-first"></div>
-    <div class="bg bg--2"></div>
-    <div class="bg bg--3"></div>
-    <div class="bg bg--4"></div>
-    <div class="bg bg--5"></div>
-  </div>
-  <script>
-    var $first_bg = $('#js-first'), //スライド部分の最後に行った時に1枚目を登録するために変数に置く
-    $current_bg = $first_bg; //現在のスライドを1枚目にセット
-
-    setInterval(function(){
-      //DOMを見て現在のスライドの次の要素があればそれを登録
-      //現在のスライドが最後の要素の場合、1番目のスライドを登録
-      var $next_bg = $current_bg.next()[0] ? $current_bg.next() : $first_bg;
-    　　　　
-      //現在のスライドからis_activeを削除、次のスライドにis_activeを付与
-      $current_bg.removeClass('is_active');
-      $next_bg.addClass('is_active');
-
-      //現在のスライドに今is_activeを付与したスライドをセット
-      $curreng_bg = $next_bg;
-
-    }, 5000);//5秒ごとにスライドを変更
-  </script>
+  <input type="button" onclick="flagFunction()" id="777" value="始める" >
+X座標：<input type="text" id="txtX">
+Y座標：<input type="text" id="txtY">
 </body>
 </html>
