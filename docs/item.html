@@ -5,13 +5,24 @@
   <title>Document</title>
 </head>
 <style >
-
+.contents
+{
+  position: relative;
+}
+  .GameMain
+  {
+    position :relative;
+    display:inline-block;
+    width: 700px;
+    height: 550px;
+    border:solid 3px rgb(0, 0, 0) ;
+  }
 </style>
 <script>
 
   function a()
     {
-      console.log(flagFunction());
+
         document.addEventListener("mousemove", (e)=>
         {
           if(flag==true)
@@ -24,7 +35,6 @@
         });
 
     }
-
 a();
   var flag=false;;
   function flagFunction()
@@ -32,10 +42,10 @@ a();
     flag=!flag;
 
     if(flag)
-    document.getElementById('777').value="始める"
-    else
     document.getElementById('777').value="止める"
-  
+    else
+    document.getElementById('777').value="始める"
+
   }
 
 
@@ -44,6 +54,31 @@ a();
   <input type="button"  onclick="flagFunction()" id="777" value="始める" >
 X座標：<input type="text" id="txtX">
 Y座標：<input type="text" id="txtY">
+<!--ゲーム画面-->
+<div class="contents">
+  <div class="GameMain">
+    <img src="../aseet/pIWhd2Mb.jpg" alt="Debug" style="position:relative;top:0px;left:auto;width:100px;height:100px;" id="item">
+    <h1 style="position:relative;top:375px;left:650px;" id="timer">0</h1>
+  </div>
 
+</div>
+<input type="button" style="width:100px;height:40px; font-size:25px;"value="Start" id="StartButton">
+<script>
+document.getElementById('StartButton').addEventListener("click",function(){this.remove();move();});
+  function move()
+  {
+    var hae= document.getElementById('item').style;
+
+    var speedX=1;
+    var SpeedY=50+"px";
+    var time=0;
+    var timer=document.getElementById('timer');
+    {
+    setInterval(()=>{time++;timer.innerHTML=time;},1000);
+    setInterval(()=>{hae.left=speedX+"px";console.log(hae.top);speedX+=3;},20);
+    }
+
+  }
+</script>
 </body>
 </html>
