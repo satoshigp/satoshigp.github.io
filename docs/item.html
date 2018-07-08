@@ -8,11 +8,14 @@
 .contents
 {
   position: relative;
+  display:flex;
+  justify-content: center;
 }
-  .GameMain
+  #GameMain
   {
     position :relative;
     display:inline-block;
+    background: rgba(14, 85, 1,0.5);
     width: 700px;
     height: 550px;
     border:solid 3px rgb(0, 0, 0) ;
@@ -56,57 +59,64 @@ X座標：<input type="text" id="txtX">
 Y座標：<input type="text" id="txtY">
 <!--ゲーム画面-->
 <div class="contents">
-  <div class="GameMain">
-    <img src="../aseet/pIWhd2Mb.jpg" alt="Debug" style="position:absolute;top:0px;left:auto;width:100px;height:100px;" id="item">
-    <img src="../aseet/pIWhd2Mb.jpg" alt="Debug" style="position:absolute;top:0px;left:auto;width:100px;height:100px;" id="item">
-
+  <div id="GameMain">
+    <!--画像配置場-->
+  <span id="aaa"></span>
+<!--秒数-->
     <h1 style="position:absolute;bottom:0px;left:650px;" id="timer">0</h1>
   </div>
 
 </div>
+<!--ゲームスタートのUI-->
 <input type="button" style="width:100px;height:40px; font-size:25px;"value="Start" id="StartButton">
 <script>
+
 document.getElementById('StartButton').addEventListener("click",function(){this.remove();move();});
   function move()
   {
+
+    /*画像生成*/
+    instans();
+    var screensize=document.getElementById('GameMain');
     var hae= document.getElementById('item').style;
-    var size=GetSize(1);
-    console.log(size) ;
-    var pos=0;
-    var speedX=3;
+    var speedX=2;
+    var speedY=2;
+    var Top=0;
+    var Left=0;
     var time=0;
     /*ハエをクリックしたら消す*/
     document.getElementById('item').addEventListener("click",function(){this.remove();});
     var timer=document.getElementById('timer');
     {
-      /*タイマーの役割*/
+    /*タイマーの役割*/
     setInterval(()=>{time++;timer.innerHTML=time;},1000);
+    /*画像を動かす*/
     setInterval(()=>
     {
-      pos+=3;
-      speedX=pos;
-      hae.left=speedX+"px";
-      hae.top=speedX+"px";
-      if(speedX>=500)
-      {
-        speedX=pos;
-        pos-=3;
-      }
+      Top+=speedX;
+      Left+=speedY;
+      /*反転条件*/
+      if((Top>700-100)||(Top<0))speedX=-speedX;
+      if((Left>550-100)||(Left<0))speedY=-speedY;
+      /*代入*/
+      hae.left=Top;
+      hae.top=Left;
     },16.7);
   }
 }
 
-
-function GetSize(e)
+function instans()
 {
-var aaa= document.getElementById('item').style;
-  if(e==1)
-  return aaa.left;
-  if(e==2)
+  var index=Math.abs(Math.floor(Math.random()*10)-5);
+  var test=new Array(index)
+  for(var i=0;i<1;i++)
   {
-    return aaa.top;
+    test[i]=new Image(100,100);
+    test[i].src="../aseet/TOPIcon.png";
+    document.getElementById('aaa').innerHTML='<img style="position:absolute;top:0px;left:auto;width:100px;height:100px;"id="item" >';
   }
 }
+
 </script>
 </body>
 </html>
