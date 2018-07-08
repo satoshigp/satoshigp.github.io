@@ -57,8 +57,10 @@ Y座標：<input type="text" id="txtY">
 <!--ゲーム画面-->
 <div class="contents">
   <div class="GameMain">
-    <img src="../aseet/pIWhd2Mb.jpg" alt="Debug" style="position:relative;top:0px;left:auto;width:100px;height:100px;" id="item">
-    <h1 style="position:relative;top:375px;left:650px;" id="timer">0</h1>
+    <img src="../aseet/pIWhd2Mb.jpg" alt="Debug" style="position:absolute;top:0px;left:auto;width:100px;height:100px;" id="item">
+    <img src="../aseet/pIWhd2Mb.jpg" alt="Debug" style="position:absolute;top:0px;left:auto;width:100px;height:100px;" id="item">
+
+    <h1 style="position:absolute;bottom:0px;left:650px;" id="timer">0</h1>
   </div>
 
 </div>
@@ -68,30 +70,41 @@ document.getElementById('StartButton').addEventListener("click",function(){this.
   function move()
   {
     var hae= document.getElementById('item').style;
+    var size=GetSize(1);
+    console.log(size) ;
     var pos=0;
     var speedX=3;
     var time=0;
+    /*ハエをクリックしたら消す*/
+    document.getElementById('item').addEventListener("click",function(){this.remove();});
     var timer=document.getElementById('timer');
     {
-      console.log(hae.width/(2+"px"));
       /*タイマーの役割*/
     setInterval(()=>{time++;timer.innerHTML=time;},1000);
     setInterval(()=>
     {
       pos+=3;
       speedX=pos;
-
+      hae.left=speedX+"px";
+      hae.top=speedX+"px";
       if(speedX>=500)
       {
         speedX=pos;
         pos-=3;
-
       }
-      hae.left=speedX+"px";
-      hae.top=speedX+"px";
     },16.7);
+  }
+}
 
 
+function GetSize(e)
+{
+var aaa= document.getElementById('item').style;
+  if(e==1)
+  return aaa.left;
+  if(e==2)
+  {
+    return aaa.top;
   }
 }
 </script>
