@@ -5,7 +5,7 @@
   <title>Document</title>
 </head>
 <style >
-.contents
+#contents
 {
   position: relative;
   display:flex;
@@ -14,11 +14,10 @@
   #GameMain
   {
     position :relative;
-    display:inline-block;
+    display:block;
     background: rgba(14, 85, 1,0.5);
-    width: 700px;
-    height: 550px;
     border:solid 3px rgb(0, 0, 0) ;
+  /*  overflow: hidden;*/
   }
 </style>
 <script>
@@ -58,65 +57,108 @@ a();
 X座標：<input type="text" id="txtX">
 Y座標：<input type="text" id="txtY">
 <!--ゲーム画面-->
-<div class="contents">
-  <div id="GameMain">
-    <!--画像配置場-->
-  <span id="aaa"></span>
-<!--秒数-->
+<div id="contents">
+  <div id="GameMain" style="width:700px;height:550px;">
+    <!--画像配置場...-->
+    <span id="aaa" style="top:auto;left:auto;position:absolute;">*</span>
+    <!--ハエの残り-->
+    <h2 style="position:absolute;right:50px;" id="count">残り〇〇匹</h2>
+    <!--秒数-->
     <h1 style="position:absolute;bottom:0px;left:650px;" id="timer">0</h1>
+
   </div>
 
 </div>
 <!--ゲームスタートのUI-->
 <input type="button" style="width:100px;height:40px; font-size:25px;"value="Start" id="StartButton">
 <script>
+var cnt=0;;
+document.getElementById('StartButton').addEventListener("click",function(){instans();this.remove();move();});
+/*game画面の表示範囲の取得*/
 
-document.getElementById('StartButton').addEventListener("click",function(){this.remove();move();});
   function move()
   {
-
-    /*画像生成*/
-    instans();
-    var screensize=document.getElementById('GameMain');
-    var hae= document.getElementById('item').style;
+    cnt=index;
+    var sizeA=document.getElementById('GameMain').style;
+    var hae =new Array(index);
     var speedX=2;
     var speedY=2;
     var Top=0;
     var Left=0;
-    var time=0;
+    for(var i=0;i<index;i++)
+    {
+      hae[i] = document.getElementById('item'+i+'').style;
+    }
     /*ハエをクリックしたら消す*/
-    document.getElementById('item').addEventListener("click",function(){this.remove();});
-    var timer=document.getElementById('timer');
+    for(var i=0;i<index;i++)
     {
-    /*タイマーの役割*/
-    setInterval(()=>{time++;timer.innerHTML=time;},1000);
-    /*画像を動かす*/
-    setInterval(()=>
-    {
-      Top+=speedX;
-      Left+=speedY;
-      /*反転条件*/
-      if((Top>700-100)||(Top<0))speedX=-speedX;
-      if((Left>550-100)||(Left<0))speedY=-speedY;
-      /*代入*/
-      hae.left=Top;
-      hae.top=Left;
-    },16.7);
-  }
-}
+      document.getElementById('item'+i+'').addEventListener("click",function(){this.remove();cnt--;document.getElementById('count').innerHTML="残り"+cnt+"匹";});
+    }
+    Timer();
 
+          /*画像を動かす*/
+          setInterval(()=>
+          {
+            console.log(cnt);
+            for(var i=0;i<1;i++)
+            {
+              /*反転条件*/
+            //    if((hae[i].left>sizeA.width)||(hae[i].left<0))Left=-Left;
+            //    if((hae[i].top>sizeA.top)||(hae[i].top<0))Top=-Top;
+                  /*代入*/
+                  hae[i].left+=speedX;
+                  hae[i].top+=speedY;
+            }
+        },16.7);
+
+
+
+  }
+  /*タイマー*/
+  function Timer()
+  {
+    var TimeCount=document.getElementById('timer');
+    var time=0;
+    var TimerOn;
+      /*タイマーの役割*/
+        TimerOn= setInterval(()=>
+        {
+          time++;
+          TimeCount.innerHTML=time;
+           if(cnt==0)
+           {
+             clearInterval(TimerOn);
+           }
+         },1000);
+
+  }
+
+
+
+var index=Math.abs(Math.floor(Math.random()*(12-10)+10));
 function instans()
 {
-  var index=Math.abs(Math.floor(Math.random()*10)-5);
+
+  var spawner=document.getElementById('aaa');
   var test=new Array(index)
-  for(var i=0;i<1;i++)
+  document.getElementById('count').innerHTML="残り"+index+"匹";
+  //alert(index);
+  for(var i=0;i<index;i++)
   {
+  spawner.style.left=rand(0,500);
+  spawner.style.top=rand(0,500);
     test[i]=new Image(100,100);
-    test[i].src="../aseet/pIWhd2Mb.jpg";
-    document.getElementById('aaa').innerHTML='<img src="../aseet/pIWhd2Mb.jpg" style="position:absolute;top:0px;left:auto;width:100px;height:100px;"id="item" >';
+    test[i].src="../aseet/TOPIcon.png";
+    /*DOMの再構築が必要無い為innerHTMLよりも高速。*/
+    spawner.insertAdjacentHTML('afterbegin',"<img src="+test[i].src+" style='position:absolute;top;10px;left:10px;width:100px;height:100px;' id='item"+i+"'>");
   }
 }
-
+/*ランダムメソッド指定の範囲内をランダムにすることができる*/
+function rand(min, max)
+{
+  var pos=Math.floor(Math.random()*(max-min)+min);
+  return pos;
+}
 </script>
 </body>
 </html>
