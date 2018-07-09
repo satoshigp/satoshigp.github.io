@@ -7,7 +7,6 @@ function responsiv()
    var main= document.getElementById('main');//idの取得
    var side= document.getElementById("side");
    var  maincont= document.getElementById('maincont');//グローバル変数
-   var MenuWid=document.getElementById('upmenu').style;
    main.clientWidth=widthsize;//現在のウィンドウサイズを最大ウィンドウ幅に代入
     var haba=widthsize*0.2;
     side.style.width=haba+"px";
@@ -25,32 +24,19 @@ function responsiv()
 
   var ancurl=document.getElementById('AncerUrl');
   var imgsrc=document.getElementById('TopFrame');
-   var a= a =>( x * x);
+
+
 if(imgsrc.src!=img)
   {
-
     imgsrc.style.opacity=0;
-    //無名関数にアロー演算子を使うことで中身を書きreturnで返すことができる。
-    setTimeout(()=>{imgsrc.style.opacity=1;imgsrc.src=img;},500);
+    //無名関数にアロー関数（ラムダ式）を使うことで関数内ををreturnで返すことができる。
+    setTimeout(()=>{imgsrc.style.opacity=1;imgsrc.src=img;ancurl.href=url;},500);
   }
   else
   {
       return;
   }
-  var ImgSrc=document.getElementById('TopFrame');
-  var a=document.getElementById('777');
-
-  a.style.opacity=0.5;
-  ImgSrc.style.opacity=1;
-
-
- ImgSrc.src=img;
-
-    //不透明度の処理
-  ancurl.href=url;
 }
-
-
 
 /*
 画像をスライドさせる為の関数

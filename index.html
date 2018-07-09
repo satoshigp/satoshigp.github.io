@@ -5,7 +5,6 @@
     <title>深田智士レスポンシブWebデザインに挑戦！</title>
     <link rel="stylesheet" href="css/Mycss/styleboot.css">
     <script type="text/javascript" src="js\Original.js">
-
     </script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -26,7 +25,6 @@
     {
       text-decoration: underline;
     }
-
   </style>
 
   <body id="main" onload="responsiv()" onresize="responsiv()" >
@@ -49,32 +47,32 @@
     </div>
     <div id="maincont">
       <div class="title">深田 智士</div>
-        <div  id="upmenu">
-          <li>About Me</li>
-          <li>Works</li>
           <!--今回はアンカーをつけない-->
-          <li>Twitter</li>
-          <li> <a href="https://github.com/satoshigp">GitHub</a> </li>
+        <div class="upmenuzone">
+          <div  class="UpMenuList"><a href="https://github.com/satoshigp">About Me</a></div>
+          <div  class="UpMenuList"><a href="https://github.com/satoshigp">Works</a></div>
+          <div  class="UpMenuList"><a href="https://github.com/satoshigp">Twitter</a></div>
+          <div class="UpMenuList"><a href="https://github.com/satoshigp">GitHub</a></div>          
         </div>
 
 <!--スライドショーの設定-->
         <div id="slideshow">
           <a href="https://unityroom.com/games/run-space" id="AncerUrl">
-            <img src="aseet/aaaaaassdasfs.jpg" name="pic" id="TopFrame"  >
+            <img src="aseet/aaaaaassdasfs.jpg" name="pic" id="TopFrame">
           </a>
-            <div id="SliderWidth">
-              <img src="aseet/Arrow.png" class="SlideContent" alt="前へ" value="先へ" onclick="MinusScr()" width="60" >
-            <div id="ImgFrame" class="SlideContent">
-                <div id="FrameWall" >
-                  <div id="ImgItem" > <img src="aseet/bbb.jpg" alt="img" name="Items" onmouseover=FUNCIMG(this.src,"http://assetstore.info/eventandcontest/themechallenge/chiristmas/")></div>
-                  <div id="ImgItem"> <img src="aseet/aaaaaassdasfs.jpg" alt="img1" name="Items" onmouseover=FUNCIMG(this.src,"https://unityroom.com/games/run-space")></div>
-                  <div id="ImgItem"> <img src="aseet/Screenshot_20180209-130040.png" alt="img2" name="Items" onmouseover=FUNCIMG(this.src,"") ></div>
-                  <div id="ImgItem"> <img src="aseet/キャプチャ.jpg" alt="img3" name="Items" onmouseover=FUNCIMG(this.src,"./NEW/")></div>
-                  <div id="ImgItem"> <img src="aseet/bbb.jpg" alt="img4" name="Items"></div>
-                </div>
-              </div>
-              <img src="aseet/Arrow.png" class="SlideContent" alt="前へ" value="先へ" onclick="PlusScr()"width="60"style="transform:scale(-1,1);">
-            </div>
+         </div>
+         <div id="SliderWidth">
+           <img src="aseet/Arrow.png" class="SlideContent" alt="前へ" value="先へ" onclick="MinusScr()" width="60" >
+           <div id="ImgFrame" class="SlideContent">
+             <div id="FrameWall" >
+               <div class="ImgItem" > <img src="aseet/bbb.jpg" alt="img" name="Items" onmouseover=FUNCIMG(this.src,"http://assetstore.info/eventandcontest/themechallenge/chiristmas/")></div>
+               <div class="ImgItem"> <img src="aseet/aaaaaassdasfs.jpg" alt="img1" name="Items" onmouseover=FUNCIMG(this.src,"https://unityroom.com/games/run-space")></div>
+               <div class="ImgItem"> <img src="aseet/Screenshot_20180209-130040.png" alt="img2" name="Items" onmouseover=FUNCIMG(this.src,"") ></div>
+               <div class="ImgItem"> <img src="aseet/キャプチャ.jpg" alt="img3" name="Items" onmouseover=FUNCIMG(this.src,"./NEW/")></div>
+               <div class="ImgItem"> <img src="aseet/bbb.jpg" alt="img4" name="Items"></div>
+             </div>
+           </div>
+           <img src="aseet/Arrow.png" class="SlideContent" alt="前へ" value="先へ" onclick="PlusScr()"width="60"style="transform:scale(-1,1);">
          </div>
 
          
@@ -92,11 +90,13 @@
         <!--文章-->
         <div class="index">自己紹介</div>
          <a id="prof"></a>
-         こんにちは。
-         ＨＴＭＬ、ＣＳＳ、JavaScripptが初心者ですがこのサイトでは<q>jQuery</q>や<q>React</q>を使わず <br>
-         根性だけでポートフォリオを作成したいと思います！
-         普段は専門学校デジタルアーツ東京という学校でプログラミングの勉強をしています。
-         <a href="satoshigp.github.io/docs/item.html">もっと詳しく(現在はJavaScriptの練習サイト)</a>
+         専門学校デジタルアーツ東京、ゲーム科ゲームプログラムコースの深田と申します。 <br>
+         高校生の時にゲーム制作に興味を持ち本校に入学しました <br>
+         初めはパソコン初心者で電源のファイルを開く程度しかできませんでしたが、現在ではゲーム制作、そしてWebのホームページ制作までできるようになりました。 <br>
+         最近はWeb系統にとても興味あり、HTML,CSS,JavaScriptを重点的に学んでおります。 <br>
+         本当はホームページを作る際には「jQuery」を使うことが多いらしいのですが、あの悪魔的な文法を見て混乱してしまいそうなので今は使わないようにしています。 <br>
+         けどjQuery等を使わないとデザイン的にほかの方々よりも劣ってしまうのでCSSとJavaScriptを使いデザインをしてみようかなと思っております！　<br>
+         jQueryでできるならJavaScriptでもできるでしょ！という俺理論的な感じでこのサイトを制作しております。
          <a id="action"></a>
         <div class="index">課外活動</div>
           現在は主に<q cite="https://unity3d.com/jp"><a href="https://unity3d.com/jp">Unity</a></q>というゲームエンジンを使い
