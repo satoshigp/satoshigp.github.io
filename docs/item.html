@@ -17,7 +17,7 @@
     display:block;
     background: rgba(14, 85, 1,0.5);
     border:solid 3px rgb(0, 0, 0) ;
-  /*  overflow: hidden;*/
+    overflow: hidden;
   }
 </style>
 <script>
@@ -60,34 +60,42 @@ Y座標：<input type="text" id="txtY">
 <div id="contents">
   <div id="GameMain" style="width:700px;height:550px;">
     <!--画像配置場...-->
-    <span id="aaa" style="top:auto;left:auto;position:absolute;">*</span>
+    <span id="aaa"></span>
     <!--ハエの残り-->
-    <h2 style="position:absolute;right:50px;" id="count">残り〇〇匹</h2>
+    <h2 style="position:absolute;right:50px;z-index:0;" id="count">残り〇〇匹</h2>
     <!--秒数-->
-    <h1 style="position:absolute;bottom:0px;left:650px;" id="timer">0</h1>
+    <h1 style="position:absolute;bottom:0px;left:650px;z-index:0;" id="timer">0</h1>
 
   </div>
-
+  <div id="BGM"></div>
+  <audio src="../aseet/bgm_maoudamashii_lastboss1.mp3" loop></audio>
 </div>
 <!--ゲームスタートのUI-->
 <input type="button" style="width:100px;height:40px; font-size:25px;"value="Start" id="StartButton">
 <script>
+var index=Math.abs(Math.floor(Math.random()*(12-10)+10));
 var cnt=0;;
 document.getElementById('StartButton').addEventListener("click",function(){instans();this.remove();move();});
-/*game画面の表示範囲の取得*/
 
   function move()
   {
     cnt=index;
+    /*game画面の表示範囲の取得*/
     var sizeA=document.getElementById('GameMain').style;
     var hae =new Array(index);
-    var speedX=2;
-    var speedY=2;
-    var Top=0;
-    var Left=0;
+    var speedX=new Array(index);
+    var speedY=new Array(index);
+    /*個別で動きのデータを持たせる*/
+    var Top=new Array(index);
+    var Left=new Array(index);
+    /*初期化*/
     for(var i=0;i<index;i++)
     {
       hae[i] = document.getElementById('item'+i+'').style;
+      speedX[i]=rand(-2,2)-1*-1;
+      speedY[i]=rand(-2,2)-1*-1;
+      Top[i]=parseInt(hae[i].top);
+      Left[i]=parseInt(hae[i].left);
     }
     /*ハエをクリックしたら消す*/
     for(var i=0;i<index;i++)
@@ -99,15 +107,16 @@ document.getElementById('StartButton').addEventListener("click",function(){insta
           /*画像を動かす*/
           setInterval(()=>
           {
-            console.log(cnt);
-            for(var i=0;i<1;i++)
+            for(var i=0;i<index;i++)
             {
               /*反転条件*/
-            //    if((hae[i].left>sizeA.width)||(hae[i].left<0))Left=-Left;
-            //    if((hae[i].top>sizeA.top)||(hae[i].top<0))Top=-Top;
-                  /*代入*/
-                  hae[i].left+=speedX;
-                  hae[i].top+=speedY;
+            if((parseInt(hae[i].left)>parseInt(sizeA.width)-100)||(parseInt(hae[i].left)<0))speedX[i]=-speedX[i];
+            if((parseInt(hae[i].top)>parseInt(sizeA.height)-100)||(parseInt(hae[i].top)<0))speedY[i]=-speedY[i];
+            Left[i]+=speedX[i];
+            Top[i]+=speedY[i];
+            /*代入*/
+            hae[i].left=Left[i];
+            hae[i].top=Top[i];
             }
         },16.7);
 
@@ -135,7 +144,6 @@ document.getElementById('StartButton').addEventListener("click",function(){insta
 
 
 
-var index=Math.abs(Math.floor(Math.random()*(12-10)+10));
 function instans()
 {
 
@@ -145,13 +153,10 @@ function instans()
   //alert(index);
   for(var i=0;i<index;i++)
   {
-  spawner.style.left=rand(0,500);
-  spawner.style.top=rand(0,500);
-    test[i]=new Image(100,100);
-    test[i].src="../aseet/TOPIcon.png";
     /*DOMの再構築が必要無い為innerHTMLよりも高速。*/
-    spawner.insertAdjacentHTML('afterbegin',"<img src="+test[i].src+" style='position:absolute;top;10px;left:10px;width:100px;height:100px;' id='item"+i+"'>");
+    spawner.insertAdjacentHTML('afterbegin',"<span  style='position:absolute;top:"+rand(0,450)+"px;left:"+rand(0,600)+"px;width:100px;height:100px;border:solid 5px rgb(33, 79, 227);z-index:1;' id='item"+i+"'></span>");
   }
+  document.querySelector("#BGM").insertAdjacentHTML('afterbegin','<audio src="../aseet/bgm_maoudamashii_lastboss1.mp3" loop></audio>')
 }
 /*ランダムメソッド指定の範囲内をランダムにすることができる*/
 function rand(min, max)
