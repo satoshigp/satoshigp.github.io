@@ -70,6 +70,7 @@ Y座標：<input type="text" id="txtY">
 </div>
 <!--ゲームスタートのUI-->
 <input type="button" style="width:100px;height:40px; font-size:25px;"value="Start" id="StartButton">
+
 <script>
 var index=Math.abs(Math.floor(Math.random()*(12-10)+10));
 var cnt=0;;
@@ -84,7 +85,7 @@ document.getElementById('StartButton').addEventListener("click",function(){insta
     /*ハエをクリックしたら消す*/
     for(var i=0;i<index;i++)
     {
-      document.getElementById('item'+i+'').addEventListener("click",function(){this.remove();cnt--;document.getElementById('count').innerHTML="残り"+cnt+"匹";});
+      document.getElementById('item'+i+'').addEventListener("click",function(){this.remove();cnt--;document.getElementById('count').innerHTML="残り"+cnt+"匹"; });
     }
     Timer();
           /*画像を動かす*/
@@ -126,7 +127,7 @@ document.getElementById('StartButton').addEventListener("click",function(){insta
     hae[i].top=Top[i];
     }
   }
-  ,16.7);
+  ,16.667);
 }
   /*タイマー*/
   function Timer()
@@ -147,8 +148,6 @@ document.getElementById('StartButton').addEventListener("click",function(){insta
 
   }
 
-
-
 function instans()
 {
 
@@ -161,7 +160,7 @@ function instans()
     /*DOMの再構築が必要無い為innerHTMLよりも高速。*/
     spawner.insertAdjacentHTML('afterbegin',"<span  style='position:absolute;top:"+rand(0,450)+"px;left:"+rand(0,600)+"px;width:100px;height:100px;border:solid 5px rgb(33, 79, 227);z-index:1;' id='item"+i+"'></span>");
   }
-  //document.querySelector("#BGM").insertAdjacentHTML('afterbegin','<audio src="../aseet/bgm_maoudamashii_lastboss1.mp3" loop></audio>')
+  document.querySelector("#BGM").insertAdjacentHTML('afterbegin','<audio src="../../aseet/bgm_maoudamashii_lastboss1.mp3" loop autoplay></audio>')
 }
 /*ランダムメソッド指定の範囲内をランダムにすることができる*/
 function rand(min, max)
