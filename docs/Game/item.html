@@ -57,7 +57,7 @@ X座標：<input type="text" id="txtX">
 Y座標：<input type="text" id="txtY">
 <!--ゲーム画面-->
 <div id="contents">
-  <div id="GameMain" style="width:700px;height:550px;">
+  <canvas id="GameMain" style="width:700px;height:550px;">
     <!--画像配置場...-->
     <span id="aaa"></span>
     <!--ハエの残り-->
@@ -65,7 +65,7 @@ Y座標：<input type="text" id="txtY">
     <!--秒数-->
     <h1 style="position:absolute;bottom:0px;left:650px;z-index:0;" id="timer">0</h1>
 
-  </div>
+  </canvas>
   <div id="BGM"></div>
 </div>
 <!--ゲームスタートのUI-->
@@ -75,6 +75,9 @@ Y座標：<input type="text" id="txtY">
 var index=Math.abs(Math.floor(Math.random()*(12-10)+10));
 var cnt=0;;
 document.getElementById('StartButton').addEventListener("click",function(){instans();this.remove();move();});
+var sizeA=document.getElementById('GameMain');
+var can=sizeA.getContext('2d');
+
 //window.requestAnimationFrame(move)
 
 
@@ -92,13 +95,13 @@ document.getElementById('StartButton').addEventListener("click",function(){insta
           aaa();
 
   }
+  requestAnimationFrame(aaa);
   function aaa()
   {
 
 
 
     /*game画面の表示範囲の取得*/
-    var sizeA=document.getElementById('GameMain').style;
     var hae =new Array(index);
     var speedX=new Array(index);
     var speedY=new Array(index);
@@ -114,20 +117,19 @@ document.getElementById('StartButton').addEventListener("click",function(){insta
       Top[i]=parseInt(hae[i].top);
       Left[i]=parseInt(hae[i].left);
     }
-    setInterval(()=>{
+
     for(var i=0;i<index;i++)
     {
       /*反転条件*/
-    if((parseInt(hae[i].left)>parseInt(sizeA.width)-100)||(parseInt(hae[i].left)<0))speedX[i]=-speedX[i];
-    if((parseInt(hae[i].top)>parseInt(sizeA.height)-100)||(parseInt(hae[i].top)<0))speedY[i]=-speedY[i];
+    if((parseInt(hae[i].left)>parseInt(sizeA.style.width)-100)||(parseInt(hae[i].left)<0))speedX[i]=-speedX[i];
+    if((parseInt(hae[i].top)>parseInt(sizeA.style.height)-100)||(parseInt(hae[i].top)<0))speedY[i]=-speedY[i];
     Left[i]+=speedX[i];
     Top[i]+=speedY[i];
     /*代入*/
     hae[i].left=Left[i];
     hae[i].top=Top[i];
     }
-  }
-  ,16.667);
+
 }
   /*タイマー*/
   function Timer()
@@ -158,9 +160,9 @@ function instans()
   for(var i=0;i<index;i++)
   {
     /*DOMの再構築が必要無い為innerHTMLよりも高速。*/
-    spawner.insertAdjacentHTML('afterbegin',"<span  style='position:absolute;top:"+rand(0,450)+"px;left:"+rand(0,600)+"px;width:100px;height:100px;border:solid 5px rgb(33, 79, 227);z-index:1;' id='item"+i+"'></span>");
+    spawner.insertAdjacentHTML('afterbegin',can.fillRect(rand(0,100),rand(0,100),50,50));
   }
-  document.querySelector("#BGM").insertAdjacentHTML('afterbegin','<audio src="../../aseet/bgm_maoudamashii_lastboss1.mp3" loop autoplay></audio>')
+  //document.querySelector("#BGM").insertAdjacentHTML('afterbegin','<audio src="../../aseet/bgm_maoudamashii_lastboss1.mp3" loop autoplay></audio>')
 }
 /*ランダムメソッド指定の範囲内をランダムにすることができる*/
 function rand(min, max)

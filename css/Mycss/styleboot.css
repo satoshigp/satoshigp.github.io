@@ -14,6 +14,7 @@ div{
   position: relative;
   margin: 0px;
     /*標準画面幅*/
+    overflow-x: hidden;
 
   background: rgb(255, 255, 255);
   height: 100%;
@@ -38,8 +39,7 @@ div{
   top:0px;
   margin: 0px;
   padding: 0px;
-
-  font-size: 1.2em;
+  font-size: 1em;
 }
 /*サイドメニュー欄の設定*/
 #side
@@ -47,17 +47,28 @@ div{
     position: fixed;/*画面に固定*/
     background: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-
     left: 0px;
+    margin: 0px;
+    padding: 0px;
     height: 100%;
+    font-size: 100%;
 }
-#side menu li a
+
+#side ul li
+{
+  list-style-type: circle;
+  color:white;
+  font-size: 1.1em;
+}
+#side ul li a
 {
   left: 0px;
   color: rgb(255, 255, 255);
-  font-size: 1.8em;
-  margin-left: 0px;
-  padding-top: 5px;
+  font-size: 1em;
+}
+#side ul li a:hover
+{
+    color: rgb(0, 132, 244);
 }
 /*
 タイトルの要素
@@ -79,14 +90,14 @@ div{
 .upmenuzone
 {
   margin: 0px 0px 30px 0px;
-  display: inline-block;
+  display: block;
   width: 100%;
 }
 .UpMenuList
 {
   margin: 0px;
   padding:0px;
-  background: rgb(43, 95, 196);
+  background: rgba(255, 138, 0, 0.76);
   box-sizing: border-box;
   border:solid 5px rgb(0, 0, 0);
   text-align: center;
@@ -95,10 +106,14 @@ div{
   left: 0px;
   height: 45px;
   width: 50%;
-  color: rgb(143, 120, 167);
   font-size: 2em;
   float: left;
 }
+.UpMenuList div
+{
+  color: rgb(255, 255, 255);
+}
+
 
 #slideshow
 {
@@ -156,7 +171,7 @@ div{
   transition: 1.5s;
 
 }
-.ImgItem img
+.ImgItem
 {
   padding:0px;
   cursor: pointer;
@@ -176,17 +191,35 @@ PC画面用の設定
    align-items: center;
    width: 25%;
  }
+
+ #side
+ {
+    font-size: 200%;
+ }
 }
 /*
 スマートフォンの画面用設定
 */
 @media screen and (max-width:480px){
-  #main
+  #maincont
   {
-    font-size: 40%;
+      font-size: 100%;
   }
 
-
+  #side
+  {
+      font-size: 75%;
+  }
+  #side li
+  {
+    list-style-type: none;
+    color:white;
+  }
+  #side li a
+  {
+    left: 0px;
+    color: rgb(255, 255, 255);
+  }
 
   .UpMenuList
   {
@@ -196,6 +229,10 @@ PC画面用の設定
     font-size: 2em;
     height: 20px;
     float: none;
+  }
+  .UpMenuList
+  {
+    font-size: 20px;
   }
   .index
   {
