@@ -82,6 +82,6 @@ if(cnt==0)
 }
 /*関数呼び出し*/
 /*ウィンドウが呼び出された瞬間に関数実行*/
-window.onloadstart=responsiv;
+window.onload=responsiv;
 /*ウィンドウサイズが変更されたときに呼び出される関数*/
 window.onresize=responsiv;
