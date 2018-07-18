@@ -31,14 +31,14 @@ function responsiv()
 
 
 //マウスを枠の中に入れたらTOP画像が変わる仕組み。
- function FUNCIMG (img)
+ function FUNCIMG (img,url)
 {
   var ancurl=document.querySelector('.ImgItem');
   //ancurl.onmouseover=this.src;
   var imgsrc=document.getElementById('TopFrame');
   imgsrc.style.opacity=0;
   //無名関数にアロー関数（ラムダ式）を使うことで関数内ををreturnすることができる。
-  setTimeout(()=>{imgsrc.style.opacity=1;imgsrc.src=ancurl.src;},500);
+  setTimeout(()=>{imgsrc.style.opacity=1;imgsrc.src=img;},500);
 }
 
 /*
