@@ -36,7 +36,8 @@ function FUNCIMG (img,url)
   var ancurl=document.querySelector('#AncerUrl');
   //ancurl.onmouseover=this.src;
   var imgsrc=document.getElementById('TopFrame');
-  if(imgsrc.src!=img&&imgsrc.style.opacity==1)
+  //トップバナーに表示されている画像と、カーソルに当てている画像が違うものか？
+  if(imgsrc.src!=img)
   {
     imgsrc.style.opacity=0;
     //無名関数にアロー関数（ラムダ式）を使うことで関数内ををreturnすることができる。
